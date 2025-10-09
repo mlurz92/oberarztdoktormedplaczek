@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Songbibliothek – Oberarzt Doktor med Placzek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <header class="hero" id="top">
+    <nav class="primary-nav">
+      <div class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-wave-square"></i></span>
+        <div>
+          <h1>Placzek Song-Atelier</h1>
+          <p>Interaktive Textbibliothek für Suno.AI Inspiration</p>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#overview">Überblick</a>
+        <a href="#library">Songbibliothek</a>
+        <a href="#workflow">Suno.AI Workflow</a>
+        <a href="#tips">Tipps</a>
+      </div>
+      <button class="mode-toggle" id="modeToggle" aria-label="Designmodus umschalten">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="badge">Crafted for Radiology Pop Anthems</p>
+        <h2>Alle Lyrics &amp; Styles auf einen Blick – mit Copy-Funktion &amp; inspirierenden Playbooks.</h2>
+        <p>Erkunde die Songskizzen für Oberarzt Doktor med Placzek, strukturiert nach Stilrichtungen, Hook-Parts und Emotionsebenen. Perfekt, um in Suno.AI sofort neue musikalische Meisterwerke zu generieren.</p>
+        <div class="cta-row">
+          <a class="cta primary" href="#library">Jetzt Bibliothek öffnen</a>
+          <a class="cta secondary" href="#workflow">Workflow entdecken</a>
+        </div>
+        <div class="hero-stats">
+          <div><span id="songCount">0</span><small>Songs</small></div>
+          <div><span id="sectionCount">0</span><small>Songabschnitte</small></div>
+          <div><span id="styleCount">0</span><small>Stil-Tags</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit-card" data-tilt>
+          <h3>Suno.AI Prompt Blueprint</h3>
+          <ul>
+            <li><span>1.</span> Stil-Cluster wählen</li>
+            <li><span>2.</span> Hook &amp; Stimmung kopieren</li>
+            <li><span>3.</span> Suno.AI Parameter anpassen</li>
+            <li><span>4.</span> Variation generieren &amp; iterieren</li>
+          </ul>
+          <button class="ghost" id="copyWorkflow" data-copy="#workflowGuide">Workflow kopieren</button>
+        </div>
+        <div class="floating-card">
+          <h4>Live Inspiration</h4>
+          <p>„Axiale Schnitte tanzen – wir schreiben Hits im CT-Lab.“</p>
+          <span class="pill">Motivation • Radiologie • Electro-Pop</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="section overview">
+      <div class="section-heading">
+        <h2>Warum diese Library?</h2>
+        <p>Die Songtexte sind so strukturiert, dass du sofort Lyrics und Stilrichtungen in Suno.AI übertragen kannst. Jedes Element lässt sich mit einem Klick kopieren, während Filter &amp; Visualisierungen dir helfen, passende Emotionen und BPM-Welten zu entdecken.</p>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3><i class="fa-solid fa-sliders"></i> Dynamische Filterung</h3>
+          <p>Filtere nach Schlagworten, Emotionen oder Tempo, um innerhalb von Sekunden den passenden Track zu finden.</p>
+        </article>
+        <article class="info-card">
+          <h3><i class="fa-solid fa-copy"></i> Instant Copy</h3>
+          <p>Jede Hook, jeder Vers, jedes Style-Briefing lässt sich direkt in die Zwischenablage übernehmen – perfekt für schnelle Iterationen.</p>
+        </article>
+        <article class="info-card">
+          <h3><i class="fa-solid fa-sparkles"></i> Animierte Experience</h3>
+          <p>Weiche Übergänge, Micro-Interactions und Scroll-Animationen machen das Browsen zum kreativen Flow.</p>
+        </article>
+        <article class="info-card">
+          <h3><i class="fa-solid fa-lightbulb"></i> Kontext &amp; Insights</h3>
+          <p>Ergänzende Tipps zu Suno.AI Parametern, Produktionsideen und Storytelling-Elementen geben dir zusätzliche Inspiration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="library" class="section library">
+      <div class="section-heading">
+        <h2>Songbibliothek</h2>
+        <p>Nutze Suche, Tags und thematische Cluster, um aus der stetig wachsenden Sammlung die ideale Vorlage auszuwählen.</p>
+      </div>
+      <div class="library-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="searchInput" placeholder="Titel, Stimmung oder Keywords durchsuchen…" autocomplete="off">
+        </div>
+        <div class="filter-groups">
+          <div class="filter-header">
+            <i class="fa-solid fa-filter"></i>
+            <span>Filter</span>
+          </div>
+          <div id="tagContainer" class="tag-container"></div>
+        </div>
+        <button class="cta tertiary" id="clearFilters"><i class="fa-solid fa-broom"></i> Filter zurücksetzen</button>
+      </div>
+      <div id="songList" class="song-list" role="list"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <i class="fa-solid fa-microphone-slash"></i>
+        <p>Keine Songs gefunden. Passe die Filter an oder lösche die Suche.</p>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow">
+      <div class="section-heading">
+        <h2>Suno.AI Workflow Playbook</h2>
+        <p>Folge diesem bewährten Ablauf, um in Suno.AI schnell hochwertige Radiologie-Songs zu produzieren.</p>
+      </div>
+      <div class="timeline" id="workflowGuide">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h3>Stil auswählen</h3>
+            <p>Nutze die Stil-Notizen eines Songs. Kombiniere Tempo, Genre und Vocal-Art für zielgerichtete Prompts.</p>
+            <span class="tip">Tipp: Suno versteht BPM-Angaben, Emotionen und Instrumentation besonders gut.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h3>Hook &amp; Struktur definieren</h3>
+            <p>Kopiere Intro, Verse und Chorus separat. So kannst du in Suno.AI einzelne Abschnitte iterativ anpassen.</p>
+            <span class="tip">Nutze "Custom Mode" in Suno, um die Lyrics direkt einzufügen.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-content">
+            <h3>Feintuning mit Referenzen</h3>
+            <p>Verknüpfe Styles mit Referenztracks (z.B. Modern Schlager + EDM Drops). Die Kombination sorgt für kreative Mischformen.</p>
+            <span class="tip">Experimentiere mit Parameter "Instrumental &amp; Vocals" für noch mehr Kontrolle.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">4</div>
+          <div class="timeline-content">
+            <h3>Export &amp; Versionierung</h3>
+            <p>Lade mehrere Versionen herunter, tagge sie nach Stimmung &amp; BPM. Nutze anschließend DAW-Tools für Feinheiten.</p>
+            <span class="tip">Suno.AI generiert 2 Varianten pro Prompt – nutze sie für Mashups oder Harmonien.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips" class="section tips">
+      <div class="section-heading">
+        <h2>Production Notes &amp; Erweiterungen</h2>
+        <p>Nutze diese Zusatzideen, um die Suno.AI-Ausgaben weiter zu professionalisieren und Live-Performances vorzubereiten.</p>
+      </div>
+      <div class="tips-grid">
+        <article class="tip-card">
+          <h3><i class="fa-solid fa-waveform-lines"></i> Layering</h3>
+          <p>Kombiniere Suno-Ausgaben mit zusätzlichen Vocal-Chops oder echten Gitarren, um Hybridsounds zu erzeugen.</p>
+          <span class="tag">Studio</span>
+        </article>
+        <article class="tip-card">
+          <h3><i class="fa-solid fa-drum"></i> Rhythmische Variation</h3>
+          <p>Nutze Ableton oder FL Studio, um Drums nachzujustieren. Besonders 135-140 BPM profitieren von Sidechain-Effekten.</p>
+          <span class="tag">Arrangement</span>
+        </article>
+        <article class="tip-card">
+          <h3><i class="fa-solid fa-chart-line"></i> Story-Arc</h3>
+          <p>Platziere emotionale Peaks gezielt: charmante Neckereien in den Versen, triumphaler Pathos im Chorus.</p>
+          <span class="tag">Songwriting</span>
+        </article>
+        <article class="tip-card">
+          <h3><i class="fa-solid fa-headset"></i> Performance</h3>
+          <p>Für Live-Auftritte: setze Call-and-Response mit dem Publikum – nutze die markanten Namen als Mitsing-Hooks.</p>
+          <span class="tag">Live</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Placzek Song-Atelier · Crafted with ❤️ &amp; Suno.AI-Liebe</p>
+    <a href="#top" class="back-to-top" aria-label="Zurück nach oben"><i class="fa-solid fa-arrow-up"></i></a>
+  </footer>
+
+  <template id="songTemplate">
+    <article class="song-card" role="listitem">
+      <div class="song-card__header">
+        <div>
+          <h3 class="song-title"></h3>
+          <div class="song-meta"></div>
+        </div>
+        <button class="icon-button copy-all" title="Kompletten Song kopieren">
+          <i class="fa-solid fa-copy"></i>
+        </button>
+      </div>
+      <div class="song-body">
+        <div class="song-styles">
+          <div class="styles-header">
+            <h4>Style Briefing</h4>
+            <button class="icon-button copy-styles" title="Style kopieren"><i class="fa-solid fa-clipboard"></i></button>
+          </div>
+          <pre class="style-text"></pre>
+        </div>
+        <div class="lyrics-container"></div>
+      </div>
+    </article>
+  </template>
+
+  <template id="sectionTemplate">
+    <section class="lyric-section">
+      <header>
+        <h5 class="section-title"></h5>
+        <div class="section-actions">
+          <button class="icon-button copy-section" title="Abschnitt kopieren"><i class="fa-solid fa-copy"></i></button>
+          <button class="icon-button collapse-section" title="Abschnitt ein-/ausklappen"><i class="fa-solid fa-chevron-up"></i></button>
+        </div>
+      </header>
+      <pre class="section-body"></pre>
+    </section>
+  </template>
+
+  <div class="toast-container" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.0.6/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
