@@ -71,7 +71,7 @@ async function fetchSongs() {
 }
 
 function parseSongbook(markdown) {
-  const sections = markdown.split(/\n##\s*/).slice(1);
+  const sections = markdown.split(/\r?\n##\s*/).slice(1);
   return sections
     .map((section) => {
       const trimmed = section.trim();
