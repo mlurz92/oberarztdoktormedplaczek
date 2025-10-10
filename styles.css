@@ -705,7 +705,7 @@ body::before {
   max-height: 160px;
   overflow: hidden;
   position: relative;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
   white-space: pre-wrap;
   line-height: 1.6;
   color: var(--muted);
