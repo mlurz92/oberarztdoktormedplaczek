@@ -384,7 +384,7 @@ function getProcessedLyrics(song) {
 
 function getProcessedHook(song) {
   if (!state.replacePlaczek) return song.hook;
-  return extractHook(getProcessedLyrics(song));
+  return song.hook.replace(/Placzek/g, "Platzek");
 }
 
 function initAnimations() {
