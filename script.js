@@ -1,324 +1,415 @@
 const state = {
   songs: [],
-  filters: new Set(),
-  sectionsCount: 0,
-  styles: new Set()
+  filteredSongs: [],
+  filters: {
+    search: "",
+    tags: new Set(),
+  },
+  activeSongIndex: 0,
+  toastTimeout: null,
+  replacePlaczek: false,
 };
 
-const elements = {
-  songList: document.getElementById('songList'),
-  songTemplate: document.getElementById('songTemplate'),
-  sectionTemplate: document.getElementById('sectionTemplate'),
-  songCount: document.getElementById('songCount'),
-  sectionCount: document.getElementById('sectionCount'),
-  styleCount: document.getElementById('styleCount'),
-  tagContainer: document.getElementById('tagContainer'),
-  searchInput: document.getElementById('searchInput'),
-  clearFilters: document.getElementById('clearFilters'),
-  emptyState: document.getElementById('emptyState'),
-  toastContainer: document.querySelector('.toast-container'),
-  modeToggle: document.getElementById('modeToggle'),
-  progressBar: document.querySelector('.progress-bar'),
-  copyWorkflow: document.getElementById('copyWorkflow')
+const selectors = {
+  songCollection: document.getElementById("songCollection"),
+  styleChips: document.getElementById("styleChips"),
+  search: document.getElementById("searchSongs"),
+  clearFilters: document.getElementById("clearFilters"),
+  statSongCount: document.getElementById("statSongCount"),
+  statStyleCount: document.getElementById("statStyleCount"),
+  statAvgLines: document.getElementById("statAvgLines"),
+  heroTitle: document.getElementById("heroTitle"),
+  heroStyles: document.getElementById("heroStyles"),
+  heroHook: document.getElementById("heroHook"),
+  heroHighlight: document.getElementById("heroHighlight"),
+  toast: document.getElementById("toast"),
+  themeToggle: document.getElementById("themeToggle"),
+  randomSong: document.getElementById("randomSong"),
+  year: document.getElementById("year"),
+  nameToggle: document.getElementById("nameSwapToggle"),
 };
 
-async function init() {
+document.addEventListener("DOMContentLoaded", () => {
+  selectors.year.textContent = new Date().getFullYear().toString();
+  initTheme();
+  initNameToggle();
+  bindUI();
+  fetchSongs();
+  initLenis();
+});
+
+function initLenis() {
+  if (window.Lenis) {
+    const lenis = new Lenis({
+      lerp: 0.08,
+      smoothWheel: true,
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+}
+
+async function fetchSongs() {
   try {
-    const response = await fetch('Songs.md');
+    const response = await fetch("Songs.md");
+    if (!response.ok) throw new Error("Markdown konnte nicht geladen werden");
     const text = await response.text();
-    state.songs = parseSongs(text);
-    buildTagList();
-    renderSongs(state.songs);
+    state.songs = parseSongbook(text);
+    state.filteredSongs = [...state.songs];
+    renderSongs();
+    buildStyleFilters();
     updateStats();
-    setupEvents();
+    highlightSong(0);
     initAnimations();
-    initSmoothScroll();
-    document.getElementById('year').textContent = new Date().getFullYear();
   } catch (error) {
-    console.error('Fehler beim Laden der Markdown-Datei', error);
-    showToast('Markdown-Datei konnte nicht geladen werden.', 'error');
+    console.error(error);
+    showToast("Fehler beim Laden der Songs", true);
   }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+function parseSongbook(markdown) {
+  const sections = markdown.split(/\r?\n##\s*/).slice(1);
+  return sections
+    .map((section) => {
+      const trimmed = section.trim();
+      const [rawTitle, ...rest] = trimmed.split("\n");
+      const body = rest.join("\n");
+      const stylesMatch = body.match(/```styles\s*([\s\S]*?)```/i);
+      const lyricsMatch = body.match(/```Lyrics\s*([\s\S]*?)```/i);
 
-function parseSongs(markdown) {
-  const regex = /##\s+([^\n]+)\n([\s\S]*?)(?=\n##\s+|$)/g;
-  const songs = [];
-  let match;
+      if (!stylesMatch || !lyricsMatch) return null;
 
-  while ((match = regex.exec(markdown)) !== null) {
-    const title = match[1].trim();
-    const block = match[2];
-    const stylesMatch = block.match(/```styles\s*\n([\s\S]*?)```/);
-    const lyricsMatch = block.match(/```Lyrics\s*\n([\s\S]*?)```/i);
-    const stylesText = stylesMatch ? stylesMatch[1].trim() : '';
-    const lyricsText = lyricsMatch ? lyricsMatch[1].trim() : '';
+      const title = rawTitle.trim();
+      const styles = stylesMatch[1].trim();
+      const lyrics = lyricsMatch[1].trim();
+      const firstHook = extractHook(lyrics);
+      const tokens = styles
+        .split(",")
+        .map((token) => token.trim())
+        .filter(Boolean);
 
-    const sections = [];
-    let currentSection = null;
-
-    lyricsText.split(/\r?\n/).forEach((line) => {
-      if (!line.trim()) {
-        if (currentSection) {
-          currentSection.lines.push('');
-        }
-        return;
-      }
-      const sectionHeader = line.match(/^\[(.+?)\]/);
-      if (sectionHeader) {
-        if (currentSection) sections.push(currentSection);
-        currentSection = {
-          title: sectionHeader[1].trim(),
-          lines: []
-        };
-        const remainder = line.replace(sectionHeader[0], '').trim();
-        if (remainder) currentSection.lines.push(remainder);
-      } else {
-        if (!currentSection) {
-          currentSection = { title: 'Allgemein', lines: [] };
-        }
-        currentSection.lines.push(line);
-      }
-    });
-
-    if (currentSection) sections.push(currentSection);
-
-    const tags = new Set();
-    stylesText.split(/[,\n]/).forEach((tag) => {
-      const clean = tag.trim().toLowerCase();
-      if (clean) {
-        tags.add(clean);
-        state.styles.add(clean);
-      }
-    });
-
-    state.sectionsCount += sections.length;
-
-    songs.push({
-      title,
-      stylesText,
-      tags: Array.from(tags),
-      sections,
-      rawBlock: `${stylesText}\n\n${lyricsText}`.trim()
-    });
-  }
-
-  return songs;
+      return {
+        title,
+        styles,
+        lyrics,
+        tokens,
+        hook: firstHook,
+      };
+    })
+    .filter(Boolean);
 }
 
-function renderSongs(songs) {
-  elements.songList.innerHTML = '';
-  if (!songs.length) {
-    elements.emptyState.classList.remove('hidden');
-    return;
+function extractHook(lyrics) {
+  const lines = lyrics.split("\n").map((line) => line.trim()).filter(Boolean);
+  const chorusIndex = lines.findIndex((line) => /\[Chorus|Chor\]/i.test(line));
+  if (chorusIndex !== -1 && lines[chorusIndex + 1]) {
+    return lines[chorusIndex + 1];
   }
-  elements.emptyState.classList.add('hidden');
+  return lines[0] || "";
+}
 
-  const fragment = document.createDocumentFragment();
+function renderSongs() {
+  selectors.songCollection.innerHTML = "";
+  const template = document.getElementById("songCardTemplate");
+  state.filteredSongs.forEach((song, index) => {
+    const card = template.content.cloneNode(true);
+    const article = card.querySelector(".song-card");
+    article.dataset.index = index.toString();
 
-  songs.forEach((song) => {
-    const songNode = elements.songTemplate.content.cloneNode(true);
-    const card = songNode.querySelector('.song-card');
-    card.dataset.tags = song.tags.join(',');
-    card.dataset.title = song.title.toLowerCase();
+    card.querySelector(".song-card__title").textContent = song.title;
+    card.querySelector(".song-card__style-text").textContent = song.styles;
+    const processedLyrics = getProcessedLyrics(song);
+    card.querySelector(".song-card__lyrics-preview").textContent = processedLyrics;
+    card.querySelector("details pre").textContent = processedLyrics;
 
-    songNode.querySelector('.song-title').textContent = song.title;
-
-    const meta = songNode.querySelector('.song-meta');
-    meta.innerHTML = song.tags.slice(0, 6).map((tag) => `<span>${tag}</span>`).join('');
-
-    const styleText = songNode.querySelector('.style-text');
-    styleText.textContent = song.stylesText;
-
-    const lyricsContainer = songNode.querySelector('.lyrics-container');
-    lyricsContainer.innerHTML = '';
-
-    song.sections.forEach((section) => {
-      const sectionNode = elements.sectionTemplate.content.cloneNode(true);
-      sectionNode.querySelector('.section-title').textContent = section.title;
-      sectionNode.querySelector('.section-body').textContent = section.lines.join('\n');
-      const sectionEl = sectionNode.querySelector('.lyric-section');
-      sectionEl.dataset.text = section.lines.join('\n');
-      lyricsContainer.appendChild(sectionNode);
+    const tagContainer = card.querySelector(".song-card__style-tags");
+    song.tokens.forEach((token) => {
+      const span = document.createElement("span");
+      span.textContent = token;
+      tagContainer.append(span);
     });
 
-    const copyAllBtn = songNode.querySelector('.copy-all');
-    copyAllBtn.addEventListener('click', () => copyToClipboard(song.rawBlock, 'Kompletter Song kopiert'));
-
-    const copyStylesBtn = songNode.querySelector('.copy-styles');
-    copyStylesBtn.addEventListener('click', () => copyToClipboard(song.stylesText, 'Style kopiert'));
-
-    lyricsContainer.querySelectorAll('.lyric-section').forEach((sectionEl) => {
-      const copySectionBtn = sectionEl.querySelector('.copy-section');
-      copySectionBtn.addEventListener('click', () => copyToClipboard(sectionEl.dataset.text, `${sectionEl.querySelector('.section-title').textContent} kopiert`));
-
-      const collapseBtn = sectionEl.querySelector('.collapse-section');
-      collapseBtn.addEventListener('click', () => {
-        sectionEl.classList.toggle('collapsed');
-        collapseBtn.innerHTML = sectionEl.classList.contains('collapsed')
-          ? '<i class="fa-solid fa-chevron-down"></i>'
-          : '<i class="fa-solid fa-chevron-up"></i>';
-      });
+    card.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", () => handleCopy(button.dataset.copy, song));
     });
 
-    fragment.appendChild(songNode);
+    article.addEventListener("mouseenter", () => {
+      highlightSong(index);
+    });
+
+    article.addEventListener("focusin", () => {
+      highlightSong(index);
+    });
+
+    selectors.songCollection.append(card);
   });
 
-  elements.songList.appendChild(fragment);
+  if (!state.filteredSongs.length) {
+    selectors.songCollection.innerHTML = `<div class="empty-state">Keine Songs für die aktuelle Filterung gefunden.</div>`;
+  }
 }
 
-function buildTagList() {
-  elements.tagContainer.innerHTML = '';
-  const sorted = Array.from(state.styles).sort((a, b) => a.localeCompare(b));
-  sorted.forEach((tag) => {
-    const button = document.createElement('button');
-    button.className = 'filter-tag';
-    button.textContent = tag;
-    button.dataset.tag = tag;
-    button.addEventListener('click', () => toggleFilter(tag, button));
-    elements.tagContainer.appendChild(button);
-  });
+function buildStyleFilters() {
+  const allTokens = new Set();
+  state.songs.forEach((song) => song.tokens.forEach((token) => allTokens.add(token)));
+
+  selectors.styleChips.innerHTML = "";
+  Array.from(allTokens)
+    .sort((a, b) => a.localeCompare(b, "de"))
+    .forEach((token) => {
+      const chip = document.createElement("button");
+      chip.className = "chip";
+      chip.type = "button";
+      chip.textContent = token;
+      chip.addEventListener("click", () => toggleTag(token, chip));
+      selectors.styleChips.append(chip);
+    });
 }
 
-function toggleFilter(tag, element) {
-  if (state.filters.has(tag)) {
-    state.filters.delete(tag);
-    element.classList.remove('active');
+function toggleTag(tag, chip) {
+  if (state.filters.tags.has(tag)) {
+    state.filters.tags.delete(tag);
+    chip.classList.remove("active");
   } else {
-    state.filters.add(tag);
-    element.classList.add('active');
+    state.filters.tags.add(tag);
+    chip.classList.add("active");
   }
-  applyFilters();
+  filterSongs();
 }
 
-function applyFilters() {
-  const query = elements.searchInput.value.trim().toLowerCase();
-  const filtered = state.songs.filter((song) => {
-    const matchesText = song.title.toLowerCase().includes(query)
-      || song.rawBlock.toLowerCase().includes(query);
-    if (!matchesText) return false;
-    if (!state.filters.size) return true;
-    return song.tags.some((tag) => state.filters.has(tag));
+function filterSongs() {
+  const { search, tags } = state.filters;
+  state.filteredSongs = state.songs.filter((song) => {
+    const searchContent = `${song.title} ${song.styles} ${state.replacePlaczek ? getProcessedLyrics(song) : song.lyrics}`.toLowerCase();
+    const matchesSearch = searchContent.includes(search.toLowerCase());
+
+    if (!matchesSearch) return false;
+    if (!tags.size) return true;
+
+    return Array.from(tags).every((tag) => song.tokens.includes(tag));
   });
-  renderSongs(filtered);
-  updateStats(filtered);
+  renderSongs();
+  if (state.filteredSongs.length) {
+    highlightSong(0);
+  } else {
+    selectors.heroTitle.textContent = "Keine Songs";
+    selectors.heroStyles.textContent = "Bitte Filter anpassen.";
+    selectors.heroHook.textContent = "";
+  }
 }
 
-function updateStats(currentSongs = state.songs) {
-  elements.songCount.textContent = currentSongs.length;
-  const sections = currentSongs.reduce((sum, song) => sum + song.sections.length, 0);
-  elements.sectionCount.textContent = sections;
-  elements.styleCount.textContent = state.styles.size;
-}
+function handleCopy(type, song) {
+  let text = "";
+  let label = "";
 
-function setupEvents() {
-  elements.searchInput.addEventListener('input', debounce(applyFilters, 200));
-  elements.clearFilters.addEventListener('click', () => {
-    state.filters.clear();
-    elements.searchInput.value = '';
-    document.querySelectorAll('.filter-tag').forEach((tag) => tag.classList.remove('active'));
-    renderSongs(state.songs);
-    updateStats();
-  });
+  switch (type) {
+    case "title":
+      text = song.title;
+      label = "Titel";
+      break;
+    case "styles":
+      text = song.styles;
+      label = "Styles";
+      break;
+    case "lyrics":
+      text = getProcessedLyrics(song);
+      label = "Lyrics";
+      break;
+    default:
+      return;
+  }
 
-  if (elements.copyWorkflow) {
-    elements.copyWorkflow.addEventListener('click', () => {
-      const guide = document.querySelector(elements.copyWorkflow.dataset.copy);
-      if (guide) {
-        const text = Array.from(guide.querySelectorAll('.timeline-item h3, .timeline-item p, .timeline-item .tip'))
-          .map((el) => el.textContent.trim()).join('\n');
-        copyToClipboard(text, 'Workflow kopiert');
-      }
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      showToast(`${label} kopiert`);
+    })
+    .catch(() => {
+      fallbackCopy(text);
+      showToast(`${label} kopiert`);
     });
-  }
-
-  elements.modeToggle.addEventListener('click', toggleTheme);
-  window.addEventListener('scroll', updateProgressBar);
 }
 
-function copyToClipboard(text, message) {
-  navigator.clipboard.writeText(text).then(() => {
-    showToast(message);
-  }).catch(() => {
-    showToast('Kopieren nicht möglich', 'error');
+function fallbackCopy(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
+
+function highlightSong(index) {
+  const song = state.filteredSongs[index];
+  if (!song) return;
+  state.activeSongIndex = index;
+  selectors.heroTitle.textContent = song.title;
+  selectors.heroStyles.textContent = song.styles;
+  selectors.heroHook.textContent = getProcessedHook(song) || "";
+
+  selectors.heroHighlight.querySelectorAll("[data-copy]").forEach((button) => {
+    button.onclick = () => handleCopy(button.dataset.copy, song);
   });
 }
 
-function showToast(message, variant = 'success') {
-  const toast = document.createElement('div');
-  toast.className = `toast toast--${variant}`;
-  toast.textContent = message;
-  elements.toastContainer.appendChild(toast);
-  setTimeout(() => {
-    toast.classList.add('animate__animated', 'animate__fadeOutDown');
-    toast.addEventListener('animationend', () => toast.remove(), { once: true });
+function showToast(message, isError = false) {
+  clearTimeout(state.toastTimeout);
+  selectors.toast.textContent = message;
+  selectors.toast.classList.toggle("error", isError);
+  selectors.toast.classList.add("visible");
+  state.toastTimeout = setTimeout(() => {
+    selectors.toast.classList.remove("visible");
   }, 2200);
 }
 
-function debounce(fn, delay) {
-  let timeout;
-  return (...args) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => fn.apply(null, args), delay);
-  };
+function updateStats() {
+  selectors.statSongCount.textContent = state.songs.length.toString();
+
+  const tokenSet = new Set();
+  state.songs.forEach((song) => song.tokens.forEach((token) => tokenSet.add(token)));
+  selectors.statStyleCount.textContent = tokenSet.size.toString();
+
+  const average = Math.round(
+    state.songs.reduce((acc, song) => acc + song.lyrics.split("\n").filter(Boolean).length, 0) /
+      (state.songs.length || 1)
+  );
+  selectors.statAvgLines.textContent = `${average} Zeilen`;
 }
 
-function toggleTheme() {
-  const currentTheme = document.body.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  document.body.setAttribute('data-theme', newTheme);
-  elements.modeToggle.innerHTML = newTheme === 'light'
-    ? '<i class="fa-solid fa-moon"></i>'
-    : '<i class="fa-solid fa-sun"></i>';
+function bindUI() {
+  selectors.search.addEventListener("input", (event) => {
+    state.filters.search = event.target.value.toLowerCase();
+    filterSongs();
+  });
+
+  selectors.clearFilters.addEventListener("click", () => {
+    state.filters.tags.clear();
+    document.querySelectorAll(".chip.active").forEach((chip) => chip.classList.remove("active"));
+    selectors.search.value = "";
+    state.filters.search = "";
+    filterSongs();
+  });
+
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll("[data-view]").forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+      selectors.songCollection.classList.toggle("list-view", button.dataset.view === "list");
+    });
+  });
+
+  selectors.heroHighlight.addEventListener("mouseleave", () => {
+    highlightSong(state.activeSongIndex);
+  });
+
+  document.querySelectorAll("[data-scroll-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.querySelector(button.dataset.scrollTarget);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  selectors.randomSong.addEventListener("click", () => {
+    if (!state.filteredSongs.length) {
+      showToast("Keine Songs verfügbar", true);
+      return;
+    }
+    const index = Math.floor(Math.random() * state.filteredSongs.length);
+    highlightSong(index);
+    scrollToSection("#hero");
+    showToast("Spotlight aktualisiert");
+  });
 }
 
-function updateProgressBar() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = docHeight ? (scrollTop / docHeight) * 100 : 0;
-  elements.progressBar.style.width = `${progress}%`;
+function scrollToSection(selector) {
+  const target = document.querySelector(selector);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function initTheme() {
+  const storedTheme = localStorage.getItem("placzek-theme");
+  if (storedTheme === "light") {
+    document.body.classList.add("light-theme");
+    selectors.themeToggle.innerHTML = '<i class="ph ph-moon"></i>';
+  }
+
+  selectors.themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    const isLight = document.body.classList.contains("light-theme");
+    localStorage.setItem("placzek-theme", isLight ? "light" : "dark");
+    selectors.themeToggle.innerHTML = `<i class="ph ${isLight ? "ph-moon" : "ph-sun"}"></i>`;
+  });
+}
+
+function initNameToggle() {
+  if (!selectors.nameToggle) return;
+  const storedPreference = localStorage.getItem("placzek-name-toggle");
+  state.replacePlaczek = storedPreference === "true";
+  selectors.nameToggle.checked = state.replacePlaczek;
+
+  selectors.nameToggle.addEventListener("change", () => {
+    state.replacePlaczek = selectors.nameToggle.checked;
+    localStorage.setItem("placzek-name-toggle", state.replacePlaczek ? "true" : "false");
+    refreshLyricsView();
+    showToast(state.replacePlaczek ? "Namenswechsel aktiv" : "Originalnamen aktiv");
+  });
+}
+
+function refreshLyricsView() {
+  renderSongs();
+  if (!state.filteredSongs.length) {
+    selectors.heroTitle.textContent = "Keine Songs";
+    selectors.heroStyles.textContent = "Bitte Filter anpassen.";
+    selectors.heroHook.textContent = "";
+    return;
+  }
+  const nextIndex = Math.min(state.activeSongIndex, state.filteredSongs.length - 1);
+  highlightSong(nextIndex);
+}
+
+function getProcessedLyrics(song) {
+  if (!state.replacePlaczek) return song.lyrics;
+  return song.lyrics.replace(/Placzek/g, "Platzek");
+}
+
+function getProcessedHook(song) {
+  if (!state.replacePlaczek) return song.hook;
+  return song.hook.replace(/Placzek/g, "Platzek");
 }
 
 function initAnimations() {
-  gsap.from('.hero-text h2', { y: 40, opacity: 0, duration: 1, ease: 'power3.out' });
-  gsap.from('.hero-text p', { y: 30, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
-  gsap.from('.hero-stats div', { y: 20, opacity: 0, duration: 0.8, delay: 0.4, stagger: 0.1 });
-
-  gsap.utils.toArray('.section').forEach((section) => {
-    gsap.from(section.querySelectorAll('.section-heading, .info-card, .song-card, .timeline-item, .tip-card'), {
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 80%'
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0.12,
-      ease: 'power2.out'
-    });
+  if (!window.gsap) return;
+  gsap.from(".hero-grid > *", {
+    opacity: 0,
+    y: 40,
+    duration: 1.1,
+    ease: "power3.out",
+    stagger: 0.18,
   });
-
-  if (window.VanillaTilt) {
-    VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-      max: 12,
-      speed: 400,
-      glare: true,
-      'max-glare': 0.35
-    });
-  }
-}
-
-function initSmoothScroll() {
-  if (!window.Lenis) return;
-  const lenis = new Lenis({
-    lerp: 0.1,
-    smooth: true
+  gsap.from(".song-card", {
+    opacity: 0,
+    y: 30,
+    duration: 0.7,
+    ease: "power3.out",
+    stagger: 0.08,
+    delay: 0.3,
   });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+  gsap.from(".timeline article, .insight-grid article", {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power3.out",
+    stagger: 0.12,
+    delay: 0.5,
+  });
 }
