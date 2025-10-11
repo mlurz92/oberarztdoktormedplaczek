@@ -180,7 +180,9 @@ function toggleTag(tag, chip) {
   filterSongs();
 }
 
-function filterSongs() {
+function filterSongs(options = {}) {
+  const { preserveActive = false } = options;
+  const previousIndex = state.activeSongIndex;
   const { search, tags } = state.filters;
   state.filteredSongs = state.songs.filter((song) => {
     const searchContent = `${song.title} ${song.styles} ${state.replacePlaczek ? getProcessedLyrics(song) : song.lyrics}`.toLowerCase();
@@ -193,7 +195,10 @@ function filterSongs() {
   });
   renderSongs();
   if (state.filteredSongs.length) {
-    highlightSong(0);
+    const nextIndex = preserveActive
+      ? Math.min(previousIndex, state.filteredSongs.length - 1)
+      : 0;
+    highlightSong(nextIndex);
   } else {
     selectors.heroTitle.textContent = "Keine Songs";
     selectors.heroStyles.textContent = "Bitte Filter anpassen.";
@@ -360,7 +365,7 @@ function initNameToggle() {
   selectors.nameToggle.addEventListener("change", () => {
     state.replacePlaczek = selectors.nameToggle.checked;
     localStorage.setItem("placzek-name-toggle", state.replacePlaczek ? "true" : "false");
-    refreshLyricsView();
+    filterSongs({ preserveActive: true });
     showToast(state.replacePlaczek ? "Namenswechsel aktiv" : "Originalnamen aktiv");
   });
 }
