@@ -362,7 +362,7 @@ body.theme-dark .stat-pill {
   font-size: 1.28rem;
   font-weight: 600;
   line-height: 1.3;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-open {
