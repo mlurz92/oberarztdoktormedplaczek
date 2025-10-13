@@ -1,415 +1,413 @@
 const state = {
   songs: [],
-  filteredSongs: [],
-  filters: {
-    search: "",
-    tags: new Set(),
-  },
-  activeSongIndex: 0,
-  toastTimeout: null,
-  replacePlaczek: false,
+  filtered: [],
+  isPlatzek: false,
+  theme: "auto",
 };
 
-const selectors = {
-  songCollection: document.getElementById("songCollection"),
-  styleChips: document.getElementById("styleChips"),
-  search: document.getElementById("searchSongs"),
-  clearFilters: document.getElementById("clearFilters"),
-  statSongCount: document.getElementById("statSongCount"),
-  statStyleCount: document.getElementById("statStyleCount"),
-  statAvgLines: document.getElementById("statAvgLines"),
-  heroTitle: document.getElementById("heroTitle"),
-  heroStyles: document.getElementById("heroStyles"),
-  heroHook: document.getElementById("heroHook"),
-  heroHighlight: document.getElementById("heroHighlight"),
+const dom = {
+  grid: document.getElementById("songGrid"),
+  search: document.getElementById("searchInput"),
+  songCount: document.getElementById("songCount"),
+  variantState: document.getElementById("variantState"),
+  variantSwitch: document.getElementById("variantSwitch"),
   toast: document.getElementById("toast"),
-  themeToggle: document.getElementById("themeToggle"),
-  randomSong: document.getElementById("randomSong"),
-  year: document.getElementById("year"),
-  nameToggle: document.getElementById("nameSwapToggle"),
+  dialog: document.getElementById("songDialog"),
+  dialogTitle: document.getElementById("dialogTitle"),
+  dialogStyles: document.getElementById("dialogStyles"),
+  dialogLyrics: document.getElementById("dialogLyrics"),
+  themeToggle: document.querySelector(".theme-toggle"),
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  selectors.year.textContent = new Date().getFullYear().toString();
-  initTheme();
-  initNameToggle();
-  bindUI();
-  fetchSongs();
-  initLenis();
-});
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function initLenis() {
-  if (window.Lenis) {
-    const lenis = new Lenis({
-      lerp: 0.08,
-      smoothWheel: true,
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+init();
+
+async function init() {
+  hydrateTheme();
+  hydrateVariant();
+  bindEvents();
+  await loadSongs();
+  render();
+}
+
+function hydrateTheme() {
+  const stored = localStorage.getItem("placzek-theme");
+  const initial = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  applyTheme(initial);
+}
+
+function hydrateVariant() {
+  const stored = localStorage.getItem("placzek-variant");
+  if (stored === "platzek") {
+    state.isPlatzek = true;
+    dom.variantSwitch.checked = true;
+  }
+  updateVariantLabel();
+}
+
+function bindEvents() {
+  dom.search.addEventListener("input", () => {
+    render();
+  });
+
+  dom.variantSwitch.addEventListener("change", () => {
+    state.isPlatzek = dom.variantSwitch.checked;
+    localStorage.setItem("placzek-variant", state.isPlatzek ? "platzek" : "placzek");
+    updateVariantLabel();
+    render();
+    refreshDialog();
+  });
+
+  dom.themeToggle.addEventListener("click", () => {
+    const next = document.body.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("placzek-theme", next);
+  });
+
+  dom.dialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+  });
+
+  dom.dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeDialog();
+  });
+
+  dom.dialog.addEventListener("click", (event) => {
+    if (event.target === dom.dialog) {
+      closeDialog();
     }
-    requestAnimationFrame(raf);
-  }
+  });
+
+  dom.dialog.querySelector(".dialog-close").addEventListener("click", closeDialog);
+
+  dom.dialog.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-copy]");
+    if (!target) return;
+    event.stopPropagation();
+    handleCopyAction(target.dataset.copy, dom.dialog.dataset.index);
+  });
 }
 
-async function fetchSongs() {
+async function loadSongs() {
   try {
-    const response = await fetch("Songs.md");
-    if (!response.ok) throw new Error("Markdown konnte nicht geladen werden");
-    const text = await response.text();
-    state.songs = parseSongbook(text);
-    state.filteredSongs = [...state.songs];
-    renderSongs();
-    buildStyleFilters();
-    updateStats();
-    highlightSong(0);
-    initAnimations();
+    const response = await fetch("Songs.md", { cache: "no-cache" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const markdown = await response.text();
+    state.songs = parseSongs(markdown);
+    state.filtered = [...state.songs];
+    dom.songCount.textContent = `${state.songs.length} ${state.songs.length === 1 ? "Song" : "Songs"}`;
+    dom.grid.setAttribute("aria-busy", "false");
   } catch (error) {
-    console.error(error);
-    showToast("Fehler beim Laden der Songs", true);
+    console.error("Songs konnten nicht geladen werden", error);
+    dom.grid.setAttribute("aria-busy", "false");
+    dom.grid.innerHTML = `
+      <article class="empty">
+        <div class="empty-surface">
+          <span class="material-symbols-rounded" aria-hidden="true">error</span>
+          <p>Die Songs.md konnte nicht geladen werden.</p>
+        </div>
+      </article>`;
   }
 }
 
-function parseSongbook(markdown) {
-  const sections = markdown.split(/\r?\n##\s*/).slice(1);
-  return sections
-    .map((section) => {
-      const trimmed = section.trim();
-      const [rawTitle, ...rest] = trimmed.split("\n");
-      const body = rest.join("\n");
-      const stylesMatch = body.match(/```styles\s*([\s\S]*?)```/i);
-      const lyricsMatch = body.match(/```Lyrics\s*([\s\S]*?)```/i);
-
-      if (!stylesMatch || !lyricsMatch) return null;
-
-      const title = rawTitle.trim();
-      const styles = stylesMatch[1].trim();
-      const lyrics = lyricsMatch[1].trim();
-      const firstHook = extractHook(lyrics);
-      const tokens = styles
-        .split(",")
-        .map((token) => token.trim())
-        .filter(Boolean);
-
-      return {
-        title,
-        styles,
-        lyrics,
-        tokens,
-        hook: firstHook,
-      };
-    })
-    .filter(Boolean);
-}
-
-function extractHook(lyrics) {
-  const lines = lyrics.split("\n").map((line) => line.trim()).filter(Boolean);
-  const chorusIndex = lines.findIndex((line) => /\[Chorus|Chor\]/i.test(line));
-  if (chorusIndex !== -1 && lines[chorusIndex + 1]) {
-    return lines[chorusIndex + 1];
+function parseSongs(markdown) {
+  const pattern = /##\s+([^\n]+)\s+###\s+Styles:\s+```([\s\S]*?)```\s+###\s+Lyrics:\s+```([\s\S]*?)```/g;
+  const songs = [];
+  let match;
+  while ((match = pattern.exec(markdown)) !== null) {
+    const [, title, stylesBlock, lyricsBlock] = match;
+    const stylesRaw = stylesBlock.replace(/\r/g, "").trim();
+    const styleList = stylesRaw
+      .split(/[,\n]/)
+      .map((entry) => entry.trim())
+      .filter(Boolean);
+    const lyrics = lyricsBlock.replace(/\s+$/g, "");
+    songs.push({
+      title: title.trim(),
+      stylesRaw,
+      styleList,
+      lyrics,
+      id: songs.length,
+    });
   }
-  return lines[0] || "";
+  return songs;
 }
 
-function renderSongs() {
-  selectors.songCollection.innerHTML = "";
-  const template = document.getElementById("songCardTemplate");
-  state.filteredSongs.forEach((song, index) => {
-    const card = template.content.cloneNode(true);
-    const article = card.querySelector(".song-card");
-    article.dataset.index = index.toString();
+function render() {
+  if (!state.songs.length) {
+    dom.grid.innerHTML = "";
+    return;
+  }
 
-    card.querySelector(".song-card__title").textContent = song.title;
-    card.querySelector(".song-card__style-text").textContent = song.styles;
-    const processedLyrics = getProcessedLyrics(song);
-    card.querySelector(".song-card__lyrics-preview").textContent = processedLyrics;
-    card.querySelector("details pre").textContent = processedLyrics;
+  const query = dom.search.value.trim().toLowerCase();
 
-    const tagContainer = card.querySelector(".song-card__style-tags");
-    song.tokens.forEach((token) => {
-      const span = document.createElement("span");
-      span.textContent = token;
-      tagContainer.append(span);
-    });
-
-    card.querySelectorAll("[data-copy]").forEach((button) => {
-      button.addEventListener("click", () => handleCopy(button.dataset.copy, song));
-    });
-
-    article.addEventListener("mouseenter", () => {
-      highlightSong(index);
-    });
-
-    article.addEventListener("focusin", () => {
-      highlightSong(index);
-    });
-
-    selectors.songCollection.append(card);
+  state.filtered = state.songs.filter((song) => {
+    if (!query) return true;
+    const searchSpace = [song.title, song.stylesRaw, song.lyrics].join("\n").toLowerCase();
+    return searchSpace.includes(query);
   });
 
-  if (!state.filteredSongs.length) {
-    selectors.songCollection.innerHTML = `<div class="empty-state">Keine Songs für die aktuelle Filterung gefunden.</div>`;
-  }
-}
-
-function buildStyleFilters() {
-  const allTokens = new Set();
-  state.songs.forEach((song) => song.tokens.forEach((token) => allTokens.add(token)));
-
-  selectors.styleChips.innerHTML = "";
-  Array.from(allTokens)
-    .sort((a, b) => a.localeCompare(b, "de"))
-    .forEach((token) => {
-      const chip = document.createElement("button");
-      chip.className = "chip";
-      chip.type = "button";
-      chip.textContent = token;
-      chip.addEventListener("click", () => toggleTag(token, chip));
-      selectors.styleChips.append(chip);
-    });
-}
-
-function toggleTag(tag, chip) {
-  if (state.filters.tags.has(tag)) {
-    state.filters.tags.delete(tag);
-    chip.classList.remove("active");
+  const total = state.songs.length;
+  const filtered = state.filtered.length;
+  if (query) {
+    dom.songCount.textContent = `${filtered}/${total} Songs`;
   } else {
-    state.filters.tags.add(tag);
-    chip.classList.add("active");
+    dom.songCount.textContent = `${total} ${total === 1 ? "Song" : "Songs"}`;
   }
-  filterSongs();
-}
 
-function filterSongs() {
-  const { search, tags } = state.filters;
-  state.filteredSongs = state.songs.filter((song) => {
-    const searchContent = `${song.title} ${song.styles} ${state.replacePlaczek ? getProcessedLyrics(song) : song.lyrics}`.toLowerCase();
-    const matchesSearch = searchContent.includes(search.toLowerCase());
+  dom.grid.innerHTML = "";
 
-    if (!matchesSearch) return false;
-    if (!tags.size) return true;
+  if (!state.filtered.length) {
+    dom.grid.innerHTML = `
+      <article class="empty">
+        <div class="empty-surface">
+          <span class="material-symbols-rounded" aria-hidden="true">search_off</span>
+          <p>Keine Treffer. Passe deine Suche an.</p>
+        </div>
+      </article>`;
+    return;
+  }
 
-    return Array.from(tags).every((tag) => song.tokens.includes(tag));
+  const fragment = document.createDocumentFragment();
+
+  state.filtered.forEach((song) => {
+    const card = buildSongCard(song);
+    fragment.appendChild(card);
   });
-  renderSongs();
-  if (state.filteredSongs.length) {
-    highlightSong(0);
-  } else {
-    selectors.heroTitle.textContent = "Keine Songs";
-    selectors.heroStyles.textContent = "Bitte Filter anpassen.";
-    selectors.heroHook.textContent = "";
+
+  dom.grid.appendChild(fragment);
+
+  if (!prefersReducedMotion && typeof window.gsap !== "undefined") {
+    window.gsap.from(dom.grid.children, {
+      y: 24,
+      opacity: 0,
+      duration: 0.65,
+      ease: "power2.out",
+      stagger: 0.05,
+    });
   }
 }
 
-function handleCopy(type, song) {
-  let text = "";
-  let label = "";
+function buildSongCard(song) {
+  const card = document.createElement("article");
+  card.className = "song-card";
+  card.dataset.index = String(song.id);
+
+  const currentLyrics = getLyricsForVariant(song);
+  const preview = buildPreview(currentLyrics);
+  const stylesPreview = song.styleList;
+
+  card.innerHTML = `
+    <div class="card-surface">
+      <header class="card-header">
+        <h2>${song.title}</h2>
+        <button class="icon-pill" type="button" data-open aria-label="Songdetails anzeigen">
+          <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+        </button>
+      </header>
+      <div class="card-preview">
+        <pre>${preview}</pre>
+        <div class="preview-fade" aria-hidden="true"></div>
+      </div>
+      <footer class="card-footer">
+        <div class="style-strip">
+          ${renderStyleChips(stylesPreview)}
+        </div>
+        <div class="copy-cluster">
+          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">text_fields</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">palette</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
+          </button>
+        </div>
+      </footer>
+    </div>`;
+
+  card.querySelector("[data-open]").addEventListener("click", (event) => {
+    event.stopPropagation();
+    openDialog(song.id);
+  });
+
+  card.addEventListener("click", (event) => {
+    if (event.target.closest(".copy-cluster")) return;
+    openDialog(song.id);
+  });
+
+  card.querySelectorAll("[data-copy]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      handleCopyAction(button.dataset.copy, song.id);
+    });
+  });
+
+  return card;
+}
+
+function renderStyleChips(styles) {
+  const visible = styles.slice(0, 3);
+  const hiddenCount = styles.length - visible.length;
+  const chips = visible.map((style) => `<span class="chip">${style}</span>`).join("");
+  if (hiddenCount > 0) {
+    return `${chips}<span class="chip muted">+${hiddenCount}</span>`;
+  }
+  return chips;
+}
+
+function buildPreview(lyrics) {
+  const lines = lyrics.split(/\r?\n/).filter((line) => line.trim().length > 0);
+  return lines.slice(0, 14).join("\n");
+}
+
+function getLyricsForVariant(song) {
+  if (!state.isPlatzek) return song.lyrics;
+  return song.lyrics
+    .replace(/Placzek/g, "Platzek")
+    .replace(/PLACZEK/g, "PLATZEK")
+    .replace(/placzek/g, "platzek");
+}
+
+function handleCopyAction(type, songIndex) {
+  const song = state.songs[songIndex];
+  if (!song) return;
+
+  const lyrics = getLyricsForVariant(song);
+  let payload = "";
 
   switch (type) {
     case "title":
-      text = song.title;
-      label = "Titel";
+      payload = song.title;
       break;
     case "styles":
-      text = song.styles;
-      label = "Styles";
+      payload = song.stylesRaw;
       break;
     case "lyrics":
-      text = getProcessedLyrics(song);
-      label = "Lyrics";
+      payload = lyrics;
+      break;
+    case "full":
+      payload = formatFullSong(song, lyrics);
+      break;
+    case "dialog-title":
+      payload = song.title;
+      break;
+    case "dialog-styles":
+      payload = song.stylesRaw;
+      break;
+    case "dialog-lyrics":
+      payload = lyrics;
+      break;
+    case "dialog-full":
+      payload = formatFullSong(song, lyrics);
       break;
     default:
       return;
   }
 
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      showToast(`${label} kopiert`);
-    })
-    .catch(() => {
-      fallbackCopy(text);
-      showToast(`${label} kopiert`);
-    });
+  copyToClipboard(payload)
+    .then(() => showToast("In Zwischenablage"))
+    .catch(() => showToast("Kopieren nicht möglich"));
 }
 
-function fallbackCopy(text) {
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "absolute";
-  textarea.style.left = "-9999px";
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textarea);
+function formatFullSong(song, lyrics) {
+  return `## ${song.title}\n\n### Styles:\n\n${song.stylesRaw}\n\n### Lyrics:\n\n${lyrics}`;
 }
 
-function highlightSong(index) {
-  const song = state.filteredSongs[index];
+async function copyToClipboard(text) {
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+    await navigator.clipboard.writeText(text);
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+}
+
+let toastTimeout;
+function showToast(message) {
+  dom.toast.textContent = message;
+  dom.toast.classList.add("is-visible");
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    dom.toast.classList.remove("is-visible");
+  }, 1600);
+}
+
+function updateVariantLabel() {
+  dom.variantState.textContent = state.isPlatzek ? "Platzek-Version" : "Placzek-Version";
+}
+
+function openDialog(index) {
+  const song = state.songs[index];
   if (!song) return;
-  state.activeSongIndex = index;
-  selectors.heroTitle.textContent = song.title;
-  selectors.heroStyles.textContent = song.styles;
-  selectors.heroHook.textContent = getProcessedHook(song) || "";
+  populateDialog(song, index);
 
-  selectors.heroHighlight.querySelectorAll("[data-copy]").forEach((button) => {
-    button.onclick = () => handleCopy(button.dataset.copy, song);
-  });
+  document.body.classList.add("dialog-open");
+  if (typeof dom.dialog.showModal === "function") {
+    dom.dialog.showModal();
+  } else {
+    dom.dialog.setAttribute("open", "true");
+  }
 }
 
-function showToast(message, isError = false) {
-  clearTimeout(state.toastTimeout);
-  selectors.toast.textContent = message;
-  selectors.toast.classList.toggle("error", isError);
-  selectors.toast.classList.add("visible");
-  state.toastTimeout = setTimeout(() => {
-    selectors.toast.classList.remove("visible");
-  }, 2200);
-}
-
-function updateStats() {
-  selectors.statSongCount.textContent = state.songs.length.toString();
-
-  const tokenSet = new Set();
-  state.songs.forEach((song) => song.tokens.forEach((token) => tokenSet.add(token)));
-  selectors.statStyleCount.textContent = tokenSet.size.toString();
-
-  const average = Math.round(
-    state.songs.reduce((acc, song) => acc + song.lyrics.split("\n").filter(Boolean).length, 0) /
-      (state.songs.length || 1)
-  );
-  selectors.statAvgLines.textContent = `${average} Zeilen`;
-}
-
-function bindUI() {
-  selectors.search.addEventListener("input", (event) => {
-    state.filters.search = event.target.value.toLowerCase();
-    filterSongs();
-  });
-
-  selectors.clearFilters.addEventListener("click", () => {
-    state.filters.tags.clear();
-    document.querySelectorAll(".chip.active").forEach((chip) => chip.classList.remove("active"));
-    selectors.search.value = "";
-    state.filters.search = "";
-    filterSongs();
-  });
-
-  document.querySelectorAll("[data-view]").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-view]").forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-      selectors.songCollection.classList.toggle("list-view", button.dataset.view === "list");
-    });
-  });
-
-  selectors.heroHighlight.addEventListener("mouseleave", () => {
-    highlightSong(state.activeSongIndex);
-  });
-
-  document.querySelectorAll("[data-scroll-target]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = document.querySelector(button.dataset.scrollTarget);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  });
-
-  selectors.randomSong.addEventListener("click", () => {
-    if (!state.filteredSongs.length) {
-      showToast("Keine Songs verfügbar", true);
-      return;
+function closeDialog() {
+  if (typeof dom.dialog.close === "function") {
+    try {
+      dom.dialog.close();
+    } catch (error) {
+      dom.dialog.removeAttribute("open");
     }
-    const index = Math.floor(Math.random() * state.filteredSongs.length);
-    highlightSong(index);
-    scrollToSection("#hero");
-    showToast("Spotlight aktualisiert");
-  });
-}
-
-function scrollToSection(selector) {
-  const target = document.querySelector(selector);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    dom.dialog.removeAttribute("open");
   }
+  document.body.classList.remove("dialog-open");
 }
 
-function initTheme() {
-  const storedTheme = localStorage.getItem("placzek-theme");
-  if (storedTheme === "light") {
-    document.body.classList.add("light-theme");
-    selectors.themeToggle.innerHTML = '<i class="ph ph-moon"></i>';
-  }
+function applyTheme(theme) {
+  document.body.dataset.theme = theme;
+  document.body.classList.toggle("theme-dark", theme === "dark");
+  dom.themeToggle.classList.toggle("is-dark", theme === "dark");
+  state.theme = theme;
+  dom.themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+}
 
-  selectors.themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-    const isLight = document.body.classList.contains("light-theme");
-    localStorage.setItem("placzek-theme", isLight ? "light" : "dark");
-    selectors.themeToggle.innerHTML = `<i class="ph ${isLight ? "ph-moon" : "ph-sun"}"></i>`;
+function populateDialog(song, index) {
+  const lyrics = getLyricsForVariant(song);
+  dom.dialog.dataset.index = index;
+  dom.dialogTitle.textContent = song.title;
+  dom.dialogStyles.innerHTML = "";
+
+  song.styleList.forEach((style) => {
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.textContent = style;
+    dom.dialogStyles.appendChild(chip);
   });
+
+  dom.dialogLyrics.textContent = lyrics;
 }
 
-function initNameToggle() {
-  if (!selectors.nameToggle) return;
-  const storedPreference = localStorage.getItem("placzek-name-toggle");
-  state.replacePlaczek = storedPreference === "true";
-  selectors.nameToggle.checked = state.replacePlaczek;
-
-  selectors.nameToggle.addEventListener("change", () => {
-    state.replacePlaczek = selectors.nameToggle.checked;
-    localStorage.setItem("placzek-name-toggle", state.replacePlaczek ? "true" : "false");
-    refreshLyricsView();
-    showToast(state.replacePlaczek ? "Namenswechsel aktiv" : "Originalnamen aktiv");
-  });
-}
-
-function refreshLyricsView() {
-  renderSongs();
-  if (!state.filteredSongs.length) {
-    selectors.heroTitle.textContent = "Keine Songs";
-    selectors.heroStyles.textContent = "Bitte Filter anpassen.";
-    selectors.heroHook.textContent = "";
-    return;
-  }
-  const nextIndex = Math.min(state.activeSongIndex, state.filteredSongs.length - 1);
-  highlightSong(nextIndex);
-}
-
-function getProcessedLyrics(song) {
-  if (!state.replacePlaczek) return song.lyrics;
-  return song.lyrics.replace(/Placzek/g, "Platzek");
-}
-
-function getProcessedHook(song) {
-  if (!state.replacePlaczek) return song.hook;
-  return song.hook.replace(/Placzek/g, "Platzek");
-}
-
-function initAnimations() {
-  if (!window.gsap) return;
-  gsap.from(".hero-grid > *", {
-    opacity: 0,
-    y: 40,
-    duration: 1.1,
-    ease: "power3.out",
-    stagger: 0.18,
-  });
-  gsap.from(".song-card", {
-    opacity: 0,
-    y: 30,
-    duration: 0.7,
-    ease: "power3.out",
-    stagger: 0.08,
-    delay: 0.3,
-  });
-  gsap.from(".timeline article, .insight-grid article", {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    ease: "power3.out",
-    stagger: 0.12,
-    delay: 0.5,
-  });
+function refreshDialog() {
+  const index = dom.dialog.dataset.index;
+  if (!index) return;
+  const isOpen = dom.dialog.open || dom.dialog.hasAttribute("open");
+  if (!isOpen) return;
+  const song = state.songs[index];
+  if (!song) return;
+  populateDialog(song, index);
 }
