@@ -2,11 +2,15 @@
 
 ## Oberarzt der Herzen
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Catchy, Bright]  
 Oh-oh-oh, Doktor med Placzek  
 Unser Held im weißen Kittel  
@@ -95,11 +99,15 @@ Wir folgen ihm, bis ans Ziel – perfekt!
 
 ## Pilot im Pixelmeer
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Songtext Energetic, Bright, Fast Tempo, Electro-Pop, Female Vocals, Uplifting, Catchy, Schlager, 135BPM]
 
 [Intro Shimmering]
@@ -179,11 +187,15 @@ Dein Glanz bleibt bestehen, sei’s Tag oder spät!
 
 ## Kunst der Diagnostik
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Melodic]
 Morgens in der Klinik
 Ein besonderer Moment
@@ -271,11 +283,15 @@ Von Doktor med Placzek
 
 ## Navigator
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Melodic Hook]  
 Oberarzt Doktor med Placzek  
 (Placzek, Placzek)  
@@ -343,11 +359,15 @@ Radiologie in Reinkultur
 
 ## Oberarzt Dr. med. Placzek
 
-```styles
+### Styles:
+
+```
 upbeat schlager electro House pop catchy female vocal hooks high pitched chorus
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 Verse:
 Er ist der Chef im CT, er weiß genau Bescheid
 Er scannt die Patienten mit Geschick und Sorgfalt
@@ -377,11 +397,15 @@ Du bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Platzek
 
 ## Unser Oberarzt
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Hook Ultra-Catchy]
 CT-King, Doktor Placzek
 Strahlt heller als ein Röntgen-Check
@@ -469,11 +493,15 @@ Leuchtet wie ein Stern!
 
 ## Meister der Schichten
 
-```styles
+### Styles:
+
+```
 Moderner Schlager mit EDM-Einflüssen und euphonischen Drops, euphoric chorus, catchy melody, catchy vocals, infectious, 140BPM
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Bright Catchy Hook 135BPM]
 Ein Bildschirm leuchtet, Scanner surrt
 Im CT-Raum, wo Wissen regiert
@@ -561,11 +589,15 @@ Wir folgen dir – für immer dein Team!
 
 ## Mit harter Hand und Charme
 
-```styles
+### Styles:
+
+```
 Electro-Pop, 135 BPM, catchy melody, catchy female vocal, infectious
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Playful Inviting]
 Dr. Placzek's Meisterschule
 Wo Brillanz auf Strenge trifft
@@ -659,11 +691,15 @@ Leuchtet ewig in uns fort
 
 ## Durch Feuer und Eis
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody, themesong
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Bright Catchy]
 Im Zentrum der Radiologie
 Wo Schatten Geschichten erzählen
@@ -757,11 +793,15 @@ Und aus Bildern wird Heilung geboren
 
 ## Oberarzt mit Herz
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Catchy, Bright]
 Oh-oh-oh, Doktor med. Placzek
 Der Arzt mit Herz und klarem Blick
@@ -850,11 +890,15 @@ Wir folgen ihm, zum Ziel – ideal!
 
 ## Oberärztlicher Glanz
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, synthpop, uplifting, catchy
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Verse 1 Energetic, Playful]
 Ich hörte Schritte draußen auf dem Flur  
 Ein Klopfen, dann steht er vor der Tür  
@@ -932,11 +976,15 @@ die Wärme Wissen und Hoffnung gibt.
 
 ## Lotse unserer Diagnostik
 
-```styles
+### Styles:
+
+```
 energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Schlager, 135BPM, catchy melody
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro Catchy]
 Im CT-Meer, so tief und weit,
 Wo Graustufen verschwimmen, 
@@ -1001,11 +1049,15 @@ Oberarzt Doktor med Platzek!
 
 ## Held und Idol
 
-```styles
+### Styles:
+
+```
 Uplifting Electro-Pop-Trance anthem with a euphoric 2010s feel. The track opens with atmospheric synth pads and a filtered arpeggio, building into a driving verse with a powerful four-on-the-floor kick drum and a pulsating, arpeggiated synth bassline. The pre-chorus features a massive build-up with a fast snare roll and a white noise riser, leading to an explosive, anthemic chorus. The chorus is defined by a soaring melodic synth lead, heavy sidechain compression on the pads for a pumping effect, and layered, epic harmonies. The bridge offers a brief, emotional breakdown with gentle piano before a melodic electric guitar solo with delay takes over. The production is polished, high-energy, with a wide stereo image and crystal-clear mix. The vocal style is a powerful, confident, and clear male lead vocal with a slightly playful, charming delivery. Triumphant, celebratory, energetic, slightly humorous, and deeply reverent mood.
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro | atmospheric synth pads | filtered arpeggio | distant vocoder whispers: "Platzek... Platzek..."]
 
 [Verse 1 | driving four-on-the-floor beat | pulsating bassline | clean male vocal]
@@ -1069,11 +1121,15 @@ Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
 
 ## Ein Oberarzt den man nie vergisst
 
-```styles
+### Styles:
+
+```
 Uptempo German Party-Schlager, Electro-Pop, driving four-on-the-floor kick drum, punchy synth bass, catchy synth melody, modern pop polish, high fidelity, powerful male vocals
 ```
 
-```Lyrics
+### Lyrics:
+
+```
 [Intro | party synth arpeggio | spoken word, dramatic male voice]
 Diagnose: unklar.
 Fragestellung: unmöglich.
