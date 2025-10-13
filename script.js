@@ -5,6 +5,9 @@ const state = {
   theme: 'auto',
 };
 
+const icon = (name, extraClass = '') =>
+  `<svg class="icon icon-${name}${extraClass ? ` ${extraClass}` : ''}" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
+
 const dom = {
   grid: document.getElementById('songGrid'),
   search: document.getElementById('searchInput'),
@@ -107,7 +110,7 @@ async function loadSongs() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">error</span>
+          ${icon('warning')}
           <p>Die Songs.md konnte nicht geladen werden.</p>
         </div>
       </article>`;
@@ -161,7 +164,7 @@ function render() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">search_off</span>
+          ${icon('search-off')}
           <p>Keine Treffer. Passe deine Suche an.</p>
         </div>
       </article>`;
@@ -198,10 +201,11 @@ function buildSongCard(song) {
 
   card.innerHTML = `
     <div class="card-shell">
+      <span class="card-aurora" aria-hidden="true"></span>
       <header class="card-header">
         <h2>${song.title}</h2>
         <button class="card-open" type="button" data-open aria-label="Songdetails anzeigen">
-          <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+          ${icon('expand')}
         </button>
       </header>
       <div class="card-preview">
@@ -213,18 +217,10 @@ function buildSongCard(song) {
           ${renderStyleChips(song.styleList)}
         </div>
         <div class="copy-group">
-          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">title</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">palette</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
-          </button>
+          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">${icon('title')}</button>
+          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">${icon('styles')}</button>
+          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">${icon('lyrics')}</button>
+          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">${icon('full')}</button>
         </div>
       </footer>
     </div>`;
@@ -262,7 +258,7 @@ function renderStyleChips(styles) {
 
 function buildPreview(lyrics) {
   const lines = lyrics.split(/\r?\n/).filter((line) => line.trim().length > 0);
-  return lines.slice(0, 18).join('\n');
+  return lines.slice(0, 12).join('\n');
 }
 
 function getLyricsForVariant(song) {
