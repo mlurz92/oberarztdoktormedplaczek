@@ -670,6 +670,7 @@ body.theme-dark .card-tag {
 .dialog-open #songDialog::backdrop {
   background: rgba(6, 8, 18, 0.6);
   backdrop-filter: blur(16px);
+  animation: backdrop-fade-in 0.38s ease;
 }
 
 .song-dialog {
