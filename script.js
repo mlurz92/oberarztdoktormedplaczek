@@ -5,6 +5,9 @@ const state = {
   theme: 'auto',
 };
 
+const icon = (name, extraClass = '') =>
+  `<svg class="icon icon-${name}${extraClass ? ` ${extraClass}` : ''}" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
+
 const dom = {
   grid: document.getElementById('songGrid'),
   search: document.getElementById('searchInput'),
@@ -107,7 +110,7 @@ async function loadSongs() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">error</span>
+          ${icon('warning')}
           <p>Die Songs.md konnte nicht geladen werden.</p>
         </div>
       </article>`;
@@ -161,7 +164,7 @@ function render() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">search_off</span>
+          ${icon('search-off')}
           <p>Keine Treffer. Passe deine Suche an.</p>
         </div>
       </article>`;
@@ -192,39 +195,35 @@ function buildSongCard(song) {
   const card = document.createElement('article');
   card.className = 'song-card';
   card.dataset.index = String(song.id);
+  card.tabIndex = 0;
 
   const lyrics = getLyricsForVariant(song);
   const preview = buildPreview(lyrics);
 
   card.innerHTML = `
-    <div class="card-shell">
+    <div class="card-surface">
+      <span class="card-sheen" aria-hidden="true"></span>
       <header class="card-header">
-        <h2>${song.title}</h2>
-        <button class="card-open" type="button" data-open aria-label="Songdetails anzeigen">
-          <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+        <div class="card-heading">
+          <span class="card-tag">Song</span>
+          <h2>${song.title}</h2>
+        </div>
+        <button class="pill-btn card-open" type="button" data-open aria-label="Songdetails anzeigen">
+          ${icon('expand')}
         </button>
       </header>
-      <div class="card-preview">
+      <div class="card-lyrics" aria-label="Lyrics Vorschau">
         <pre>${preview}</pre>
-        <div class="preview-fade" aria-hidden="true"></div>
       </div>
       <footer class="card-footer">
         <div class="style-strip">
           ${renderStyleChips(song.styleList)}
         </div>
-        <div class="copy-group">
-          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">title</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">palette</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
-          </button>
+        <div class="copy-group" role="group" aria-label="Schnellaktionen">
+          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">${icon('title')}</button>
+          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">${icon('styles')}</button>
+          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">${icon('lyrics')}</button>
+          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">${icon('full')}</button>
         </div>
       </footer>
     </div>`;
@@ -236,8 +235,17 @@ function buildSongCard(song) {
   });
 
   card.addEventListener('click', (event) => {
-    if (event.target.closest('.copy-group')) return;
+    if (event.target.closest('.copy-group') || event.target.closest('.card-lyrics')) return;
     openDialog(song.id);
+  });
+
+  card.addEventListener('keydown', (event) => {
+    // Let child buttons handle their own keyboard events.
+    if (event.defaultPrevented || event.target.closest('button')) return;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openDialog(song.id);
+    }
   });
 
   card.querySelectorAll('[data-copy]').forEach((button) => {
@@ -261,8 +269,7 @@ function renderStyleChips(styles) {
 }
 
 function buildPreview(lyrics) {
-  const lines = lyrics.split(/\r?\n/).filter((line) => line.trim().length > 0);
-  return lines.slice(0, 18).join('\n');
+  return lyrics.replace(/\r/g, '').trim().replace(/\n{3,}/g, '\n\n');
 }
 
 function getLyricsForVariant(song) {
