@@ -240,7 +240,8 @@ function buildSongCard(song) {
   });
 
   card.addEventListener('keydown', (event) => {
-    if (event.defaultPrevented) return;
+    // Let child buttons handle their own keyboard events.
+    if (event.defaultPrevented || event.target.closest('button')) return;
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       openDialog(song.id);
