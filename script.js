@@ -203,6 +203,7 @@ function buildSongCard(song) {
   card.className = 'song-card';
   card.dataset.index = String(song.id);
   card.tabIndex = 0;
+  card.setAttribute('role', 'button');
 
   const lyrics = getLyricsForVariant(song);
   const preview = buildPreview(lyrics);
