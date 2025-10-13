@@ -125,7 +125,7 @@ function parseSongs(markdown) {
       .split(/[\n,]/)
       .map((entry) => entry.trim())
       .filter(Boolean);
-    const lyrics = lyricsBlock.replace(/\s+$/g, '');
+    const lyrics = lyricsBlock.trim();
     songs.push({
       title: title.trim(),
       stylesRaw,
