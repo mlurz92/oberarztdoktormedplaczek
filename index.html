@@ -3,262 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oberarzt Doktor med Placzek · Suno Prompt-Bibliothek</title>
+  <title>Oberarzt Dr. med. Placzek · Song-Atlas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.0.6/dist/lenis.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-lenis-prevent="">
-  <div class="background-texture" aria-hidden="true"></div>
-  <header class="global-header" data-lenis-prevent>
+<body>
+  <div class="background-canvas" aria-hidden="true">
+    <div class="gradient gradient--one"></div>
+    <div class="gradient gradient--two"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="app-header" id="top">
     <div class="brand">
-      <span class="brand-icon">OD</span>
-      <div class="brand-copy">
-        <strong>Oberarzt Doktor med Placzek</strong>
-        <small>Suno.AI Prompt-Werkstatt</small>
+      <span class="brand__mark">OD</span>
+      <div class="brand__copy">
+        <strong>Oberarzt Dr. med. Placzek</strong>
+        <span>Song-Atlas</span>
       </div>
     </div>
-    <nav class="primary-nav" aria-label="Hauptnavigation">
-      <a href="#hero" class="nav-link">Überblick</a>
-      <a href="#library" class="nav-link">Songbibliothek</a>
-      <a href="#workflow" class="nav-link">Workflow</a>
-      <a href="#insights" class="nav-link">Insights</a>
+    <nav class="app-nav" aria-label="Seitennavigation">
+      <a class="app-nav__link" href="#overview">Überblick</a>
+      <a class="app-nav__link" href="#catalog">Songübersicht</a>
     </nav>
     <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Darstellung wechseln">
-        <i class="ph ph-sun"></i>
-      </button>
-      <button class="pulse-button" id="randomSong" type="button">
-        <i class="ph ph-shuffle"></i>
-        Zufallssong
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Darstellung wechseln">
+        <i class="ph ph-moon"></i>
       </button>
     </div>
   </header>
 
-  <main data-lenis-prevent>
-    <section id="hero" class="section hero">
-      <div class="hero-grid">
-        <div class="hero-intro">
-          <p class="eyebrow">Creative Ops · Suno.AI</p>
-          <h1>Kuratiere &amp; verfeinere Songtexte<br />für Doktor med Placzek.</h1>
-          <p class="lede">
-            Die Bibliothek verbindet klinische Präzision mit poppigem Schlager-Glam. Durchstöbere die kuratierten
-            Song-Blueprints, sichere Styles und Lyrics mit einem Klick und orchestriere deine eigenen Suno.AI-Produktionen.
-          </p>
-          <div class="hero-actions">
-            <button class="cta" data-scroll-target="#library">
-              <i class="ph ph-music-notes-plus"></i>
-              Songbibliothek erkunden
-            </button>
-            <button class="ghost" data-scroll-target="#workflow">
-              <i class="ph ph-compass"></i>
-              Workflow entdecken
-            </button>
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero__copy">
+        <p class="eyebrow">Suno Prompt Library</p>
+        <h1>Alle Songs über den Oberarzt – sofort griffbereit.</h1>
+        <p>
+          Die Anwendung lädt automatisch jede Zeile aus der <strong>Songs.md</strong> und fasst die Informationen in einer
+          klaren Übersicht zusammen. Kopiere Titel, Styles, Lyrics oder komplette Songpakete mit nur einem Klick und
+          experimentiere auf Wunsch mit der Schreibweise <em>Platzek</em> statt <em>Placzek</em>.
+        </p>
+        <dl class="stat-grid">
+          <div>
+            <dt>Verfügbare Songs</dt>
+            <dd id="statSongCount">–</dd>
           </div>
-          <dl class="hero-stats">
-            <div>
-              <dt>Aktive Songs</dt>
-              <dd id="statSongCount">–</dd>
-            </div>
-            <div>
-              <dt>Distinct Styles</dt>
-              <dd id="statStyleCount">–</dd>
-            </div>
-            <div>
-              <dt>Durchschnittliche Länge</dt>
-              <dd id="statAvgLines">–</dd>
-            </div>
-          </dl>
-        </div>
-        <article class="hero-highlight" id="heroHighlight" aria-live="polite">
-          <header>
-            <span class="badge">Spotlight</span>
-            <h2 id="heroTitle">Songtitel lädt...</h2>
-          </header>
-          <section>
-            <h3>Styles</h3>
-            <p id="heroStyles">–</p>
-          </section>
-          <section>
-            <h3>Key Hook</h3>
-            <p id="heroHook">–</p>
-          </section>
-          <div class="card-actions">
-            <button type="button" class="icon-button" data-copy="title">
-              <i class="ph ph-copy"></i>
-              Titel kopieren
-            </button>
-            <button type="button" class="icon-button" data-copy="styles">
-              <i class="ph ph-copy"></i>
-              Styles kopieren
-            </button>
-            <button type="button" class="icon-button" data-copy="lyrics">
-              <i class="ph ph-copy"></i>
-              Lyrics kopieren
-            </button>
+          <div>
+            <dt>Eindeutige Styles</dt>
+            <dd id="statStyleCount">–</dd>
           </div>
-        </article>
+          <div>
+            <dt>Ø Zeilen pro Song</dt>
+            <dd id="statAvgLines">–</dd>
+          </div>
+        </dl>
       </div>
-    </section>
-
-    <section id="library" class="section library">
-      <header class="section-header">
-        <div>
-          <p class="eyebrow">Songbibliothek</p>
-          <h2>Alle Songs · Schnell filtern, kopieren &amp; kombinieren</h2>
-        </div>
-        <div class="library-toolbar">
-          <label class="search-field">
-            <i class="ph ph-magnifying-glass"></i>
-            <input type="search" id="searchSongs" placeholder="Nach Titeln, Hooks oder Schlüsselwörtern suchen" aria-label="Songs durchsuchen" />
-          </label>
-          <label class="name-swap-toggle" for="nameSwapToggle">
-            <input type="checkbox" id="nameSwapToggle" />
-            <span class="name-swap-toggle__track" aria-hidden="true">
-              <span class="name-swap-toggle__thumb"></span>
-            </span>
-            <span class="name-swap-toggle__label">Placzek → Platzek</span>
-          </label>
-          <div class="toggle-group" role="group" aria-label="Ansicht wechseln">
-            <button type="button" class="toggle active" data-view="grid">
-              <i class="ph ph-grid-four"></i>
-            </button>
-            <button type="button" class="toggle" data-view="list">
-              <i class="ph ph-list"></i>
-            </button>
-          </div>
-        </div>
-      </header>
-      <div class="library-layout">
-        <aside class="filter-panel" aria-label="Style-Filter">
-          <h3>Style-Cluster</h3>
-          <p class="filter-note">Kombiniere Tags, um Songs für bestimmte Suno-Szenarien zu finden.</p>
-          <div class="chip-cloud" id="styleChips"></div>
-          <button class="ghost small" id="clearFilters" type="button">
-            <i class="ph ph-faders"></i>
-            Filter zurücksetzen
+      <article class="spotlight" id="spotlight" aria-live="polite">
+        <header class="spotlight__header">
+          <span class="badge">Spotlight</span>
+          <h2 id="spotlightTitle">Songtitel wird geladen …</h2>
+        </header>
+        <p class="spotlight__styles" id="spotlightStyles">Styles folgen in Kürze.</p>
+        <div class="spotlight__tags" id="spotlightTags" aria-label="Zugeordnete Styles"></div>
+        <div class="spotlight__lyrics" id="spotlightLyrics" role="presentation"></div>
+        <div class="spotlight__actions">
+          <button type="button" class="spotlight__button" data-copy="title">
+            <i class="ph ph-copy"></i>
+            Titel kopieren
           </button>
-        </aside>
-        <div class="song-collection" id="songCollection" aria-live="polite"></div>
-      </div>
+          <button type="button" class="spotlight__button" data-copy="styles">
+            <i class="ph ph-copy"></i>
+            Styles kopieren
+          </button>
+          <button type="button" class="spotlight__button" data-copy="lyrics">
+            <i class="ph ph-copy"></i>
+            Lyrics kopieren
+          </button>
+          <button type="button" class="spotlight__button" data-copy="all">
+            <i class="ph ph-copy"></i>
+            Alles kopieren
+          </button>
+        </div>
+      </article>
     </section>
 
-    <section id="workflow" class="section workflow">
-      <header class="section-header">
-        <div>
-          <p class="eyebrow">Production Workflow</p>
-          <h2>Vom Prompt zur Premiere in vier Etappen</h2>
-        </div>
-      </header>
-      <div class="timeline">
-        <article>
-          <h3>01 · Analyse</h3>
-          <p>Scanne die Styles nach BPM, Stimmung, Vokalspezifika und übertrage sie unverändert in Suno, um die Klangästhetik zu sichern. Ergänze Instrumentierung oder Energieniveaus nur, wenn es der Klinikstory dient.</p>
-        </article>
-        <article>
-          <h3>02 · Prompting</h3>
-          <p>Kopiere Lyrics-Blöcke modular in Suno.AI. Beginne mit Intro+Chorus, prüfe die Generierung und erweitere dann um zusätzliche Strophen. Das reduziert Fehlinterpretationen im Hook.</p>
-        </article>
-        <article>
-          <h3>03 · Iteration</h3>
-          <p>Nutze die Style-Tags als Konstanten und variiere nur einzelne Vibes (z. B. &bdquo;brighter pads&ldquo;, &bdquo;more reverb&ldquo;). Jede Änderung sollte isoliert getestet werden, damit der Signature-Sound des Oberarztes erhalten bleibt.</p>
-        </article>
-        <article>
-          <h3>04 · Mastering</h3>
-          <p>Exportiere Varianten, vergleiche Dynamics und wähle die Version mit der klarsten Vocal-Präsenz. Dokumentiere finale Einstellungen direkt in der Bibliothek, um dein Suno-Playbook aktuell zu halten.</p>
-        </article>
+    <section class="controls" aria-label="Songfilter">
+      <div class="controls__bar">
+        <label class="search" for="searchSongs">
+          <i class="ph ph-magnifying-glass"></i>
+          <input id="searchSongs" type="search" placeholder="Titel, Lyrics oder Styles durchsuchen" aria-label="Songs durchsuchen" />
+        </label>
+        <button id="clearSearch" type="button" class="ghost-button" aria-label="Suche zurücksetzen">
+          <i class="ph ph-x"></i>
+        </button>
+        <label class="switch" for="nameToggle">
+          <input type="checkbox" id="nameToggle" />
+          <span class="switch__track">
+            <span class="switch__thumb"></span>
+          </span>
+          <span class="switch__label">Placzek → Platzek</span>
+        </label>
       </div>
+      <div class="chip-rail" id="chipRail" aria-label="Style-Filter"></div>
     </section>
 
-    <section id="insights" class="section insights">
-      <header class="section-header">
-        <div>
-          <p class="eyebrow">Insights &amp; Quick Wins</p>
-          <h2>Best Practices für Klinik-Pop</h2>
-        </div>
-      </header>
-      <div class="insight-grid">
-        <article>
-          <h3>Hook-Dominanz</h3>
-          <p>Platziere den Namen &bdquo;Oberarzt Doktor med Placzek&ldquo; in jedem Chorus. Die Wiedererkennung erzeugt bei Suno-AI stabilere Hook-Melodien.</p>
-        </article>
-        <article>
-          <h3>Story Beats</h3>
-          <p>Verse können komplexer sein, solange der Pre-Chorus in zwei Zeilen den klinischen Triumph betont. Das trainiert Suno auf klare Spannungsbögen.</p>
-        </article>
-        <article>
-          <h3>Vocal Delivery</h3>
-          <p>Female vocals funktionieren ideal, wenn du Adjektive wie &bdquo;bright&ldquo;, &bdquo;energetic&ldquo;, &bdquo;playful&ldquo; kombinierst. Ergänze bei Bedarf &bdquo;touch of theatricality&ldquo; für mehr Schlager-Glitz.</p>
-        </article>
-        <article>
-          <h3>Arrangement</h3>
-          <p>Arbeite mit Breakdowns nach dem zweiten Chorus, um Raum für Radiologie-Sounddesigns (CT-Beep, Monitor-Hits) zu schaffen. Suno interpretiert das als kreative Soundeffekte.</p>
-        </article>
-        <article>
-          <h3>Prompt-Notizen</h3>
-          <p>Füge im Custom-Field von Suno den gewünschten Output-Kanal hinzu (z. B. &bdquo;stereo, mastered, radio-ready&ldquo;). Dadurch musst du später weniger nachbearbeiten.</p>
-        </article>
-        <article>
-          <h3>Team-Collab</h3>
-          <p>Nutze die Copy-Buttons im Team-Standup, um schnell Variationen zu testen. Markiere Favoriten direkt in der Bibliothek, damit neue Mitglieder sofort produktiv werden.</p>
-        </article>
-      </div>
+    <section class="catalog" id="catalog" aria-live="polite">
+      <div id="songList" class="song-grid" role="list"></div>
     </section>
   </main>
 
-  <footer class="global-footer" data-lenis-prevent>
-    <p>&copy; <span id="year"></span> Oberarzt Doktor med Placzek · Prompt-Lab für Suno.AI</p>
-    <div>
-      <a href="#hero">Zurück nach oben</a>
-      <a href="mailto:studio@doktor-placzek.de">Kontakt</a>
-    </div>
+  <footer class="app-footer">
+    <p>
+      Zusammenstellung der Songs aus <strong>Songs.md</strong>.
+      <span id="year"></span> · Oberarzt Dr. med. Placzek Song-Atlas
+    </p>
+    <a class="back-to-top" href="#top" aria-label="Zurück nach oben">
+      <i class="ph ph-arrow-up"></i>
+    </a>
   </footer>
 
+  <div class="toast" id="toast" role="status" aria-live="assertive"></div>
+
   <template id="songCardTemplate">
-    <article class="song-card">
+    <article class="song-card" role="listitem">
       <header class="song-card__header">
-        <div>
-          <span class="song-card__badge">Song Blueprint</span>
-          <h3 class="song-card__title"></h3>
-        </div>
-        <div class="song-card__actions">
-          <button type="button" class="icon-button" data-copy="title">
-            <i class="ph ph-copy"></i>
-            Titel
-          </button>
-          <button type="button" class="icon-button" data-copy="styles">
-            <i class="ph ph-copy"></i>
-            Styles
-          </button>
-          <button type="button" class="icon-button" data-copy="lyrics">
-            <i class="ph ph-copy"></i>
-            Lyrics
-          </button>
-        </div>
+        <h3 class="song-card__title"></h3>
+        <button type="button" class="song-card__quick-copy" data-copy="all" aria-label="Kompletten Song kopieren">
+          <i class="ph ph-copy"></i>
+        </button>
       </header>
-      <section class="song-card__styles">
-        <h4>Style-DNA</h4>
-        <p class="song-card__style-text"></p>
-        <div class="song-card__style-tags"></div>
-      </section>
-      <section class="song-card__lyrics">
-        <h4>Lyrics Blueprint</h4>
-        <div class="song-card__lyrics-preview"></div>
-        <details class="song-card__lyrics-full">
-          <summary>Komplette Lyrics anzeigen</summary>
-          <pre></pre>
-        </details>
-      </section>
+      <p class="song-card__styles"></p>
+      <div class="song-card__tags" aria-label="Style-Tags"></div>
+      <p class="song-card__preview"></p>
+      <div class="song-card__actions" role="group" aria-label="Schnellaktionen">
+        <button type="button" data-copy="title">Titel</button>
+        <button type="button" data-copy="styles">Styles</button>
+        <button type="button" data-copy="lyrics">Lyrics</button>
+        <button type="button" data-copy="all">Alles</button>
+      </div>
     </article>
   </template>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.0.6/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
