@@ -6,7 +6,7 @@ const state = {
 };
 
 const icon = (name, extraClass = '') =>
-  `<svg class="icon icon-${name}${extraClass ? ` ${extraClass}` : ''}" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
+  `<svg class="icon icon-${name}${extraClass ? ` ${extraClass}` : ''}" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
 
 const dom = {
   grid: document.getElementById('songGrid'),
