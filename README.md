@@ -1,35 +1,31 @@
-# Oberarzt Dr. med. Placzek – Song-Kompendium
+# Placzek Song Suite
 
-Eine schlanke, statische Web-App, die sämtliche Inhalte direkt aus der `Songs.md` einliest und die Hymnen über Oberarzt Dr. med. Placzek perfekt strukturiert darstellt.
+Eine glasige Single-Page-Anwendung, die beim Laden sämtliche Songs aus der `Songs.md` einliest und als lyrikfokussierte Karten präsentiert. Kopieren aller Bestandteile gelingt über kompakte Icon-Schaltflächen; ein Variantenschalter ersetzt auf Wunsch jeden Placzek-Verweis live durch Platzek.
 
-## Funktionsumfang
+## Funktionen
 
-- **Automatischer Import**: Beim Start wird `Songs.md` per `fetch` geladen, geparst und die Oberfläche ohne weitere Konfiguration mit allen Songs befüllt.
-- **Kopieraktionen nach Bedarf**: Für jeden Song lassen sich Titel, Styles, Lyrics oder der komplette Datensatz einzeln per Klick in die Zwischenablage legen – auf Karten oder im Detaildialog.
-- **Platzek-Umschaltung**: Ein globaler Schalter tauscht in den Lyrics „Placzek“ dynamisch gegen „Platzek“ aus, ohne die Originaldatei anzutasten.
-- **Hell/Dunkel-Modus**: Ein Theme-Toggle schaltet live zwischen lichtem und dunklem Erscheinungsbild und merkt sich die Auswahl via `localStorage`.
-- **Vollständig responsiv**: Karten, Dialog und Steuerlemente passen sich jeder Viewportbreite an – vom Smartphone bis zum großen Desktop.
-- **Detailansicht mit Dialog**: Die Lyrics werden in einem modalen Dialog komfortabel lesbar. Separate Kopier-Buttons befinden sich direkt bei Styles und Lyrics sowie als „Alles kopieren“.
-- **Suche in Echtzeit**: Titel, Styles und Lyrics lassen sich über eine zentrale Suchleiste filtern.
+- **Automatisches Markdown-Parsing** – Beim Start wird `Songs.md` per `fetch` geladen, nach Titeln, Styles und Lyrics zerlegt und sofort dargestellt. Ergänzungen an der Datei erscheinen automatisch.
+- **Lyrik im Fokus** – Jede Karte zeigt einen großzügigen Ausschnitt der Lyrics, Styles werden als dezente Chips zusammengefasst. Ein Glas-Dialog offenbart alle Inhalte vollständig.
+- **Clipboard-Workflow** – Vier Icon-Schaltflächen kopieren Titel, Styles, Lyrics oder den kompletten Song. Die Aktionen stehen auch im Dialog bereit und liefern Toast-Feedback.
+- **Placzek↔Platzek-Option** – Ein persistenter Switch ersetzt alle Vorkommen direkt in der Oberfläche, sodass beide Varianten jederzeit abrufbar bleiben.
+- **Animierter Hell/Dunkel-Modus** – Ein transformierendes Sonne/Mond-SVG schaltet die Darstellung. Die Wahl wird gespeichert und automatisch wiederhergestellt.
+- **Responsive Glas-UI** – Das Layout passt sich fließend an alle Viewports an, ohne Überlagerungen oder abgeschnittene Beschriftungen. GSAP sorgt für sanfte Einblendungen (mit Rücksicht auf `prefers-reduced-motion`).
 
-## Projektstruktur
+## Nutzung
 
-```
-.
-├── index.html     # Markup und Komponenten-Struktur der Anwendung
-├── styles.css     # Designsystem, Layout und responsives Verhalten
-├── script.js      # Logik zum Einlesen, Rendern, Kopieren und zum Theme-Handling
-└── Songs.md       # Quelle für alle Songs (nicht ändern)
-```
+1. Starte einen lokalen Webserver im Projektverzeichnis, z. B. `python -m http.server 8000`.
+2. Öffne `http://localhost:8000` im Browser. Ohne Webserver kann `fetch` die `Songs.md` nicht laden.
+3. Suche nach Titeln, Styles oder Lyrics, öffne Karten per Klick oder nutze den Dialog für vollständige Inhalte.
 
-## Lokale Entwicklung
+## Anpassung
 
-1. Einen simplen Webserver starten (z. B. `python -m http.server 8000`).
-2. `http://localhost:8000` im Browser öffnen.
-3. Änderungen an `styles.css`, `script.js` oder `index.html` werden beim Neuladen sichtbar.
+- Neue Songs werden ausschließlich in `Songs.md` ergänzt. Die Struktur (Titel, Styles-Block, Lyrics-Block in Codeblöcken) muss beibehalten werden.
+- Farben, Glaseffekte und Animationen lassen sich zentral in `styles.css` anpassen. Die Komponenten verwenden CSS-Variablen.
+- Zusätzliche Interaktionen (z. B. Sortierung) können in `script.js` ergänzt werden. Die Render-Pipeline arbeitet vollständig datengetrieben.
 
-> **Hinweis:** Ein direktes Öffnen der `index.html` aus dem Dateisystem blockiert den `fetch`-Aufruf auf `Songs.md`. Die App muss daher über einen Webserver ausgeliefert werden.
+## Abhängigkeiten
 
-## Lizenz
+- [GSAP](https://greensock.com/gsap/) via CDN für dezente Animationsabläufe
+- Google Fonts & Material Symbols für Typografie und Icons
 
-Interne Demo-Anwendung. Bitte vor externer Nutzung mit dem Team von Oberarzt Dr. med. Placzek abstimmen.
+Weitere Build-Schritte sind nicht erforderlich.

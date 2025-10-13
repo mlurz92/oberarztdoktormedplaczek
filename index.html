@@ -3,113 +3,114 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Song Kompendium – Oberarzt Dr. med. Placzek</title>
+    <title>Placzek Song Suite</title>
+    <meta name="color-scheme" content="light dark" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   </head>
   <body>
-    <div class="app-shell">
-      <header class="site-header" aria-label="Hauptnavigation">
-        <div class="brand">
-          <div class="brand-mark" aria-hidden="true"></div>
-          <div>
-            <p class="brand-kicker">Archiv für Hymnen</p>
-            <h1 class="brand-title">Oberarzt Dr. med. Placzek</h1>
+    <div class="scene" aria-hidden="true"></div>
+    <div class="app">
+      <header class="top-bar glass-panel">
+        <div class="brand-block">
+          <span class="brand-emblem" aria-hidden="true">
+            <span class="brand-shine"></span>
+          </span>
+          <div class="brand-copy">
+            <span class="brand-tag">Song Suite</span>
+            <h1>Oberarzt&nbsp;Dr.&nbsp;Placzek</h1>
           </div>
         </div>
-        <div class="header-controls">
-          <button class="ui-button tertiary" id="themeToggle" type="button" aria-live="polite" aria-label="Darstellung umschalten">
-            <span class="button-label">Helles Thema</span>
-            <span class="icon" aria-hidden="true">🌞</span>
+        <div class="action-cluster">
+          <button class="theme-toggle" type="button" aria-label="Darstellung umschalten">
+            <svg class="theme-icon" viewBox="0 0 48 48" role="img" aria-hidden="true">
+              <g class="sun">
+                <circle cx="24" cy="24" r="11"></circle>
+                <g class="rays">
+                  <line x1="24" y1="4" x2="24" y2="12"></line>
+                  <line x1="24" y1="36" x2="24" y2="44"></line>
+                  <line x1="4" y1="24" x2="12" y2="24"></line>
+                  <line x1="36" y1="24" x2="44" y2="24"></line>
+                  <line x1="10" y1="10" x2="16" y2="16"></line>
+                  <line x1="32" y1="32" x2="38" y2="38"></line>
+                  <line x1="10" y1="38" x2="16" y2="32"></line>
+                  <line x1="32" y1="16" x2="38" y2="10"></line>
+                </g>
+              </g>
+              <g class="moon">
+                <path d="M32 8a16 16 0 1 0 8 28.3A14 14 0 0 1 32 8Z"></path>
+              </g>
+            </svg>
           </button>
-          <label class="toggle" id="nameToggleLabel">
-            <input type="checkbox" id="nameToggle" />
-            <span class="toggle-slider" aria-hidden="true"></span>
-            <span class="toggle-text">
-              <span class="toggle-title">Lyrics Variante</span>
-              <span class="toggle-sub">Placzek → Platzek</span>
+          <label class="variant-toggle" for="variantSwitch">
+            <span class="variant-label">Placzek</span>
+            <input id="variantSwitch" type="checkbox" />
+            <span class="variant-track" aria-hidden="true">
+              <span class="variant-thumb"></span>
             </span>
+            <span class="variant-label">Platzek</span>
           </label>
         </div>
       </header>
 
-      <main>
-        <section class="hero" aria-labelledby="heroTitle">
-          <div class="hero-text">
-            <h2 id="heroTitle">Das interaktive Song-Kompendium</h2>
-            <p>
-              Alle veröffentlichten Songs werden beim Laden der Seite direkt aus der <strong>Songs.md</strong> eingelesen.
-              Wähle einen Titel, sieh dir Styles und Lyrics an und kopiere exakt den Abschnitt, den du benötigst – oder alles auf einmal.
-            </p>
-          </div>
-          <div class="hero-cta">
-            <div class="stat-card" aria-live="polite">
-              <span class="stat-label">Anzahl Songs</span>
-              <span class="stat-value" id="songCount">–</span>
-            </div>
-            <div class="search-field">
-              <label class="field-label" for="searchInput">Suche</label>
-              <div class="field-wrapper">
-                <span aria-hidden="true" class="field-icon">🔍</span>
-                <input id="searchInput" type="search" placeholder="Titel, Style oder Text durchsuchen" autocomplete="off" spellcheck="false" />
-              </div>
-            </div>
-          </div>
-        </section>
+      <section class="control-row glass-panel">
+        <div class="stats">
+          <span class="stat-pill" id="songCount">0 Songs</span>
+          <span class="stat-pill" id="variantState">Placzek-Version</span>
+        </div>
+        <label class="search" for="searchInput">
+          <span class="material-symbols-rounded" aria-hidden="true">search</span>
+          <input id="searchInput" type="search" placeholder="Titel oder Lyrics durchsuchen" autocomplete="off" />
+        </label>
+      </section>
 
-        <section class="grid-section" aria-live="polite">
-          <h3 class="sr-only">Song Übersicht</h3>
-          <div id="songGrid" class="song-grid" role="list"></div>
-          <div class="empty-state" id="emptyState" hidden>
-            <p>Keine Songs gefunden. Passe die Suche oder Filter an.</p>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>Erstellt für das Team rund um Oberarzt Dr. med. Placzek. Alle Inhalte werden automatisch aus der Songs.md geladen.</p>
-      </footer>
+      <main id="songGrid" class="song-grid" aria-live="polite" aria-busy="true"></main>
     </div>
 
-    <dialog id="songDialog" aria-modal="true" aria-labelledby="dialogTitle">
-      <form method="dialog" class="dialog-frame">
+    <dialog id="songDialog" class="song-dialog" aria-modal="true">
+      <div class="dialog-surface">
         <header class="dialog-header">
-          <h2 id="dialogTitle"></h2>
-          <button class="ui-button ghost" value="cancel" aria-label="Dialog schließen">✕</button>
-        </header>
-        <div class="dialog-body">
-          <div class="dialog-meta">
-            <div class="dialog-section">
-              <div class="section-heading">
-                <h3>Styles</h3>
-                <button class="ui-button pill" data-copy="styles" type="button">
-                  <span>Styles kopieren</span>
-                </button>
-              </div>
-              <ul class="style-list" id="dialogStyles"></ul>
-            </div>
-            <div class="dialog-section">
-              <div class="section-heading">
-                <h3>Lyrics</h3>
-                <button class="ui-button pill" data-copy="lyrics" type="button">
-                  <span>Lyrics kopieren</span>
-                </button>
-              </div>
-              <pre class="lyrics" id="dialogLyrics"></pre>
+          <div class="dialog-title">
+            <h2 id="dialogTitle"></h2>
+            <div class="dialog-icons">
+              <button class="icon-btn" type="button" data-copy="dialog-title" aria-label="Titel kopieren">
+                <span class="material-symbols-rounded" aria-hidden="true">title</span>
+              </button>
+              <button class="icon-btn" type="button" data-copy="dialog-styles" aria-label="Styles kopieren">
+                <span class="material-symbols-rounded" aria-hidden="true">palette</span>
+              </button>
+              <button class="icon-btn" type="button" data-copy="dialog-lyrics" aria-label="Lyrics kopieren">
+                <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
+              </button>
+              <button class="icon-btn" type="button" data-copy="dialog-full" aria-label="Song komplett kopieren">
+                <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
+              </button>
             </div>
           </div>
-        </div>
-        <footer class="dialog-footer">
-          <button class="ui-button primary" data-copy="full" type="button">Alles kopieren</button>
-          <button class="ui-button secondary" value="cancel" type="submit">Schließen</button>
-        </footer>
-      </form>
+          <button class="dialog-close" type="button" aria-label="Schließen">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <section class="dialog-section">
+          <h3>Styles</h3>
+          <div id="dialogStyles" class="dialog-styles"></div>
+        </section>
+        <section class="dialog-section">
+          <h3>Lyrics</h3>
+          <pre id="dialogLyrics" class="dialog-lyrics"></pre>
+        </section>
+      </div>
     </dialog>
 
-    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>

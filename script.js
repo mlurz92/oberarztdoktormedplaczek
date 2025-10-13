@@ -1,383 +1,420 @@
 const state = {
   songs: [],
-  filteredSongs: [],
-  usePlatzek: false,
-  searchTerm: "",
-  activeSong: null,
+  filtered: [],
+  isPlatzek: false,
+  theme: 'auto',
 };
 
-const selectors = {
-  songGrid: document.getElementById("songGrid"),
-  songCount: document.getElementById("songCount"),
-  emptyState: document.getElementById("emptyState"),
-  searchInput: document.getElementById("searchInput"),
-  nameToggle: document.getElementById("nameToggle"),
-  themeToggle: document.getElementById("themeToggle"),
-  toast: document.getElementById("toast"),
-  dialog: document.getElementById("songDialog"),
-  dialogTitle: document.getElementById("dialogTitle"),
-  dialogStyles: document.getElementById("dialogStyles"),
-  dialogLyrics: document.getElementById("dialogLyrics"),
+const dom = {
+  grid: document.getElementById('songGrid'),
+  search: document.getElementById('searchInput'),
+  songCount: document.getElementById('songCount'),
+  variantState: document.getElementById('variantState'),
+  variantSwitch: document.getElementById('variantSwitch'),
+  toast: document.getElementById('toast'),
+  dialog: document.getElementById('songDialog'),
+  dialogTitle: document.getElementById('dialogTitle'),
+  dialogStyles: document.getElementById('dialogStyles'),
+  dialogLyrics: document.getElementById('dialogLyrics'),
+  themeToggle: document.querySelector('.theme-toggle'),
 };
 
-const COPY_LABELS = {
-  title: "Songtitel",
-  styles: "Styles",
-  lyrics: "Lyrics",
-  full: "Kompletter Song",
-};
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
+init();
+
+async function init() {
+  hydrateTheme();
+  hydrateVariant();
   bindEvents();
-  loadSongs();
-});
+  await loadSongs();
+  render();
+}
+
+function hydrateTheme() {
+  const stored = localStorage.getItem('placzek-theme');
+  const initial = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(initial);
+}
+
+function hydrateVariant() {
+  const stored = localStorage.getItem('placzek-variant');
+  if (stored === 'platzek') {
+    state.isPlatzek = true;
+    dom.variantSwitch.checked = true;
+  }
+  updateVariantLabel();
+}
 
 function bindEvents() {
-  selectors.searchInput.addEventListener("input", event => {
-    state.searchTerm = event.target.value.trim();
-    filterSongs();
+  dom.search.addEventListener('input', () => {
+    render();
   });
 
-  selectors.nameToggle.addEventListener("change", event => {
-    state.usePlatzek = event.target.checked;
-    refreshView();
-    showToast(event.target.checked ? "Lyrics zeigen jetzt Platzek." : "Lyrics zeigen wieder Placzek.");
+  dom.variantSwitch.addEventListener('change', () => {
+    state.isPlatzek = dom.variantSwitch.checked;
+    localStorage.setItem('placzek-variant', state.isPlatzek ? 'platzek' : 'placzek');
+    updateVariantLabel();
+    render();
+    refreshDialog();
   });
 
-  selectors.themeToggle.addEventListener("click", toggleTheme);
-
-  selectors.songGrid.addEventListener("click", handleGridClick);
-
-  selectors.dialog.addEventListener("close", () => {
-    state.activeSong = null;
+  dom.themeToggle.addEventListener('click', () => {
+    const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('placzek-theme', next);
   });
 
-  selectors.dialog.addEventListener("click", event => {
-    if (event.target === selectors.dialog) {
-      selectors.dialog.close();
+  dom.dialog.addEventListener('close', () => {
+    document.body.classList.remove('dialog-open');
+  });
+
+  dom.dialog.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeDialog();
+  });
+
+  dom.dialog.addEventListener('click', (event) => {
+    if (event.target === dom.dialog) {
+      closeDialog();
     }
   });
 
-  selectors.dialog.querySelectorAll("[data-copy]").forEach(button => {
-    button.addEventListener("click", () => {
-      if (!state.activeSong) return;
-      const text = getCopyPayload(button.dataset.copy, state.activeSong);
-      copyToClipboard(text, COPY_LABELS[button.dataset.copy]);
-    });
+  dom.dialog.querySelector('.dialog-close').addEventListener('click', closeDialog);
+
+  dom.dialog.addEventListener('click', (event) => {
+    const target = event.target.closest('[data-copy]');
+    if (!target) return;
+    event.stopPropagation();
+    handleCopyAction(target.dataset.copy, dom.dialog.dataset.index);
   });
 }
 
 async function loadSongs() {
   try {
-    const response = await fetch("Songs.md", { cache: "no-store" });
+    const response = await fetch('Songs.md', { cache: 'no-cache' });
     if (!response.ok) {
-      throw new Error(`Songs konnten nicht geladen werden (Status ${response.status}).`);
+      throw new Error(`HTTP ${response.status}`);
     }
-
     const markdown = await response.text();
-    const songs = parseSongs(markdown);
-
-    if (!songs.length) {
-      throw new Error("Es wurden keine Songs in der Songs.md gefunden.");
-    }
-
-    state.songs = songs;
-    state.filteredSongs = [...songs];
-    refreshView(true);
+    state.songs = parseSongs(markdown);
+    state.filtered = [...state.songs];
+    dom.songCount.textContent = formatSongCount(state.songs.length);
+    dom.grid.setAttribute('aria-busy', 'false');
   } catch (error) {
-    selectors.songGrid.innerHTML = "";
-    selectors.emptyState.hidden = false;
-    selectors.emptyState.innerHTML = `<p class="error">${error.message}</p>`;
-    console.error(error);
-    showToast("Fehler beim Laden der Songs", true);
+    console.error('Songs konnten nicht geladen werden', error);
+    dom.grid.setAttribute('aria-busy', 'false');
+    dom.grid.innerHTML = `
+      <article class="empty">
+        <div class="empty-surface">
+          <span class="material-symbols-rounded" aria-hidden="true">error</span>
+          <p>Die Songs.md konnte nicht geladen werden.</p>
+        </div>
+      </article>`;
   }
 }
 
 function parseSongs(markdown) {
-  const entries = [];
-  const pattern = /##\s+(.*?)\r?\n+(?:###\s+Styles:\r?\n+```([\s\S]*?)```\r?\n+###\s+Lyrics:\r?\n+```([\s\S]*?)```)/g;
+  const pattern = /##\s+([^\n]+)\s+###\s+Styles:\s+```([\s\S]*?)```\s+###\s+Lyrics:\s+```([\s\S]*?)```/g;
+  const songs = [];
   let match;
-
   while ((match = pattern.exec(markdown)) !== null) {
-    const [_, title, rawStyles, rawLyrics] = match;
-    const styles = rawStyles
-      .split(/[,\r?\n]+/)
-      .map(entry => entry.trim())
+    const [, title, stylesBlock, lyricsBlock] = match;
+    const stylesRaw = stylesBlock.replace(/\r/g, '').trim();
+    const styleList = stylesRaw
+      .split(/[\n,]/)
+      .map((entry) => entry.trim())
       .filter(Boolean);
-
-    const lyrics = rawLyrics.replace(/\r/g, "").trim();
-
-    entries.push({
+    const lyrics = lyricsBlock.trim();
+    songs.push({
       title: title.trim(),
-      styles,
+      stylesRaw,
+      styleList,
       lyrics,
+      id: songs.length,
     });
   }
-
-  return entries;
+  return songs;
 }
 
-function filterSongs() {
-  const query = state.searchTerm.toLowerCase();
-
-  if (!query) {
-    state.filteredSongs = [...state.songs];
-  } else {
-    state.filteredSongs = state.songs.filter(song => {
-      const titleMatch = song.title.toLowerCase().includes(query);
-      const styleMatch = song.styles.some(style => style.toLowerCase().includes(query));
-      const lyricsMatch = song.lyrics.toLowerCase().includes(query);
-      return titleMatch || styleMatch || lyricsMatch;
-    });
-  }
-
-  refreshView();
-}
-
-function refreshView(animate = false) {
-  selectors.songGrid.innerHTML = "";
-
-  if (!state.filteredSongs.length) {
-    selectors.songCount.textContent = "0";
-    selectors.emptyState.hidden = false;
+function render() {
+  if (!state.songs.length) {
+    dom.grid.innerHTML = '';
     return;
   }
 
-  selectors.emptyState.hidden = true;
-  selectors.songCount.textContent = String(state.filteredSongs.length);
+  const query = dom.search.value.trim().toLowerCase();
+
+  state.filtered = state.songs.filter((song) => {
+    if (!query) return true;
+    const searchSpace = [song.title, song.stylesRaw, song.lyrics].join('\n').toLowerCase();
+    return searchSpace.includes(query);
+  });
+
+  const total = state.songs.length;
+  const filtered = state.filtered.length;
+  dom.songCount.textContent = query ? `${filtered}/${total} Songs` : formatSongCount(total);
+
+  dom.grid.innerHTML = '';
+
+  if (!state.filtered.length) {
+    dom.grid.innerHTML = `
+      <article class="empty">
+        <div class="empty-surface">
+          <span class="material-symbols-rounded" aria-hidden="true">search_off</span>
+          <p>Keine Treffer. Passe deine Suche an.</p>
+        </div>
+      </article>`;
+    return;
+  }
 
   const fragment = document.createDocumentFragment();
 
-  state.filteredSongs.forEach((song, index) => {
-    const card = buildSongCard(song, index);
+  state.filtered.forEach((song) => {
+    const card = buildSongCard(song);
     fragment.appendChild(card);
   });
 
-  selectors.songGrid.appendChild(fragment);
+  dom.grid.appendChild(fragment);
 
-  if (animate && window.gsap) {
-    gsap.fromTo(
-      ".song-card",
-      { autoAlpha: 0, y: 12 },
-      { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out" }
-    );
+  if (!prefersReducedMotion && typeof window.gsap !== 'undefined') {
+    window.gsap.from(dom.grid.children, {
+      y: 26,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.05,
+    });
   }
 }
 
-function buildSongCard(song, index) {
-  const lyricsPreview = getLyricsVariant(song)
-    .split("\n")
-    .filter(Boolean)
-    .slice(0, 4)
-    .join("\n");
+function buildSongCard(song) {
+  const card = document.createElement('article');
+  card.className = 'song-card';
+  card.dataset.index = String(song.id);
 
-  const card = document.createElement("article");
-  card.className = "song-card";
-  card.setAttribute("role", "listitem");
-  card.dataset.index = String(index);
+  const lyrics = getLyricsForVariant(song);
+  const preview = buildPreview(lyrics);
 
   card.innerHTML = `
-    <header class="card-header">
-      <div>
-        <p class="card-eyebrow">Song</p>
-        <h3 class="card-title">${escapeHtml(song.title)}</h3>
+    <div class="card-shell">
+      <header class="card-header">
+        <h2>${song.title}</h2>
+        <button class="card-open" type="button" data-open aria-label="Songdetails anzeigen">
+          <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+        </button>
+      </header>
+      <div class="card-preview">
+        <pre>${preview}</pre>
+        <div class="preview-fade" aria-hidden="true"></div>
       </div>
-      <div class="card-actions">
-        <button class="ui-button icon" data-copy="title" type="button" aria-label="Titel kopieren">
-          <span aria-hidden="true">📋</span>
-        </button>
-        <button class="ui-button icon" data-copy="styles" type="button" aria-label="Styles kopieren">
-          <span aria-hidden="true">🎧</span>
-        </button>
-        <button class="ui-button icon" data-copy="lyrics" type="button" aria-label="Lyrics kopieren">
-          <span aria-hidden="true">📝</span>
-        </button>
-        <button class="ui-button icon" data-copy="full" type="button" aria-label="Alles kopieren">
-          <span aria-hidden="true">📦</span>
-        </button>
-      </div>
-    </header>
-    <ul class="chip-list">
-      ${song.styles.map(style => `<li class="chip">${escapeHtml(style)}</li>`).join("")}
-    </ul>
-    <pre class="card-preview">${escapeHtml(lyricsPreview)}</pre>
-    <button class="ui-button secondary full-width" data-open="dialog" type="button">Details ansehen</button>
-  `;
+      <footer class="card-footer">
+        <div class="style-strip">
+          ${renderStyleChips(song.styleList)}
+        </div>
+        <div class="copy-group">
+          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">title</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">palette</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
+          </button>
+          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">
+            <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
+          </button>
+        </div>
+      </footer>
+    </div>`;
+
+  const openButton = card.querySelector('[data-open]');
+  openButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    openDialog(song.id);
+  });
+
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('.copy-group')) return;
+    openDialog(song.id);
+  });
+
+  card.querySelectorAll('[data-copy]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      handleCopyAction(button.dataset.copy, song.id);
+    });
+  });
 
   return card;
 }
 
-function handleGridClick(event) {
-  const target = event.target.closest("button");
-  if (!target) return;
+function renderStyleChips(styles) {
+  const visible = styles.slice(0, 3);
+  const hiddenCount = styles.length - visible.length;
+  const chips = visible.map((style) => `<span class="chip">${style}</span>`).join('');
+  if (hiddenCount > 0) {
+    return `${chips}<span class="chip muted">+${hiddenCount}</span>`;
+  }
+  return chips || '<span class="chip muted">Keine Styles</span>';
+}
 
-  const card = event.target.closest(".song-card");
-  if (!card) return;
+function buildPreview(lyrics) {
+  const lines = lyrics.split(/\r?\n/).filter((line) => line.trim().length > 0);
+  return lines.slice(0, 18).join('\n');
+}
 
-  const song = state.filteredSongs[Number(card.dataset.index)];
+function getLyricsForVariant(song) {
+  if (!state.isPlatzek) return song.lyrics;
+  return song.lyrics
+    .replace(/Placzek/g, 'Platzek')
+    .replace(/PLACZEK/g, 'PLATZEK')
+    .replace(/placzek/g, 'platzek');
+}
+
+function handleCopyAction(type, songIndex) {
+  const song = state.songs[songIndex];
   if (!song) return;
 
-  if (target.dataset.copy) {
-    const payload = getCopyPayload(target.dataset.copy, song);
-    copyToClipboard(payload, COPY_LABELS[target.dataset.copy]);
-    return;
-  }
+  const lyrics = getLyricsForVariant(song);
+  let payload = '';
 
-  if (target.dataset.open === "dialog") {
-    openDialog(song);
-  }
-}
-
-function getCopyPayload(type, song) {
   switch (type) {
-    case "title":
-      return song.title;
-    case "styles":
-      return song.styles.join(", ");
-    case "lyrics":
-      return getLyricsVariant(song);
-    case "full":
-      return `${song.title}\n\nStyles: ${song.styles.join(", ")}\n\nLyrics:\n${getLyricsVariant(song)}`;
+    case 'title':
+      payload = song.title;
+      break;
+    case 'styles':
+      payload = song.stylesRaw;
+      break;
+    case 'lyrics':
+      payload = lyrics;
+      break;
+    case 'full':
+      payload = formatFullSong(song, lyrics);
+      break;
+    case 'dialog-title':
+      payload = song.title;
+      break;
+    case 'dialog-styles':
+      payload = song.stylesRaw;
+      break;
+    case 'dialog-lyrics':
+      payload = lyrics;
+      break;
+    case 'dialog-full':
+      payload = formatFullSong(song, lyrics);
+      break;
     default:
-      return "";
-  }
-}
-
-function getLyricsVariant(song) {
-  if (!state.usePlatzek) {
-    return song.lyrics;
+      return;
   }
 
-  return song.lyrics.replace(/Placzek/g, "Platzek");
+  copyToClipboard(payload)
+    .then(() => showToast('In Zwischenablage'))
+    .catch(() => showToast('Kopieren nicht möglich'));
 }
 
-function openDialog(song) {
-  state.activeSong = song;
-  selectors.dialogTitle.textContent = song.title;
+function formatFullSong(song, lyrics) {
+  return `## ${song.title}\n\n### Styles:\n\n${song.stylesRaw}\n\n### Lyrics:\n\n${lyrics}`;
+}
 
-  selectors.dialogStyles.innerHTML = song.styles
-    .map(style => `<li class="chip">${escapeHtml(style)}</li>`)
-    .join("");
-
-  selectors.dialogLyrics.textContent = getLyricsVariant(song);
-
-  if (typeof selectors.dialog.showModal === "function") {
-    selectors.dialog.showModal();
+async function copyToClipboard(text) {
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    await navigator.clipboard.writeText(text);
   } else {
-    selectors.dialog.setAttribute("open", "true");
-  }
-}
-
-function copyToClipboard(text, label) {
-  if (!text) {
-    showToast("Kein Inhalt zum Kopieren", true);
-    return;
-  }
-
-  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        showToast(`${label} kopiert.`);
-      })
-      .catch(() => {
-        showToast("Kopieren nicht möglich", true);
-      });
-    return;
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "true");
-  textarea.style.position = "absolute";
-  textarea.style.left = "-9999px";
-  document.body.appendChild(textarea);
-  const selection = document.getSelection();
-  const originalRange = selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
-  textarea.select();
-
-  try {
-    const successful = document.execCommand("copy");
-    showToast(successful ? `${label} kopiert.` : "Kopieren nicht möglich", !successful);
-  } catch (error) {
-    showToast("Kopieren nicht möglich", true);
-  }
-
-  document.body.removeChild(textarea);
-  if (originalRange && selection) {
-    selection.removeAllRanges();
-    selection.addRange(originalRange);
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
   }
 }
 
 let toastTimeout;
-function showToast(message, isError = false) {
-  const toast = selectors.toast;
-  toast.textContent = message;
-  toast.dataset.state = isError ? "error" : "info";
-  toast.hidden = false;
-  toast.classList.add("is-visible");
-
+function showToast(message) {
+  dom.toast.textContent = message;
+  dom.toast.classList.add('is-visible');
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => {
-    toast.classList.remove("is-visible");
-    setTimeout(() => {
-      toast.hidden = true;
-    }, 250);
-  }, 2500);
+    dom.toast.classList.remove('is-visible');
+  }, 1600);
 }
 
-function escapeHtml(value) {
-  return value.replace(/[&<>\"]/g, char => {
-    switch (char) {
-      case "&":
-        return "&amp;";
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case '"':
-        return "&quot;";
-      default:
-        return char;
-    }
-  });
+function updateVariantLabel() {
+  dom.variantState.textContent = state.isPlatzek ? 'Platzek-Version' : 'Placzek-Version';
 }
 
-function initTheme() {
-  const stored = localStorage.getItem("odp-theme");
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = stored || (prefersDark ? "dark" : "light");
-  applyTheme(initialTheme, Boolean(stored));
+function openDialog(index) {
+  const song = state.songs[index];
+  if (!song) return;
+  populateDialog(song, index);
 
-  const mediaQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-  if (mediaQuery) {
-    const listener = event => {
-      const storedTheme = localStorage.getItem("odp-theme");
-      if (!storedTheme) {
-        applyTheme(event.matches ? "dark" : "light", false);
-      }
-    };
-    if (typeof mediaQuery.addEventListener === "function") {
-      mediaQuery.addEventListener("change", listener);
-    } else if (typeof mediaQuery.addListener === "function") {
-      mediaQuery.addListener(listener);
-    }
+  document.body.classList.add('dialog-open');
+  if (typeof dom.dialog.showModal === 'function') {
+    dom.dialog.showModal();
+  } else {
+    dom.dialog.setAttribute('open', 'true');
   }
 }
 
-function applyTheme(theme, persist = true) {
+function closeDialog() {
+  if (typeof dom.dialog.close === 'function') {
+    try {
+      dom.dialog.close();
+    } catch (error) {
+      dom.dialog.removeAttribute('open');
+    }
+  } else {
+    dom.dialog.removeAttribute('open');
+  }
+  document.body.classList.remove('dialog-open');
+}
+
+function applyTheme(theme) {
   document.body.dataset.theme = theme;
-  if (persist) {
-    localStorage.setItem("odp-theme", theme);
-  }
-  selectors.themeToggle.querySelector(".button-label").textContent = theme === "dark" ? "Dunkles Thema" : "Helles Thema";
-  selectors.themeToggle.querySelector(".icon").textContent = theme === "dark" ? "🌙" : "🌞";
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  dom.themeToggle.classList.toggle('is-dark', theme === 'dark');
+  state.theme = theme;
+  dom.themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
 }
 
-function toggleTheme() {
-  const currentTheme = document.body.dataset.theme || "light";
-  const nextTheme = currentTheme === "light" ? "dark" : "light";
-  applyTheme(nextTheme, true);
+function populateDialog(song, index) {
+  const lyrics = getLyricsForVariant(song);
+  dom.dialog.dataset.index = index;
+  dom.dialogTitle.textContent = song.title;
+  dom.dialogStyles.innerHTML = '';
+
+  if (!song.styleList.length) {
+    const chip = document.createElement('span');
+    chip.className = 'chip muted';
+    chip.textContent = 'Keine Styles';
+    dom.dialogStyles.appendChild(chip);
+  } else {
+    song.styleList.forEach((style) => {
+      const chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.textContent = style;
+      dom.dialogStyles.appendChild(chip);
+    });
+  }
+
+  dom.dialogLyrics.textContent = lyrics;
+}
+
+function refreshDialog() {
+  const index = dom.dialog.dataset.index;
+  if (typeof index === 'undefined') return;
+  const isOpen = dom.dialog.open || dom.dialog.hasAttribute('open');
+  if (!isOpen) return;
+  const song = state.songs[index];
+  if (!song) return;
+  populateDialog(song, index);
+}
+
+function formatSongCount(length) {
+  return `${length} ${length === 1 ? 'Song' : 'Songs'}`;
 }
