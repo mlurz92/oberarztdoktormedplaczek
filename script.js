@@ -5,6 +5,16 @@ const state = {
   theme: 'auto',
 };
 
+const icon = (name, extraClass = '') =>
+  `<svg class="icon icon-${name}${extraClass ? ` ${extraClass}` : ''}" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
+
+const cardCopyActions = [
+  { type: 'title', label: 'Titel', icon: 'title' },
+  { type: 'styles', label: 'Styles', icon: 'styles' },
+  { type: 'lyrics', label: 'Lyrics', icon: 'lyrics' },
+  { type: 'full', label: 'Komplett', icon: 'full' },
+];
+
 const dom = {
   grid: document.getElementById('songGrid'),
   search: document.getElementById('searchInput'),
@@ -107,7 +117,7 @@ async function loadSongs() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">error</span>
+          ${icon('warning')}
           <p>Die Songs.md konnte nicht geladen werden.</p>
         </div>
       </article>`;
@@ -161,7 +171,7 @@ function render() {
     dom.grid.innerHTML = `
       <article class="empty">
         <div class="empty-surface">
-          <span class="material-symbols-rounded" aria-hidden="true">search_off</span>
+          ${icon('search-off')}
           <p>Keine Treffer. Passe deine Suche an.</p>
         </div>
       </article>`;
@@ -192,39 +202,36 @@ function buildSongCard(song) {
   const card = document.createElement('article');
   card.className = 'song-card';
   card.dataset.index = String(song.id);
+  card.tabIndex = 0;
 
   const lyrics = getLyricsForVariant(song);
   const preview = buildPreview(lyrics);
 
   card.innerHTML = `
-    <div class="card-shell">
+    <div class="card-surface">
+      <span class="card-sheen" aria-hidden="true"></span>
+      <span class="card-prism" aria-hidden="true"></span>
       <header class="card-header">
-        <h2>${song.title}</h2>
+        <div class="card-heading">
+          <span class="card-tag">Song</span>
+          <h2>${song.title}</h2>
+        </div>
         <button class="card-open" type="button" data-open aria-label="Songdetails anzeigen">
-          <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+          <span class="open-label">Song anzeigen</span>
+          ${icon('expand', 'open-icon')}
         </button>
       </header>
-      <div class="card-preview">
-        <pre>${preview}</pre>
-        <div class="preview-fade" aria-hidden="true"></div>
+      <div class="card-lyrics" aria-label="Lyrics Vorschau">
+        <div class="lyrics-scroll">
+          <pre>${preview}</pre>
+        </div>
       </div>
       <footer class="card-footer">
         <div class="style-strip">
           ${renderStyleChips(song.styleList)}
         </div>
-        <div class="copy-group">
-          <button class="icon-btn" type="button" data-copy="title" aria-label="Titel kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">title</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="styles" aria-label="Styles kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">palette</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="lyrics" aria-label="Lyrics kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
-          </button>
-          <button class="icon-btn" type="button" data-copy="full" aria-label="Song komplett kopieren">
-            <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
-          </button>
+        <div class="copy-dock" role="group" aria-label="Kopieren">
+          ${renderCopyDock()}
         </div>
       </footer>
     </div>`;
@@ -236,8 +243,16 @@ function buildSongCard(song) {
   });
 
   card.addEventListener('click', (event) => {
-    if (event.target.closest('.copy-group')) return;
+    if (event.target.closest('[data-copy]') || event.target.closest('.card-lyrics')) return;
     openDialog(song.id);
+  });
+
+  card.addEventListener('keydown', (event) => {
+    if (event.defaultPrevented) return;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openDialog(song.id);
+    }
   });
 
   card.querySelectorAll('[data-copy]').forEach((button) => {
@@ -260,9 +275,32 @@ function renderStyleChips(styles) {
   return chips || '<span class="chip muted">Keine Styles</span>';
 }
 
+function renderCopyDock() {
+  return cardCopyActions
+    .map(
+      ({ type, label, icon: iconName }) => `
+        <button class="copy-tile" type="button" data-copy="${type}">
+          <span class="tile-veil" aria-hidden="true"></span>
+          ${icon(iconName, 'tile-icon')}
+          <span class="tile-label">${label}</span>
+        </button>
+      `,
+    )
+    .join('');
+}
+
 function buildPreview(lyrics) {
-  const lines = lyrics.split(/\r?\n/).filter((line) => line.trim().length > 0);
-  return lines.slice(0, 18).join('\n');
+  const compact = lyrics.replace(/\r/g, '').trim().replace(/\n{3,}/g, '\n\n');
+  const lines = compact.split('\n');
+  const limited = lines.slice(0, 9);
+  let preview = limited.join('\n');
+  if (lines.length > limited.length) {
+    preview += '\n…';
+  }
+  if (preview.length > 620) {
+    preview = `${preview.slice(0, 600)}…`;
+  }
+  return preview;
 }
 
 function getLyricsForVariant(song) {
