@@ -372,27 +372,27 @@ Verse:
 Er ist der Chef im CT, er weiß genau Bescheid
 Er scannt die Patienten mit Geschick und Sorgfalt
 Er ist der Meister in seinem Fach, er kennt sich mit allem aus
-Er ist der Oberarzt Doktor med Platzek
+Er ist der Oberarzt Doktor med Placzek
 
 Chorus:
-Oberarzt Doktor med Platzek, er ist unser Held und unser Gott
+Oberarzt Doktor med Placzek, er ist unser Held und unser Gott
 Er ist der beste in seinem Fach, er macht uns alle froh
-Oberarzt Doktor med Platzek, er ist hart, aber fair
+Oberarzt Doktor med Placzek, er ist hart, aber fair
 Er ist die helle Sonne in unsrem Leben, er gibt uns Kraft und Mut
 
 Verse:
 Er umgarnt Manu und Lena, der alte Charmeur
 Sie schmelzen hin bei ihm, er hat einfach Flair
 Er ist streng zu Assistenten, er duldet keinen Fehler
-Aber sie lernen viel von ihm, er ist der Oberarzt Doktor med Platzek
+Aber sie lernen viel von ihm, er ist der Oberarzt Doktor med Placzek
 
 Chorus:
-Oberarzt Doktor med Platzek, er ist unser Held und unser Gott
+Oberarzt Doktor med Placzek, er ist unser Held und unser Gott
 Er ist der beste in seinem Fach, er macht uns alle froh
-Oberarzt Doktor med Platzek, er ist frech, einfach der Boss
+Oberarzt Doktor med Placzek, er ist frech, einfach der Boss
 Er ist die  helle Sonne in unserem Leben, er gibt uns Kraft und Wärme
 Vorbild, Held und CT Gott, was du anfässt wird zu Gold
-Du bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Platzek
+Du bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Placzek
 ```
 
 ## Unser Oberarzt
@@ -483,7 +483,7 @@ Seine Kunst ist einfach wow
 (Niemand macht es so genau!)
 
 [Outro Bright, Euphoric Fade]
-CT-King, Doktor Platzek
+CT-King, Doktor Placzek
 (Hey-hey, hey-hey!)
 Strahlt heller als ein Röntgen-Check
 (Hey-hey, hey-hey!)
@@ -999,7 +999,7 @@ Verwirrung sich in Köpfen zeigt,
 Fälle komplex, die Zeit sie rennt,
 Doch einer bleibt stets kompetent,
 Kennt Untiefen, jede Gefahr,
-Oberarzt Doktor med Platzek, klar!
+Oberarzt Doktor med Placzek, klar!
 
 [Pre-Chorus Encouraging]
 "Kommt mit, ihr jungen Ärzte, nun,
@@ -1008,7 +1008,7 @@ Navigieren, Schicht für Schicht,
 Durch Dunkelheit, zum hellen Licht!"
 
 [Chorus Catchy]
-Oberarzt Doktor med Platzek,
+Oberarzt Doktor med Placzek,
 Lotse unsrer Diagnostik,
 Führt uns sicher durch den Sturm,
 Zum sich'ren Hafen, 
@@ -1030,7 +1030,7 @@ Wird euer Blick geschärft, so sehr,
 Dass ihr bald könnt, was ich schon lehr'!"
 
 [Chorus Catchy]
-Oberarzt Doktor med Platzek,
+Oberarzt Doktor med Placzek,
 Lotse unsrer Diagnostik,
 Führt uns sicher durch den Sturm,
 Zum sich'ren Hafen, 
@@ -1043,7 +1043,7 @@ Die Kunst der Deutung, wird uns blasser,
 Die Angst weicht, das Können wächst.
 
 [Outro Catchy]
-Oberarzt Doktor med Platzek!
+Oberarzt Doktor med Placzek!
 (Unser Lotse, stets korrekt!)
 ```
 
@@ -1058,7 +1058,7 @@ Uplifting Electro-Pop-Trance anthem with a euphoric 2010s feel. The track opens 
 ### Lyrics:
 
 ```
-[Intro | atmospheric synth pads | filtered arpeggio | distant vocoder whispers: "Platzek... Platzek..."]
+[Intro | atmospheric synth pads | filtered arpeggio | distant vocoder whispers: "Placzek... Placzek..."]
 
 [Verse 1 | driving four-on-the-floor beat | pulsating bassline | clean male vocal]
 Ich war ein dummer Jungfacharzt, im Dunkeln ganz allein
@@ -1075,9 +1075,9 @@ Dein Wort ist das Gesetz, die Assistenten steh'n stramm
 Ein schelmisches Lächeln, und du ziehst alle in den Bann!
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Platzek, du bist der CT-Gott!
+Oberarzt Doktor med Placzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Platzek, für immer unser Held!
+Oberarzt Doktor med Placzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
@@ -1097,23 +1097,23 @@ Dein Wort ist das Gesetz, die Assistenten steh'n stramm
 Ein schelmisches Lächeln, und du ziehst alle in den Bann!
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Platzek, du bist der CT-Gott!
+Oberarzt Doktor med Placzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Platzek, für immer unser Held!
+Oberarzt Doktor med Placzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
 
 [Bridge]
 Als dummer Assistent, dummer Jungfacharzt und auch als dummer leitender Jungoberarzt,
-mein Idol und Vorbild ist immer Oberarzt Doktor med Platzek.
+mein Idol und Vorbild ist immer Oberarzt Doktor med Placzek.
 Sein Führungsstil, sein Wissen sein Charme, eine Inspiration, erstrebenswert und warm
 Ich wünsche ich kann das irgendwann erreichen.
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Platzek, du bist der CT-Gott!
+Oberarzt Doktor med Placzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Platzek, für immer unser Held!
+Oberarzt Doktor med Placzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
@@ -1150,12 +1150,12 @@ dem größten Oberarzt von hier.
 Und immer wenn das Telefon geklingelt hat,
 ein Zuweiser ganz demütig und klein,
 wussten wir, die Lage ist kompliziert,
-das kann nur ein Fall für Doktor med Platzek sein!
+das kann nur ein Fall für Doktor med Placzek sein!
 
 [Chorus | anthemic layered male vocals | powerful delivery | beat drop]
-Oberarzt Doktor med Platzek! Du bist der CT-Gott!
+Oberarzt Doktor med Placzek! Du bist der CT-Gott!
 Dein Befund ist präzise und messerscharf, vertreibt die letzte Not!
-Oberarzt Doktor med Platzek! Für immer unser Held!
+Oberarzt Doktor med Placzek! Für immer unser Held!
 Der charmanteste und beste Radiologe 
 auf der Welt!
 
@@ -1172,22 +1172,22 @@ gibst uns das Gefühl, als ob's so einfach wär.
 [Pre-Chorus | synth riser | filter sweep | building energy]
 Und immer wenn ein Polytrauma reinkam,
 die Chirurgen schrien nach einem Mann mit Plan,
-hieß es: "Ruhe, wir rufen Doktor med Platzek an!",
+hieß es: "Ruhe, wir rufen Doktor med Placzek an!",
 nur er allein ist der, der uns noch retten kann!
 
 [Chorus | anthemic layered male vocals | more powerful delivery | beat drop]
-Oberarzt Doktor med Platzek! Du bist der CT-Gott!
+Oberarzt Doktor med Placzek! Du bist der CT-Gott!
 Dein Befund ist präzise und messerscharf, vertreibt die letzte Not!
-Oberarzt Doktor med Platzek! Für immer unser Held!
+Oberarzt Doktor med Placzek! Für immer unser Held!
 Der charmanteste und beste Radiologe 
 auf der Welt!
 
 [Outro | driving beat returns | layered vocals chanting | fade out]
-(Platzek!) Oberarzt Doktor med Platzek!
+(Placzek!) Oberarzt Doktor med Placzek!
 (CT-Gott!) Der Held der Radiologie!
-(Platzek!) Oberarzt Doktor med Platzek!
+(Placzek!) Oberarzt Doktor med Placzek!
 (Legende!) Wir vergessen dich nie!
-(Platzek!)
+(Placzek!)
 ```
 
 ## Vier-Eins-Neun-Zwei
@@ -1216,7 +1216,7 @@ Die Durchwahl eingegeben – gleich meldet er sich, oh wei
 Vier-Eins-Neun-Zwei
 Vier-Eins-Neun-Zwei
 Jeder Arzt hier kennt diese Zahl
-Direkt zu Platzeks Kompetenz – perfekt in jedem Fall
+Direkt zu Placzeks Kompetenz – perfekt in jedem Fall
 
 [Pre-Chorus | building tension | female vocal ethereal | rising synth]
 Gleich hebt er ab, ich muss bereit sein
@@ -1225,16 +1225,16 @@ Seine Fragen sind präzise, treffen wie ein Pfeil
 Wer hier anruft, braucht 'nen Plan – und jedes medizinische Detail!
 
 [Chorus | explosive drop | male and female alternating | anthemic hook]
-Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Platzek-Nummer! Retter in der Not!
+Die Placzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
-Doktor med Platzek! Am Hörer, messerscharf!
+Doktor med Placzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Verse 2 | confident male vocal | driving beat | storytelling]
-"Guten Tag, Platzek hier" – diese Stimme, kühl und klar
+"Guten Tag, Placzek hier" – diese Stimme, kühl und klar
 "Schildern Sie mir Ihren Fall, präzise, sagen Sie mir, was geschah!"
 "CT Abdomen mit Kontrastmittel bitte, dringend!" – stotter' ich nervös
 "Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant und bloß
@@ -1251,12 +1251,12 @@ Beim nächsten Mal bin ich gewappnet, mit allen Fakten parat
 Dann öffnet sich die Schleuse zu seinem CT-Apparat!
 
 [Chorus | euphoric | layered vocals | maximum energy]
-Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Platzek-Nummer! Retter in der Not!
+Die Placzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
-Doktor med Platzek! Am Hörer, messerscharf!
+Doktor med Placzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Bridge | breakdown | intimate duet | emotional depth]
@@ -1277,12 +1277,12 @@ Sein Blick erfasst die Schichten, jedes Pixel im präzisen Lauf
 Sie haben alles richtig gemacht!" – Das wertvollste Wort!
 
 [Final Chorus | maximum euphoria | all vocals layered | triumphant]
-Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
 Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, so ist es dabei!
-Die Platzek-Nummer! Legende am Telefon!
+Die Placzek-Nummer! Legende am Telefon!
 Wer von ihm lernt, wer ihm vertraut, erreicht medizinische Perfektion schon!
 
-Doktor med Platzek! Der Torwächter, der Held!
+Doktor med Placzek! Der Torwächter, der Held!
 Der beste Radiologe, den diese Klinik je bestellt!
 
 [Outro | atmospheric | phone hang-up | female whisper fading]
