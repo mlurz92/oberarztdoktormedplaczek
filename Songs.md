@@ -1209,7 +1209,7 @@ Die jeder kennt, die jeder fürchtet...
 
 [Verse 1 | nervous male vocal | minimal kick | anxious tone]
 Ich bin Chirurg, hab 'nen komplizierten Fall
-Labor kritisch, Patient instabil im Schwall
+Labor kritisch, Patient instabil und kalt
 Mein Finger zittert über dem Display
 Die Durchwahl eingegeben – gleich meldet er sich, oh wei
 
