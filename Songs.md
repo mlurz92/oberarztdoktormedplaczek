@@ -1216,18 +1216,18 @@ Die Durchwahl eingegeben – gleich meldet er sich, oh wei
 Vier-Eins-Neun-Zwei
 Vier-Eins-Neun-Zwei
 Jeder Arzt hier kennt diese Zahl
-Die Hotline zur Radiologie – perfekt in jedem Fall
+Direkt zu Platzeks Kompetenz – perfekt in jedem Fall
 
 [Pre-Chorus | building tension | female vocal ethereal | rising synth]
 Gleich hebt er ab, ich muss bereit sein
 Indikation klar, Anamnese rein
 Seine Fragen sind präzise, treffen wie ein Pfeil
-Wer hier anruft, braucht 'nen Plan – und medizinischen Instinkt geil!
+Wer hier anruft, braucht 'nen Plan – und jedes medizinische Detail!
 
 [Chorus | explosive drop | male and female alternating | anthemic hook]
-Die Platzek-Hotline! Vier-Eins-Neun-Zwei!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Platzek-Hotline! Retter in der Not!
+Die Platzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
 Doktor med Platzek! Am Hörer, messerscharf!
@@ -1235,25 +1235,25 @@ Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Verse 2 | confident male vocal | driving beat | storytelling]
 "Guten Tag, Platzek hier" – diese Stimme, kühl und klar
-"Schildern Sie mir Ihren Fall, lassen Sie nichts aus, sagen Sie mir, was geschah!"
+"Schildern Sie mir Ihren Fall, präzise, sagen Sie mir, was geschah!"
 "CT Abdomen mit Kontrastmittel bitte, dringend!" – stotter' ich nervös
-"Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant, nie bloß
+"Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant und bloß
 
 Die Stille schwebt, drei Sekunden Ewigkeit
-Mein Kollege neben mir wird bleich, oh Gott, oh weh, wie's gleich heißt:
-"Die Indikation erscheint mir unzureichend, bitte
-Sonographie zunächst, dann Labor – klare Schritte!"
+Mein Kollege neben mir wird bleich, das Urteil naht, gleich ist es soweit:
+"Die Indikation erscheint mir unzureichend, verstehen Sie
+Sonographie zunächst, dann Labor – das sind die richtigen Wege!"
 
 [Pre-Chorus | female vocal dramatic | building energy]
 Die Absage tut weh, doch sie lehrt uns mehr
-Als jedes Lehrbuch, jede Fortbildung, sie schärft uns sehr!
+Als jedes Lehrbuch, jede Fortbildung, sie formt uns schwer!
 Beim nächsten Mal bin ich gewappnet, mit allen Fakten parat
-Dann öffnet er die Schleuse zu seinem CT-Apparat!
+Dann öffnet sich die Schleuse zu seinem CT-Apparat!
 
 [Chorus | euphoric | layered vocals | maximum energy]
-Die Platzek-Hotline! Vier-Eins-Neun-Zwei!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Platzek-Hotline! Retter in der Not!
+Die Platzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
 Doktor med Platzek! Am Hörer, messerscharf!
@@ -1262,25 +1262,25 @@ Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 [Bridge | breakdown | intimate duet | emotional depth]
 (Male spoken, vulnerable) Dann kam der Notfall, echter Code, Leben an der Grenze
 (Female sung, echoing) *An der Grenze, an der Grenze*
-(Male spoken) Ich wählte Vier-Eins-Neun-Zwei, diesmal war ich vorbereitet, kannte meine Grenzen
+(Male spoken) Ich wählte Vier-Eins-Neun-Zwei, diesmal war ich vorbereitet mit Evidenz
 (Female sung) *Vier-Eins-Neun-Zwei, Vier-Eins-Neun-Zwei*
 
 (Male sung, building) "Freie Flüssigkeit, Schock, Hämatokrit im freien Fall,
-Verdacht auf Milzruptur, ich brauch' Sie jetzt!"
+Verdacht auf Milzruptur, ich brauch Sie jetzt, in diesem kritischen Schwall!"
 (Both together) Und dann... sein Ton verändert sich: "Ich scanne selbst, kommen Sie her,
-Wir retten diesen Menschen, ich bin bereit – sofort!"
+Wir retten diesen Menschen, ich bin bereit – sofort, kein Zögern mehr!"
 
 [Build-up | epic rise | snare rolls | filter sweep | anticipation]
 Im CT-Raum sein Können leuchtet auf
-Sein Blick erfasst die Schichten, jedes Pixel im genauen Lauf
-"Milzruptur Grad vier, Kontrastextravasat, OP sofort!
-Sie haben alles richtig gemacht!" – Das schönste Wort!
+Sein Blick erfasst die Schichten, jedes Pixel im präzisen Lauf
+"Milzruptur Grad vier, Kontrastextravasat, Notfall-OP sofort!
+Sie haben alles richtig gemacht!" – Das wertvollste Wort!
 
 [Final Chorus | maximum euphoria | all vocals layered | triumphant]
-Die Platzek-Hotline! Vier-Eins-Neun-Zwei!
-Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, ganz neu dabei!
-Die Platzek-Hotline! Legende am Telefon!
-Wer von ihm lernt, wer ihm vertraut, erreicht die medizinische Perfektion!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
+Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, so ist es dabei!
+Die Platzek-Nummer! Legende am Telefon!
+Wer von ihm lernt, wer ihm vertraut, erreicht medizinische Perfektion schon!
 
 Doktor med Platzek! Der Torwächter, der Held!
 Der beste Radiologe, den diese Klinik je bestellt!
