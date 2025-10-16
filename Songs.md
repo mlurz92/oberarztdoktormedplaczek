@@ -1489,94 +1489,88 @@ Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
 Diagnose... gesichert.
 ```
 
-## Bolus-Countdown
+## Protokoll-Architekt
 
 ### Styles:
 
 ```
-euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, shimmering supersaws, arpeggiated pluck intro, wide stereo field, anthemic DUET (female + male), stacked harmonies in CHORUS, bright modern mix, no guitars, no rap, huge final drop, crowd chant hook
-[Duet | Female airy lead + Male clear lead][Key: A minor][Energy: High][Chorus: Soaring lead + layered harmonies][Build: white-noise riser + snare roll][Drop: sidechained supersaw lead][Outro: big finish then clean cut]
+euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, supersaw lead, bright modern mix, wide stereo image, anthemic DUET (female + male), stacked harmonies in CHORUS, big final drop
+[Key: A minor][Energy: High][Duet: female airy lead + male clear lead][Intro: arp + filtered pad][Build: snare roll + white-noise riser][Chorus: soaring layered leads][Drop: sidechain stronger, open hats][Bridge: piano breakdown][Outro: big finish, clean cut]
 ```
 
 ### Lyrics:
 
 ```
-[Intro | shimmering arp, filtered pad | 2 bars count-in]
-(Duet whispers) Drei, zwei, eins — bereit?
-[Build | kick in softly]
-Female: Ich öffne das Protokoll, setze Marker auf der Zeit,
-Male: Leg die Schwelle in der Aorta, Bolus-Tracking ist bereit.
-Female: Fenster justiert, Level sitzt — ich fühl den Grauton singen,
-Male: Wenn die Linie steigt, wird unser Kontrast Feuer bringen.
+[Intro | shimmering arp, filtered pad]
+(Whisper, both) Drei, zwei, eins — wir sind bereit.
+[Build | kick fades in]
+Female: Wenn die Tür aufgeht, wird der Flur sofort still,
+Male: Oberarzt Dr. med. Placzek — der, der alles will.
+Female: Mit einem Blick ordnet er Pixel und Licht,
+Male: und jede graue Frage bekommt ihr Gewicht.
 
-[Verse 1 | story + momentum]
-Female lead: Du sagst „ALARA“, ich hör Zeit, Distanz und Schild,
-Male adlib: minimal, doch scharf — genau das Bild.
-Female: Pitch und kVp im Griff, mAs im Flow,
-Male: Auto-Exposure folgt, und Rauschen bleibt low.
+[Verse 1 | driving, playful]
+Female lead: Er sagt „ALARA“, doch liefert Brillanz,
+Male adlib: minimale Dosis, maximale Balance.
+Female: Fenster und Level im sicheren Griff,
+Male: HU erzählt Wahrheit, er setzt den Begriff.
+Female: Er schreibt die Protokolle, taktet die Zeit,
+Male: Bolus-Tracking sitzt — Präzision jederzeit.
 
-[Pre-Chorus | lift + call/response]
-Female: Arterielle Phase, Herz pocht im Takt,
-Male: Portalvenös im Auge — Timing exakt.
-Female: MPR, kurvig führt uns die Bahn,
-Male: MIP macht die Gefäße zum klaren Plan.
+[Pre-Chorus | lift, call/response]
+Female: Arterielle Flamme, wir folgen dem Plan,
+Male: portalvenös weiter — exakt abgefahren.
+Female: MPR führt kurvig, die Raumtiefe spricht,
+Male: MIP zeigt Gefäße, und plötzlich wird’s Licht.
 
 [Chorus | anthemic, stacked harmonies]
-[CHORUS | soaring, stacked | hook repeats]
-Du baust den Flow — Protokoll-Architekt!
-Wir fliegen durch Schichten, der Pixel-Effekt.
-HU erzählt uns die Wahrheit im Licht,
-Fenster und Level — und alles wird Sicht.
-(Chant) Pro-to-koll! Pro-to-koll!
-Du führst uns ans Ziel — Protokoll-Architekt!
+[CHORUS | soaring]
+Placzek! Placzek! Protokoll-Architekt!
+Du führst uns durchs Pixelmeer, zielgenau, perfekt!
+Dein Blick baut aus Schichten den klaren Befund,
+wir singen dein Timing — Sekunde für Sekund.
+(Chant) Pla-czek! Pla-czek! Wir folgen deinem Takt,
+Oberarzt der Herzen, der immer richtig packt!
 
-[Post-Chorus | hook riff + crowd chant]
-[Hook tag]
-Kon-trast! Track! Drei-zwei-eins — go!
+[Post-Chorus | hook riff]
+[Hook] Drei-zwei-eins — Bolus go! / Wir fliegen high, wir landen low.
 
-[Verse 2 | technical poetry, playful]
-Male lead: Iterative Reco nimmt den Lärm aus dem Raum,
-Female adlib: mehr Detail, weniger Staub im Traum.
-Male: Kernel gewechselt, der Weichteil gewinnt,
-Female: und jede kleine Spur bekommt Kontur und Sinn.
-Male: Hounsfield spricht,  + / − wird klar,
-Female: wir drehen am Wheel und sind sofort da.
-Both: Von Axial zu Sagittal, Koronar im Blick,
-Wenn Wissen und Timing klicken — sitzt der Trick.
+[Verse 2 | technical poetry, witty]
+Male lead: Iterative Reco nimmt Rauschen die Macht,
+Female adlib: Kernels gewechselt — und Weichteil erwacht.
+Male: Von axial nach sagittal, koronar im Blick,
+Female: jeder Klick ist Lehre und sitzt wie ein Tick.
+Both: Wenn Zweifel rauscht, bleibt sein Kompass ruhig,
+ein Nicken von ihm — und alles fügt sich.
 
 [Pre-Chorus 2 | bigger lift]
-Female: Schwelle erreicht, Trigger — die Welle läuft an,
-Male: 70–90 später leuchtet die Leber wie geplant.
-Female: Slab gesetzt, die MIP wird weit,
-Male: und VR malt Tiefe in die Zeit.
+Female: Schwelle erreicht, der Trigger ist da,
+Male: 70–90 zählen, die Leber sagt „Ja“.
+Female: VR setzt Tiefe, die Szene wird weit,
+Male: und jeder Assist wird ein Teil seiner Zeit.
 
-[Chorus | bigger, add octave harmony]
-Du baust den Flow — Protokoll-Architekt!
-Wir fliegen durch Schichten, der Pixel-Effekt.
-HU erzählt uns die Wahrheit im Licht,
-Fenster und Level — und alles wird Sicht.
-(Chant) Pro-to-koll! Pro-to-koll!
-Du führst uns ans Ziel — Protokoll-Architekt!
+[Chorus | higher octave + gang vocals]
+Placzek! Placzek! Protokoll-Architekt!
+Du führst uns durchs Pixelmeer, zielgenau, perfekt!
+Dein Blick baut aus Schichten den klaren Befund,
+wir singen dein Timing — Sekunde für Sekund.
+(Chant) Pro-to-koll! Pro-to-koll! Dein Name unser Takt,
+Oberarzt Dr. med. Placzek — der immer richtig packt!
 
-[Bridge | breakdown, emotional then rise]
-[Bridge | piano + pad | half-time]
-Female: Wenn Zweifel rauscht, bleib ruhig im Bild,
-Male: die Dosis bleibt klein, doch der Befund wird wild.
-Female: Ein Klick zu viel? Wir atmen ein,
-Male: dann trägt uns Präzision allein.
+[Bridge | piano breakdown → rise]
+[Half-time]
+Female: Wenn’s stürmt im Dienst, bleibt deine Hand leicht,
+Male: dein Maßstab streng, doch immer gerecht.
+Female: Ein kurzer Satz — und Hektik wird leis’,
+Male: aus Chaos wird Ordnung, aus Zweifel wird Fleiß.
+[Build | riser + snare rolls]
+(Both, shout) Zähl uns ein: Drei-zwei-eins — jetzt!
 
-[Build | snare roll + riser | key hold]
-(Both) Zähl uns ein — drei, zwei, eins — Bolus go!
-
-[Final Chorus | big finish, octave up, crowd]
-[Big Finish | layered gang vocals + supersaw lead]
-Du baust den Flow — Protokoll-Architekt!
-Wir fliegen durch Schichten, der Pixel-Effekt.
-HU erzählt uns die Wahrheit im Licht,
-Fenster und Level — und alles wird Sicht.
-(Chant) Kon-trast! Track! Pro-to-koll!
-(Shout) Archi-tekt — wir landen im Soll!
-
-[Outro | clean cutoff on 1]
-[END]
+[Final Chorus | maximum euphoria, octave up]
+Placzek! Placzek! Protokoll-Architekt!
+Du führst uns durchs Pixelmeer, zielgenau, perfekt!
+Dein Plan, dein Timing, dein Lehr-Intellekt —
+wir tragen die Hook, bis der Vorhang sich senkt!
+(Chant) Pla-czek! Pla-czek! — CT-Symphoniek
+[END | clean cut on 1]
 ```
