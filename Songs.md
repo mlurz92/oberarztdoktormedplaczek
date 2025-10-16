@@ -1,4 +1,4 @@
-# Songs über Oberarzt Doktor med Placzek
+# Songs über Oberarzt Doktor med Platzek
 
 ## Oberarzt der Herzen
 
@@ -12,7 +12,7 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 
 ```
 [Intro Catchy, Bright]  
-Oh-oh-oh, Doktor med Placzek  
+Oh-oh-oh, Doktor med Platzek  
 Unser Held im weißen Kittel  
 Oh-oh-oh, er zeigt uns den Weg  
 Der Oberarzt der Herzen – perfekt!  
@@ -35,12 +35,12 @@ Zusammen schaffen wir jeden Fall
 Denn Wissen macht uns unschlagbar!"  
 
 [Chorus Catchy, Anthemic]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er ist der Oberarzt der Herzen  
 Ein Held, ein Lehrer, der uns lenkt  
 Mit ihm wird das Ziel immer geschenkt  
 
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er führt uns sicher Schritt für Schritt  
 Der Oberarzt der Herzen – perfekt!  
 Wir alle folgen ihm, er ist der Hit!  
@@ -63,12 +63,12 @@ Zusammen schaffen wir jeden Fall
 Denn Wissen macht uns unschlagbar!"  
 
 [Chorus Catchy, Anthemic]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er ist der Oberarzt der Herzen  
 Ein Held, ein Lehrer, der uns lenkt  
 Mit ihm wird das Ziel immer geschenkt  
 
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er führt uns sicher Schritt für Schritt  
 Der Oberarzt der Herzen – perfekt!  
 Wir alle folgen ihm, er ist der Hit!  
@@ -80,18 +80,18 @@ Fehler sind Schritte, die du musst verstehen
 Bleib mutig, dann wirst du es seh'n!"  
 
 [Final Chorus Euphoric, Triumphant]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er ist der Oberarzt der Herzen  
 Ein Held, ein Lehrer, der uns lenkt  
 Mit ihm wird das Ziel immer geschenkt  
 
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Er führt uns sicher Schritt für Schritt  
 Der Oberarzt der Herzen – perfekt!  
 Wir alle folgen ihm, er ist der Hit!  
 
 [Outro Bright, Fading Out]  
-Oh-oh-oh, Doktor med Placzek  
+Oh-oh-oh, Doktor med Platzek  
 Der Oberarzt der Herzen – perfekt!  
 Oh-oh-oh, er zeigt uns den Weg  
 Wir folgen ihm, bis ans Ziel – perfekt!
@@ -111,7 +111,7 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 [Songtext Energetic, Bright, Fast Tempo, Electro-Pop, Female Vocals, Uplifting, Catchy, Schlager, 135BPM]
 
 [Intro Shimmering]
-Oberarzt Doktor med Placzek,
+Oberarzt Doktor med Platzek,
 Strahlend wie ein Stern am Klinik-Himmel!
 Er wirbelt durch den Flur, so energiegeladen,
 Dass alle Herzen höher schlagen!
@@ -133,11 +133,11 @@ Manchmal streng, doch immer mit Charme,
 So hält er uns wach und stets in Alarm!
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek – du bist unser Held!
+Oberarzt Doktor med Platzek – du bist unser Held!
 Deine Aura funkelt heller als die Welt!
 Ein Lehrer, ein Vorbild, der Herzen-Oberarzt,
 Wir folgen dir blind, denn du hast uns stets bewahrzt!
-Oberarzt Doktor med Placzek – du führst uns zum Ziel!
+Oberarzt Doktor med Platzek – du führst uns zum Ziel!
 Dein Wissen ist hoch, dein Temperament so viel!
 Wir tanzen im Takt deiner Diagnosen,
 Mit dir bleibt jeder Zweifel für immer eingefroren!
@@ -159,11 +159,11 @@ Deine Ratschläge klingen laut und klar,
 So wird jeder von uns ein diagnostischer Star!
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek – der CT-Herrscher hier!
+Oberarzt Doktor med Platzek – der CT-Herrscher hier!
 Dein Wissen lodert, wir brennen neben dir!
 Ein Pilot im Pixelmeer, souverän und genau,
 Kein Rauschen kann dich bezwingen, so smart und schlau!
-Oberarzt Doktor med Placzek – wir fallen auf die Knie!
+Oberarzt Doktor med Platzek – wir fallen auf die Knie!
 Wir wollen nur dich als Leitstern und Genie!
 Mit jedem Scan schreibst du Ruhm in unsere Welt,
 Ein Oberarzt, der alle Zweifel wegfegt – unser Held!
@@ -175,11 +175,11 @@ Dein Lob ist rar, doch dafür strahlt es lang,
 Verwandelt Unsicherheit in einen Siegesgesang!
 
 [Final Chorus Euphoric]
-Oberarzt Doktor med Placzek – ein Garant für Erfolg!
+Oberarzt Doktor med Platzek – ein Garant für Erfolg!
 Kein Problem bleibt ungeklärt, du bist niemals stolz.
 Du lehrst, du lenkst, du forderst uns streng,
 Wir wollen in deinem Perfektionslicht steh’n!
-Oberarzt Doktor med Placzek – leuchtest wie die Sonne,
+Oberarzt Doktor med Platzek – leuchtest wie die Sonne,
 Für immer und ewig bist du unsere Wonne!
 Der Oberarzt der Herzen, der uns erhebt,
 Dein Glanz bleibt bestehen, sei’s Tag oder spät!
@@ -200,7 +200,7 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 Morgens in der Klinik
 Ein besonderer Moment
 Wenn durch die Gänge leise
-Doktor Placzek geht
+Doktor Platzek geht
 
 [Verse 1 Flowing]
 Mit ruhiger Präzision
@@ -219,7 +219,7 @@ Seine Worte öffnen Welten
 Die wir langsam erst verstehen
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Führt durch Schichten, Bild für Bild
 Seine Kunst der Diagnostik
 Macht das Unsichtbare sichtbar
@@ -252,7 +252,7 @@ Was zunächst verworren scheint
 Wird durch seine Sicht ganz klar
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Meister seines Elements
 In der Welt der Radiologie
 Ist sein Name längst Legende
@@ -269,7 +269,7 @@ Schafft er kleine Wunder
 Tag für Tag mit seinem Können
 
 [Final Chorus Uplifting]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Leitet uns mit sanfter Hand
 Durch die Tiefen der Bildgebung
 In ein neues Verständnis hinein
@@ -278,7 +278,7 @@ In ein neues Verständnis hinein
 Seine Weisheit wird uns führen
 Noch auf manchem weiten Weg
 Dankbar sind wir für die Lehren
-Von Doktor med Placzek
+Von Doktor med Platzek
 ```
 
 ## Navigator
@@ -293,8 +293,8 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 
 ```
 [Intro Melodic Hook]  
-Oberarzt Doktor med Placzek  
-(Placzek, Placzek)  
+Oberarzt Doktor med Platzek  
+(Platzek, Platzek)  
 Meister der Bildgebung  
 (Meister, Meister)  
 Jeder Scan wird klar  
@@ -317,12 +317,12 @@ Jeder Klick ein Lehrmoment
 Jeder Fall ein neues Wir  
 
 [Chorus Anthemic]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Navigiert durch Pixelmeer  
 Aus dem Nebel der Schichtungen  
 Formt er Wahrheit kristallklar  
 
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Führt den Blick ins Detail  
 Aus dem Chaos der Signale  
 Wächst Erkenntnis ohne Fehl  
@@ -345,19 +345,19 @@ Jedes Rekonstruktionsbild
 Ein Symphonie aus Licht  
 
 [Final Chorus x2]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 Navigiert durch Pixelmeer  
 Aus dem Nebel der Schichtungen  
 Formt er Wahrheit kristallklar  
 
 [Outro Reverberating]  
-Oberarzt Doktor med Placzek  
+Oberarzt Doktor med Platzek  
 (Im Ohr bleibt dieser Name)  
 Radiologie in Reinkultur  
 (Sein Ruhm wird niemals schlafen)
 ```
 
-## Oberarzt Dr. med. Placzek
+## Oberarzt Dr. med. Platzek
 
 ### Styles:
 
@@ -372,27 +372,27 @@ Verse:
 Er ist der Chef im CT, er weiß genau Bescheid
 Er scannt die Patienten mit Geschick und Sorgfalt
 Er ist der Meister in seinem Fach, er kennt sich mit allem aus
-Er ist der Oberarzt Doktor med Placzek
+Er ist der Oberarzt Doktor med Platzek
 
 Chorus:
-Oberarzt Doktor med Placzek, er ist unser Held und unser Gott
+Oberarzt Doktor med Platzek, er ist unser Held und unser Gott
 Er ist der beste in seinem Fach, er macht uns alle froh
-Oberarzt Doktor med Placzek, er ist hart, aber fair
+Oberarzt Doktor med Platzek, er ist hart, aber fair
 Er ist die helle Sonne in unsrem Leben, er gibt uns Kraft und Mut
 
 Verse:
 Er umgarnt Manu und Lena, der alte Charmeur
 Sie schmelzen hin bei ihm, er hat einfach Flair
 Er ist streng zu Assistenten, er duldet keinen Fehler
-Aber sie lernen viel von ihm, er ist der Oberarzt Doktor med Placzek
+Aber sie lernen viel von ihm, er ist der Oberarzt Doktor med Platzek
 
 Chorus:
-Oberarzt Doktor med Placzek, er ist unser Held und unser Gott
+Oberarzt Doktor med Platzek, er ist unser Held und unser Gott
 Er ist der beste in seinem Fach, er macht uns alle froh
-Oberarzt Doktor med Placzek, er ist frech, einfach der Boss
+Oberarzt Doktor med Platzek, er ist frech, einfach der Boss
 Er ist die  helle Sonne in unserem Leben, er gibt uns Kraft und Wärme
 Vorbild, Held und CT Gott, was du anfässt wird zu Gold
-Du bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Placzek
+Du bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Platzek
 ```
 
 ## Unser Oberarzt
@@ -407,7 +407,7 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 
 ```
 [Intro Hook Ultra-Catchy]
-CT-King, Doktor Placzek
+CT-King, Doktor Platzek
 Strahlt heller als ein Röntgen-Check
 Hey-hey, der Meister ist hier
 Der beste Oberarzt bei dir!
@@ -427,11 +427,11 @@ Seine Weisheit ist enorm
 Er lehrt uns nach perfekter Norm!
 
 [Chorus Ultra-Catchy, Euphoric]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Unser Held im CT
 Macht aus jedem schweren Fall
 Eine Diagnose schnell
-Hey-hey, Doktor med Placzek
+Hey-hey, Doktor med Platzek
 Radiologie-Effekt
 Seine Lehren sind genial
 Er macht uns alle spezial!
@@ -457,11 +457,11 @@ Lernen täglich mehr von ihm
 Folgen seinem CT-Sinn!
 
 [Chorus Ultra-Catchy, Euphoric]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Unser Held im CT
 Macht aus jedem schweren Fall
 Eine Diagnose schnell
-Hey-hey, Doktor med Placzek
+Hey-hey, Doktor med Platzek
 Radiologie-Effekt
 Seine Lehren sind genial
 Er macht uns alle spezial!
@@ -473,17 +473,17 @@ Jeder Schnitt wird kristallklar (Hey!)
 Macht das Schwere wunderbar!
 
 [Final Chorus Maximum Energy]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 (CT-King der Radiologie!)
 Unser Held im CT
 (Macht die Diagnose klar!)
-Hey-hey, Doktor med Placzek
+Hey-hey, Doktor med Platzek
 (Lehrt uns jeden Tag aufs Neu!)
 Seine Kunst ist einfach wow
 (Niemand macht es so genau!)
 
 [Outro Bright, Euphoric Fade]
-CT-King, Doktor Placzek
+CT-King, Doktor Platzek
 (Hey-hey, hey-hey!)
 Strahlt heller als ein Röntgen-Check
 (Hey-hey, hey-hey!)
@@ -506,13 +506,13 @@ Moderner Schlager mit EDM-Einflüssen und euphonischen Drops, euphoric chorus, c
 Ein Bildschirm leuchtet, Scanner surrt
 Im CT-Raum, wo Wissen regiert
 Die Tür geht auf, ein Schatten fällt
-Oberarzt Doktor med Placzek betritt das Bild
+Oberarzt Doktor med Platzek betritt das Bild
 
 [Verse 1 Dynamic Storytelling Female Vocals]
 Mit Adlerblick und scharfem Verstand
 Führt er den Cursor mit sicherer Hand
 Was andre übersehen, erkennt er sogleich
-Oberarzt Doktor med Placzek – in seinem Reich
+Oberarzt Doktor med Platzek – in seinem Reich
 Seine Diagnosen sind präzise und klar
 Jedes Detail macht er sofort sichtbar
 Er fordert Perfektion, akzeptiert keinen Fehler
@@ -525,11 +525,11 @@ Seine Strenge ist ein Geschenk, kein Malheur
 Nur wer genau sieht, versteht das Bild so
 
 [Chorus Euphoric Catchy Anthem]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Leuchtet heller als der hellste Stern
 Zeigt uns den Weg durch Schicht um Schicht
 Sein Wissen ist unser wertvollstes Licht
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Mit charmantem Blick und kluger Hand
 Manchmal streng, doch immer brilliant
 Ein Vorbild, das jeden Tag aufs Neue verzaubert
@@ -551,11 +551,11 @@ Wo Struktur und Anomalie verschmelzen blind
 In jedem Befund, den wir schreiben bald
 
 [Chorus Euphoric Catchy Anthem]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Leuchtet heller als der hellste Stern
 Zeigt uns den Weg durch Schicht um Schicht
 Sein Wissen ist unser wertvollstes Licht
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Mit charmantem Blick und kluger Hand
 Manchmal streng, doch immer brilliant
 Ein Vorbild, das jeden Tag aufs Neue verzaubert
@@ -571,11 +571,11 @@ Die feinen Details zwischen schwarz und weiß
 Sein Wissensschatz – unser höchster Preis
 
 [Final Chorus Peak Euphoric Climax]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Unser Leitstern im CT
 Mit seiner Führung und Expertise
 Werden wir Meister – genau wie er
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Mit scharfem Verstand und warmem Herz
 Unser Mentor, unser Idol, unser Guide
 Ein CT-Gott für alle Zeit!
@@ -583,7 +583,7 @@ Ein CT-Gott für alle Zeit!
 [Outro Bright Echoing Fade]
 Strahlender als jedes Bild auf dem Screen
 Klarer als der höchste Kontrast zu sehen
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Wir folgen dir – für immer dein Team!
 ```
 
@@ -599,7 +599,7 @@ Electro-Pop, 135 BPM, catchy melody, catchy female vocal, infectious
 
 ```
 [Intro Playful Inviting]
-Dr. Placzek's Meisterschule
+Dr. Platzek's Meisterschule
 Wo Brillanz auf Strenge trifft
 Ein Lächeln scharf wie Skalpelle
 Ein Blick, der tief in Seelen dringt
@@ -622,9 +622,9 @@ Ein Tadel von ihm brennt wie Feuer
 Doch zündet auch das Licht in uns an
 
 [Chorus Ultra-Catchy Melodic]
-Dr. Placzek! Mit harter Hand und Charme
+Dr. Platzek! Mit harter Hand und Charme
 Führt er uns durch das Labyrinth
-Dr. Placzek! Sein neckisches Genie
+Dr. Platzek! Sein neckisches Genie
 Formt aus Ton die Meister von morgen
 
 Seine Brillanz ist unser Leuchtturm
@@ -650,9 +650,9 @@ Seine Lehren sind Gold, sein Tadel ist Silber
 Unter seiner Führung werden wir zu Diamanten
 
 [Chorus Ultra-Catchy Melodic]
-Dr. Placzek! Mit harter Hand und Charme
+Dr. Platzek! Mit harter Hand und Charme
 Führt er uns durch das Labyrinth
-Dr. Placzek! Sein neckisches Genie
+Dr. Platzek! Sein neckisches Genie
 Formt aus Ton die Meister von morgen
 
 Seine Brillanz ist unser Leuchtturm
@@ -672,9 +672,9 @@ Sieht durch uns hindurch und baut uns auf
 Mit charmanter Hand und klugem Geist
 
 [Chorus Euphoric Release]
-Dr. Placzek! Mit harter Hand und Charme
+Dr. Platzek! Mit harter Hand und Charme
 Führt er uns durch das Labyrinth
-Dr. Placzek! Sein neckisches Genie
+Dr. Platzek! Sein neckisches Genie
 Formt aus Ton die Meister von morgen
 
 Seine Brillanz ist unser Leuchtturm
@@ -683,7 +683,7 @@ In seiner Schule wächst man schnell
 Oder man geht unter im Sturm!
 
 [Outro Memorable Hook]
-Dr. Placzek's harte Schule
+Dr. Platzek's harte Schule
 Prägt uns alle, macht uns stark
 Sein neckischer Charme, sein brillanter Geist
 Leuchtet ewig in uns fort
@@ -709,7 +709,7 @@ Der Meister vom CT-Land
 [Verse 1 Rhythmic Flowing]
 Mit kritischem Auge und scharfem Verstand
 Gleitet er durch die Graustufen sanft
-Doktor med Placzek, sein Wissen so tief
+Doktor med Platzek, sein Wissen so tief
 Jeden Befund er meisterhaft liest
 
 Die Assistenten stehen still im Raum
@@ -726,7 +726,7 @@ Denn unter Druck entstehen Diamanten
 [Chorus Melodic Ultra-Catchy]
 Der Herrscher des CTs mit eiserner Hand
 Führt seine Schüler zum Licht der Erkenntnis
-Doktor med Placzek, brillant und gerecht
+Doktor med Platzek, brillant und gerecht
 In seiner Schule wächst Können wie Magie
 
 Mit jedem Tadel ein Funke Genie
@@ -754,7 +754,7 @@ Er formt die Besten durch Feuer und Eis
 [Chorus Melodic Ultra-Catchy]
 Der Herrscher des CTs mit eiserner Hand
 Führt seine Schüler zum Licht der Erkenntnis
-Doktor med Placzek, brillant und gerecht
+Doktor med Platzek, brillant und gerecht
 In seiner Schule wächst Können wie Magie
 
 Mit jedem Tadel ein Funke Genie
@@ -776,7 +776,7 @@ Seine Logik lässt keinen Spielraum für Fehler
 [Final Chorus Grand Euphoric]
 Der Herrscher des CTs mit eiserner Hand
 Führt seine Schüler zum Licht der Erkenntnis
-Doktor med Placzek, brillant und gerecht
+Doktor med Platzek, brillant und gerecht
 In seiner Schule wächst Können wie Magie
 
 Mit jedem Tadel ein Funke Genie
@@ -786,7 +786,7 @@ Im Reich der Strahlen und Kontraste
 
 [Outro Gentle Memorable]
 Im Zentrum der Radiologie
-Wo Doktor Placzek regiert
+Wo Doktor Platzek regiert
 Da werden aus Lehrlingen Meister
 Und aus Bildern wird Heilung geboren
 ```
@@ -803,7 +803,7 @@ energetic, bright, fast tempo, electro-pop, female vocals, uplifting, catchy, Sc
 
 ```
 [Intro Catchy, Bright]
-Oh-oh-oh, Doktor med. Placzek
+Oh-oh-oh, Doktor med. Platzek
 Der Arzt mit Herz und klarem Blick
 Oh-oh-oh, er zeigt uns den Weg
 Der Oberarzt – einfach genial!
@@ -826,12 +826,12 @@ Gemeinsam meistern wir den Fall,
 Mit Wissen sind wir optimal!"
 
 [Chorus Catchy, Anthemic]
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Der Oberarzt mit Herz und Verstand
 Ein Held, ein Lehrer, der uns führt
 Mit ihm das Ziel stets optimiert
 
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Er leitet sicher, Schritt für Schritt
 Der Oberarzt – einfach genial!
 Wir folgen ihm, er ist ideal!
@@ -854,12 +854,12 @@ Gemeinsam meistern wir den Fall,
 Mit Wissen sind wir optimal!"
 
 [Chorus Catchy, Anthemic]
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Der Oberarzt mit Herz und Verstand
 Ein Held, ein Lehrer, der uns führt
 Mit ihm das Ziel stets optimiert
 
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Er leitet sicher, Schritt für Schritt
 Der Oberarzt – einfach genial!
 Wir folgen ihm, er ist ideal!
@@ -871,18 +871,18 @@ Aus Fehlern lernen, das ist der Weg
 Sei mutig, dann erreichst du den Steg!"
 
 [Final Chorus Euphoric, Triumphant]
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Der Oberarzt mit Herz und Verstand
 Ein Held, ein Lehrer, der uns führt
 Mit ihm das Ziel stets optimiert
 
-Oberarzt Doktor med. Placzek
+Oberarzt Doktor med. Platzek
 Er leitet sicher, Schritt für Schritt
 Der Oberarzt – einfach genial!
 Wir folgen ihm, er ist ideal!
 
 [Outro Bright, Fading Out]
-Oh-oh-oh, Doktor med. Placzek
+Oh-oh-oh, Doktor med. Platzek
 Der Oberarzt – einfach genial!
 Oh-oh-oh, er zeigt uns den Weg
 Wir folgen ihm, zum Ziel – ideal!
@@ -902,7 +902,7 @@ energetic, bright, fast tempo, electro-pop, synthpop, uplifting, catchy
 [Verse 1 Energetic, Playful]
 Ich hörte Schritte draußen auf dem Flur  
 Ein Klopfen, dann steht er vor der Tür  
-Oberarzt Doktor med Placzek, der Herr im CT  
+Oberarzt Doktor med Platzek, der Herr im CT  
 Sein Blick scharf, sein lächeln charmant  
 
 "Dummer Jungfacharzt, hör auf meinen Plan  
@@ -917,22 +917,22 @@ Mein Glanz, mein Wissen führen dich weit"
 Oberarzt Vorbild Leitbild, einfach unerreicht!
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek, 
+Oberarzt Doktor med Platzek, 
 Ziel meines simplen Seins.
 Er strahlt hell, ich bin geblendet  
 von seinem oberärztlichen Glanz.  
  
-Oberarzt Doktor med Placzek 
+Oberarzt Doktor med Platzek 
 mein Leitstern, mein Idol.   
 Ich sonne mich in seinem oberärztlichen Glanz
 und hoffe er wird mich auch mal erfassen.
-Oberarzt Doktor med Placzek, 
+Oberarzt Doktor med Platzek, 
 witzig charmant Perfektion! 
 
 [Verse 2 Energetic, Playful]
 Ich seh auf die Bilder und komm nicht zurecht  
 Weiß nicht weiter der Fokus ist schlecht!  
-Doktor med Placzek eilt zur Rettung herbei. 
+Doktor med Platzek eilt zur Rettung herbei. 
 "Mach’s wie ich, sei perfekt  
 Denn sonst wird dein Befund sicher nichts!"  
 
@@ -946,16 +946,16 @@ Mein Glanz, mein Wissen führen dich weit"
 Oberarzt Vorbild Leitbild, einfach unerreicht!
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek, 
+Oberarzt Doktor med Platzek, 
 Ziel meines simplen Seins.
 Er strahlt hell, ich bin geblendet  
 von seinem oberärztlichen Glanz.  
  
-Oberarzt Doktor med Placzek 
+Oberarzt Doktor med Platzek 
 mein Leitstern, mein Idol.   
 Ich sonne mich in seinem oberärztlichen Glanz
 und hoffe er wird mich auch mal erfassen.
-Oberarzt Doktor med Placzek, 
+Oberarzt Doktor med Platzek, 
 witzig charmant Perfektion! 
 
 [Bridge Reflective and Inspirational]
@@ -967,7 +967,7 @@ doch ich sehe dein Potenzial,
 mein Rat und Wissen bringt dich voran!"  
 
 [Final Chorus Euphoric and Playful]
-Oberarzt Doktor med Placzek,
+Oberarzt Doktor med Platzek,
 Held, Idol, CT Gott,
 du bist die Perfektion,
 die helle Sonne in unserem Leben,
@@ -999,7 +999,7 @@ Verwirrung sich in Köpfen zeigt,
 Fälle komplex, die Zeit sie rennt,
 Doch einer bleibt stets kompetent,
 Kennt Untiefen, jede Gefahr,
-Oberarzt Doktor med Placzek, klar!
+Oberarzt Doktor med Platzek, klar!
 
 [Pre-Chorus Encouraging]
 "Kommt mit, ihr jungen Ärzte, nun,
@@ -1008,7 +1008,7 @@ Navigieren, Schicht für Schicht,
 Durch Dunkelheit, zum hellen Licht!"
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek,
+Oberarzt Doktor med Platzek,
 Lotse unsrer Diagnostik,
 Führt uns sicher durch den Sturm,
 Zum sich'ren Hafen, 
@@ -1030,7 +1030,7 @@ Wird euer Blick geschärft, so sehr,
 Dass ihr bald könnt, was ich schon lehr'!"
 
 [Chorus Catchy]
-Oberarzt Doktor med Placzek,
+Oberarzt Doktor med Platzek,
 Lotse unsrer Diagnostik,
 Führt uns sicher durch den Sturm,
 Zum sich'ren Hafen, 
@@ -1043,7 +1043,7 @@ Die Kunst der Deutung, wird uns blasser,
 Die Angst weicht, das Können wächst.
 
 [Outro Catchy]
-Oberarzt Doktor med Placzek!
+Oberarzt Doktor med Platzek!
 (Unser Lotse, stets korrekt!)
 ```
 
@@ -1058,7 +1058,7 @@ Uplifting Electro-Pop-Trance anthem with a euphoric 2010s feel. The track opens 
 ### Lyrics:
 
 ```
-[Intro | atmospheric synth pads | filtered arpeggio | distant vocoder whispers: "Placzek... Placzek..."]
+[Intro | atmospheric synth pads | filtered arpeggio | distant vocoder whispers: "Platzek... Platzek..."]
 
 [Verse 1 | driving four-on-the-floor beat | pulsating bassline | clean male vocal]
 Ich war ein dummer Jungfacharzt, im Dunkeln ganz allein
@@ -1075,9 +1075,9 @@ Dein Wort ist das Gesetz, die Assistenten steh'n stramm
 Ein schelmisches Lächeln, und du ziehst alle in den Bann!
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Placzek, du bist der CT-Gott!
+Oberarzt Doktor med Platzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Placzek, für immer unser Held!
+Oberarzt Doktor med Platzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
@@ -1097,23 +1097,23 @@ Dein Wort ist das Gesetz, die Assistenten steh'n stramm
 Ein schelmisches Lächeln, und du ziehst alle in den Bann!
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Placzek, du bist der CT-Gott!
+Oberarzt Doktor med Platzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Placzek, für immer unser Held!
+Oberarzt Doktor med Platzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
 
 [Bridge]
 Als dummer Assistent, dummer Jungfacharzt und auch als dummer leitender Jungoberarzt,
-mein Idol und Vorbild ist immer Oberarzt Doktor med Placzek.
+mein Idol und Vorbild ist immer Oberarzt Doktor med Platzek.
 Sein Führungsstil, sein Wissen sein Charme, eine Inspiration, erstrebenswert und warm
 Ich wünsche ich kann das irgendwann erreichen.
 
 [Chorus | explosive drop | anthemic male vocal | stacked harmonies | soaring synth lead | heavy sidechain compression]
-Oberarzt Doktor med Placzek, du bist der CT-Gott!
+Oberarzt Doktor med Platzek, du bist der CT-Gott!
 Deine Befunde sind wie Meißel, treffen auf den Spot
-Oberarzt Doktor med Placzek, für immer unser Held!
+Oberarzt Doktor med Platzek, für immer unser Held!
 Du siehst die kleinste Läsion in dieser Pixel-Welt!
 Deine Weisheit hyperdens, für uns das hellste Licht
 Wo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!
@@ -1150,12 +1150,12 @@ dem größten Oberarzt von hier.
 Und immer wenn das Telefon geklingelt hat,
 ein Zuweiser ganz demütig und klein,
 wussten wir, die Lage ist kompliziert,
-das kann nur ein Fall für Doktor med Placzek sein!
+das kann nur ein Fall für Doktor med Platzek sein!
 
 [Chorus | anthemic layered male vocals | powerful delivery | beat drop]
-Oberarzt Doktor med Placzek! Du bist der CT-Gott!
+Oberarzt Doktor med Platzek! Du bist der CT-Gott!
 Dein Befund ist präzise und messerscharf, vertreibt die letzte Not!
-Oberarzt Doktor med Placzek! Für immer unser Held!
+Oberarzt Doktor med Platzek! Für immer unser Held!
 Der charmanteste und beste Radiologe 
 auf der Welt!
 
@@ -1172,22 +1172,22 @@ gibst uns das Gefühl, als ob's so einfach wär.
 [Pre-Chorus | synth riser | filter sweep | building energy]
 Und immer wenn ein Polytrauma reinkam,
 die Chirurgen schrien nach einem Mann mit Plan,
-hieß es: "Ruhe, wir rufen Doktor med Placzek an!",
+hieß es: "Ruhe, wir rufen Doktor med Platzek an!",
 nur er allein ist der, der uns noch retten kann!
 
 [Chorus | anthemic layered male vocals | more powerful delivery | beat drop]
-Oberarzt Doktor med Placzek! Du bist der CT-Gott!
+Oberarzt Doktor med Platzek! Du bist der CT-Gott!
 Dein Befund ist präzise und messerscharf, vertreibt die letzte Not!
-Oberarzt Doktor med Placzek! Für immer unser Held!
+Oberarzt Doktor med Platzek! Für immer unser Held!
 Der charmanteste und beste Radiologe 
 auf der Welt!
 
 [Outro | driving beat returns | layered vocals chanting | fade out]
-(Placzek!) Oberarzt Doktor med Placzek!
+(Platzek!) Oberarzt Doktor med Platzek!
 (CT-Gott!) Der Held der Radiologie!
-(Placzek!) Oberarzt Doktor med Placzek!
+(Platzek!) Oberarzt Doktor med Platzek!
 (Legende!) Wir vergessen dich nie!
-(Placzek!)
+(Platzek!)
 ```
 
 ## Vier-Eins-Neun-Zwei
@@ -1216,7 +1216,7 @@ Die Durchwahl eingegeben – gleich meldet er sich, oh wei
 Vier-Eins-Neun-Zwei
 Vier-Eins-Neun-Zwei
 Jeder Arzt hier kennt diese Zahl
-Direkt zu Placzeks Kompetenz – perfekt in jedem Fall
+Direkt zu Platzeks Kompetenz – perfekt in jedem Fall
 
 [Pre-Chorus | building tension | female vocal ethereal | rising synth]
 Gleich hebt er ab, ich muss bereit sein
@@ -1225,16 +1225,16 @@ Seine Fragen sind präzise, treffen wie ein Pfeil
 Wer hier anruft, braucht 'nen Plan – und jedes medizinische Detail!
 
 [Chorus | explosive drop | male and female alternating | anthemic hook]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Placzek-Nummer! Retter in der Not!
+Die Platzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
-Doktor med Placzek! Am Hörer, messerscharf!
+Doktor med Platzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Verse 2 | confident male vocal | driving beat | storytelling]
-"Guten Tag, Placzek hier" – diese Stimme, kühl und klar
+"Guten Tag, Platzek hier" – diese Stimme, kühl und klar
 "Schildern Sie mir Ihren Fall, präzise, sagen Sie mir, was geschah!"
 "CT Abdomen mit Kontrastmittel bitte, dringend!" – stotter' ich nervös
 "Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant und bloß
@@ -1251,12 +1251,12 @@ Beim nächsten Mal bin ich gewappnet, mit allen Fakten parat
 Dann öffnet sich die Schleuse zu seinem CT-Apparat!
 
 [Chorus | euphoric | layered vocals | maximum energy]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Placzek-Nummer! Retter in der Not!
+Die Platzek-Nummer! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
-Doktor med Placzek! Am Hörer, messerscharf!
+Doktor med Platzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Bridge | breakdown | intimate duet | emotional depth]
@@ -1277,12 +1277,12 @@ Sein Blick erfasst die Schichten, jedes Pixel im präzisen Lauf
 Sie haben alles richtig gemacht!" – Das wertvollste Wort!
 
 [Final Chorus | maximum euphoria | all vocals layered | triumphant]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Platzek-Nummer! Vier-Eins-Neun-Zwei!
 Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, so ist es dabei!
-Die Placzek-Nummer! Legende am Telefon!
+Die Platzek-Nummer! Legende am Telefon!
 Wer von ihm lernt, wer ihm vertraut, erreicht medizinische Perfektion schon!
 
-Doktor med Placzek! Der Torwächter, der Held!
+Doktor med Platzek! Der Torwächter, der Held!
 Der beste Radiologe, den diese Klinik je bestellt!
 
 [Outro | atmospheric | phone hang-up | female whisper fading]
@@ -1328,7 +1328,7 @@ Wenn alle zweifeln, wenn niemand mehr weiß
 Ist seine Antwort Gold – der ultimative Beweis!
 
 [Chorus | explosive drop | both vocals layered | anthemic | soaring lead synth]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Du bist der Goldstandard hier
 Deine Diagnosen glänzen
 24 Karat rein in dir
@@ -1344,14 +1344,14 @@ Gold-Gold-Goldstandard!
 
 [Verse 2 | female vocal dynamic | driving beat]
 Die Literatur sagt "unsicher", die Leitlinien sind unklar
-Doch Placzeks Urteil ist präzise, absolut und wunderbar
+Doch Platzeks Urteil ist präzise, absolut und wunderbar
 Er kennt die Studien, die Paper, jeden Trend
 Sein Wissen ist die Goldgrube, die niemals endet
 
 Andere haben Meinungen, Theorien, Vermutungen
 Doch seine Diagnose steht – in goldenen Buchstaben geschrieben, keine Irrungen
 Pathologie-Konferenz, Tumorboard, interdisziplinär
-Wenn Placzek spricht, verstummen alle – sein Wort ist schwer!
+Wenn Platzek spricht, verstummen alle – sein Wort ist schwer!
 
 [Pre-Chorus | male vocal powerful | building energy | white noise riser]
 Er setzt den Standard, nach dem wir alle streben
@@ -1360,7 +1360,7 @@ Die Messlatte liegt hoch, vergoldet und so klar
 Wer ihn zum Vorbild hat, wird selbst bald wunderbar!
 
 [Chorus | more intense | both vocals harmonized | maximum energy]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Du bist der Goldstandard hier
 Deine Diagnosen glänzen
 24 Karat rein in dir
@@ -1384,12 +1384,12 @@ An der wir wachsen, jeden Tag, jede Nacht!
 
 [Build-up | epic rise | layered vocals | filter sweep | synth stabs]
 Gold-Standard! Gold-Standard!
-Placzek! Placzek!
+Platzek! Platzek!
 Die Referenz! Die Legende!
 Der eine, wahre Goldstandard!
 
 [Final Chorus | euphoric climax | all vocals layered | triumphant | maximum intensity]
-Oberarzt Doktor med Placzek
+Oberarzt Doktor med Platzek
 Du bist der Goldstandard hier
 Deine Diagnosen glänzen
 24 Karat rein in dir
@@ -1400,7 +1400,7 @@ Du bist die goldene Wahrheit
 In perfekter Form!
 
 [Final Chorus Extended | anthemic repetition]
-Der Goldstandard! (Placzek!)
+Der Goldstandard! (Platzek!)
 Die Referenz! (Für immer!)
 Der Goldstandard! (Unser Held!)
 In goldenen Lettern! (Geschrieben!)
@@ -1408,7 +1408,7 @@ In goldenen Lettern! (Geschrieben!)
 [Outro | atmospheric | golden shimmer returns | vocals fading]
 Wenn Unsicherheit zu Klarheit wird
 Wenn Diagnosen zu Gold werden
-Dann war Placzek hier
+Dann war Platzek hier
 Der Goldstandard – für immer
 
 *fade to golden silence*
