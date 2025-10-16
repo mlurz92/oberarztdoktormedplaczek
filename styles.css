@@ -816,7 +816,7 @@ body.theme-dark .dialog-lyrics::-webkit-scrollbar-thumb {
   padding: 0.95rem 1.9rem;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.86);
-  color: #0f172a;
+  color: #fff;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
   opacity: 0;
