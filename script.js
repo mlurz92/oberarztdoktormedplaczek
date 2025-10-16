@@ -1,71 +1,61 @@
 const ICON_PATHS = {
   theme: `
-    <circle cx="12" cy="12" r="5.4"></circle>
-    <path d="M17.6 7.4a6.3 6.3 0 0 1-5.1 9.7 6.3 6.3 0 0 1-4.6-2.2"></path>
-    <line x1="12" y1="2.2" x2="12" y2="4.2"></line>
-    <line x1="12" y1="19.8" x2="12" y2="21.8"></line>
-    <line x1="4.2" y1="12" x2="6.2" y2="12"></line>
-    <line x1="17.8" y1="12" x2="19.8" y2="12"></line>
-    <line x1="6.1" y1="6.1" x2="7.6" y2="7.6"></line>
-    <line x1="16.4" y1="16.4" x2="17.9" y2="17.9"></line>
+    <circle cx="12" cy="12" r="5.2"></circle>
+    <path d="M15.6 6.3a5.7 5.7 0 1 0 2.4 8.6"></path>
   `,
   search: `
-    <circle cx="10.8" cy="10.8" r="5.8"></circle>
-    <line x1="15.6" y1="15.6" x2="21" y2="21"></line>
+    <circle cx="11" cy="11" r="5.6"></circle>
+    <line x1="15.5" y1="15.5" x2="20.4" y2="20.4"></line>
   `,
   clipboard: `
-    <path d="M9.6 4.6h4.8"></path>
-    <path d="M9.2 3h5.6a1.6 1.6 0 0 1 1.6 1.6V6.5H7.6V4.6A1.6 1.6 0 0 1 9.2 3Z"></path>
-    <path d="M7 6.5h10a1.8 1.8 0 0 1 1.8 1.8v9.9a1.8 1.8 0 0 1-1.8 1.8H7a1.8 1.8 0 0 1-1.8-1.8V8.3A1.8 1.8 0 0 1 7 6.5Z"></path>
-    <line x1="8.8" y1="11" x2="15.2" y2="11"></line>
-    <line x1="8.8" y1="14.6" x2="13.4" y2="14.6"></line>
+    <rect x="6.4" y="7" width="11.2" height="12" rx="2.2"></rect>
+    <path d="M9.4 7V5.6a2.6 2.6 0 0 1 5.2 0V7"></path>
+    <line x1="9.5" y1="11" x2="14.7" y2="11"></line>
+    <line x1="9.5" y1="14.3" x2="15.5" y2="14.3"></line>
   `,
   open: `
     <polyline points="9 5 5 5 5 9"></polyline>
-    <line x1="5" y1="5" x2="10.4" y2="10.4"></line>
+    <line x1="5" y1="5" x2="10.6" y2="10.6"></line>
     <polyline points="15 19 19 19 19 15"></polyline>
-    <line x1="19" y1="19" x2="13.6" y2="13.6"></line>
+    <line x1="19" y1="19" x2="13.4" y2="13.4"></line>
   `,
   title: `
     <line x1="6" y1="7" x2="18" y2="7"></line>
-    <line x1="9" y1="5" x2="15" y2="5"></line>
-    <line x1="6" y1="12" x2="18" y2="12"></line>
-    <line x1="6" y1="17" x2="13.5" y2="17"></line>
+    <line x1="8" y1="12" x2="18" y2="12"></line>
+    <line x1="8" y1="17" x2="15" y2="17"></line>
   `,
   palette: `
-    <path d="M12 4a8 8 0 1 0 0 16h2.2a2.8 2.8 0 0 0 0-5.6H13"></path>
-    <circle cx="8.6" cy="9.1" r="1"></circle>
-    <circle cx="12.3" cy="7.2" r="1"></circle>
-    <circle cx="9.2" cy="13.1" r="1"></circle>
-    <circle cx="15.6" cy="10.8" r="1"></circle>
+    <path d="M12 5a7 7 0 1 0 0 14h2a2.6 2.6 0 0 0 0-5.2h-1"></path>
+    <circle cx="8.4" cy="9" r="0.9"></circle>
+    <circle cx="12.1" cy="7.6" r="0.9"></circle>
+    <circle cx="9" cy="13.1" r="0.9"></circle>
+    <circle cx="15" cy="10.5" r="0.9"></circle>
   `,
   lyrics: `
-    <path d="M9 7.2v9a2.3 2.3 0 1 1-2.3-2.3"></path>
-    <path d="M9 7.2 17 5.8v8.6a2.3 2.3 0 1 1-2.3-2.3"></path>
+    <path d="M9 7.2v9.1a2.4 2.4 0 1 1-2.4-2.4"></path>
+    <path d="M9 7.2 17 5.8v8.7a2.4 2.4 0 1 1-2.4-2.4"></path>
   `,
   full: `
-    <path d="M6.5 6.5h11a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"></path>
-    <line x1="8.4" y1="10" x2="15.6" y2="10"></line>
-    <line x1="8.4" y1="13.2" x2="14.4" y2="13.2"></line>
-    <line x1="8.4" y1="16.4" x2="12.6" y2="16.4"></line>
+    <rect x="6.7" y="6.7" width="10.6" height="10.6" rx="1.2"></rect>
+    <line x1="8.6" y1="10" x2="15.4" y2="10"></line>
+    <line x1="8.6" y1="13.3" x2="14.4" y2="13.3"></line>
+    <line x1="8.6" y1="16.6" x2="12.5" y2="16.6"></line>
   `,
   close: `
     <line x1="7" y1="7" x2="17" y2="17"></line>
     <line x1="17" y1="7" x2="7" y2="17"></line>
   `,
   alert: `
-    <path d="M3.6 19h16.8L12 5.4 3.6 19Z"></path>
-    <line x1="12" y1="10.2" x2="12" y2="14.6"></line>
-    <circle cx="12" cy="17.4" r="0.8"></circle>
+    <path d="M3.8 19.2h16.4L12 5.2 3.8 19.2Z"></path>
+    <line x1="12" y1="10" x2="12" y2="14.4"></line>
+    <circle cx="12" cy="17.2" r="0.8"></circle>
   `,
   noresults: `
-    <circle cx="10.5" cy="10.5" r="5.8"></circle>
-    <line x1="15" y1="15" x2="20.2" y2="20.2"></line>
+    <circle cx="11" cy="11" r="5.6"></circle>
+    <line x1="15.4" y1="15.4" x2="20.4" y2="20.4"></line>
     <line x1="8" y1="8" x2="13" y2="13"></line>
   `,
 };
-
-const vivusInstances = new WeakMap();
 
 const state = {
   songs: [],
@@ -548,35 +538,29 @@ function hydrateIconSlots(root) {
     const svg = slot.querySelector('svg');
     if (svg) {
       const button = slot.closest('button');
-      registerVivus(svg, button);
+      registerIconPulse(svg, button);
     }
   });
 }
 
-function registerVivus(svg, button) {
-  if (vivusInstances.has(svg) || typeof window.Vivus === 'undefined') return;
-  const instance = new window.Vivus(svg, {
-    start: 'manual',
-    type: 'delayed',
-    duration: 80,
-  });
-  vivusInstances.set(svg, instance);
-
-  const play = () => {
-    instance.stop().reset().play(1);
+function registerIconPulse(svg, button) {
+  if (prefersReducedMotion) return;
+  const trigger = () => {
+    svg.classList.remove('icon--pulse');
+    requestAnimationFrame(() => {
+      svg.classList.add('icon--pulse');
+    });
   };
 
-  if (button) {
-    if (!button.dataset.vivusBound) {
-      button.addEventListener('mouseenter', play);
-      button.addEventListener('focus', play);
-      button.dataset.vivusBound = 'true';
-    }
-  } else {
-    if (!prefersReducedMotion) {
-      play();
-    }
-  }
+  trigger();
+
+  if (!button) return;
+  if (button.dataset.iconPulseBound === 'true') return;
+  const events = ['pointerenter', 'focus', 'click'];
+  events.forEach((eventName) => {
+    button.addEventListener(eventName, trigger);
+  });
+  button.dataset.iconPulseBound = 'true';
 }
 
 function updateCopyAllState() {
