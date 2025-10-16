@@ -1488,3 +1488,95 @@ Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
 [Outro | synth lead melody fades | keyboard clicking sound | final whisper female]
 Diagnose... gesichert.
 ```
+
+## Bolus-Countdown
+
+### Styles:
+
+```
+euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, shimmering supersaws, arpeggiated pluck intro, wide stereo field, anthemic DUET (female + male), stacked harmonies in CHORUS, bright modern mix, no guitars, no rap, huge final drop, crowd chant hook
+[Duet | Female airy lead + Male clear lead][Key: A minor][Energy: High][Chorus: Soaring lead + layered harmonies][Build: white-noise riser + snare roll][Drop: sidechained supersaw lead][Outro: big finish then clean cut]
+```
+
+### Lyrics:
+
+```
+[Intro | shimmering arp, filtered pad | 2 bars count-in]
+(Duet whispers) Drei, zwei, eins — bereit?
+[Build | kick in softly]
+Female: Ich öffne das Protokoll, setze Marker auf der Zeit,
+Male: Leg die Schwelle in der Aorta, Bolus-Tracking ist bereit.
+Female: Fenster justiert, Level sitzt — ich fühl den Grauton singen,
+Male: Wenn die Linie steigt, wird unser Kontrast Feuer bringen.
+
+[Verse 1 | story + momentum]
+Female lead: Du sagst „ALARA“, ich hör Zeit, Distanz und Schild,
+Male adlib: minimal, doch scharf — genau das Bild.
+Female: Pitch und kVp im Griff, mAs im Flow,
+Male: Auto-Exposure folgt, und Rauschen bleibt low.
+
+[Pre-Chorus | lift + call/response]
+Female: Arterielle Phase, Herz pocht im Takt,
+Male: Portalvenös im Auge — Timing exakt.
+Female: MPR, kurvig führt uns die Bahn,
+Male: MIP macht die Gefäße zum klaren Plan.
+
+[Chorus | anthemic, stacked harmonies]
+[CHORUS | soaring, stacked | hook repeats]
+Du baust den Flow — Protokoll-Architekt!
+Wir fliegen durch Schichten, der Pixel-Effekt.
+HU erzählt uns die Wahrheit im Licht,
+Fenster und Level — und alles wird Sicht.
+(Chant) Pro-to-koll! Pro-to-koll!
+Du führst uns ans Ziel — Protokoll-Architekt!
+
+[Post-Chorus | hook riff + crowd chant]
+[Hook tag]
+Kon-trast! Track! Drei-zwei-eins — go!
+
+[Verse 2 | technical poetry, playful]
+Male lead: Iterative Reco nimmt den Lärm aus dem Raum,
+Female adlib: mehr Detail, weniger Staub im Traum.
+Male: Kernel gewechselt, der Weichteil gewinnt,
+Female: und jede kleine Spur bekommt Kontur und Sinn.
+Male: Hounsfield spricht,  + / − wird klar,
+Female: wir drehen am Wheel und sind sofort da.
+Both: Von Axial zu Sagittal, Koronar im Blick,
+Wenn Wissen und Timing klicken — sitzt der Trick.
+
+[Pre-Chorus 2 | bigger lift]
+Female: Schwelle erreicht, Trigger — die Welle läuft an,
+Male: 70–90 später leuchtet die Leber wie geplant.
+Female: Slab gesetzt, die MIP wird weit,
+Male: und VR malt Tiefe in die Zeit.
+
+[Chorus | bigger, add octave harmony]
+Du baust den Flow — Protokoll-Architekt!
+Wir fliegen durch Schichten, der Pixel-Effekt.
+HU erzählt uns die Wahrheit im Licht,
+Fenster und Level — und alles wird Sicht.
+(Chant) Pro-to-koll! Pro-to-koll!
+Du führst uns ans Ziel — Protokoll-Architekt!
+
+[Bridge | breakdown, emotional then rise]
+[Bridge | piano + pad | half-time]
+Female: Wenn Zweifel rauscht, bleib ruhig im Bild,
+Male: die Dosis bleibt klein, doch der Befund wird wild.
+Female: Ein Klick zu viel? Wir atmen ein,
+Male: dann trägt uns Präzision allein.
+
+[Build | snare roll + riser | key hold]
+(Both) Zähl uns ein — drei, zwei, eins — Bolus go!
+
+[Final Chorus | big finish, octave up, crowd]
+[Big Finish | layered gang vocals + supersaw lead]
+Du baust den Flow — Protokoll-Architekt!
+Wir fliegen durch Schichten, der Pixel-Effekt.
+HU erzählt uns die Wahrheit im Licht,
+Fenster und Level — und alles wird Sicht.
+(Chant) Kon-trast! Track! Pro-to-koll!
+(Shout) Archi-tekt — wir landen im Soll!
+
+[Outro | clean cutoff on 1]
+[END]
+```
