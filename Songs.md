@@ -1454,7 +1454,7 @@ Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
 "Interessante Hypothese", sagt er mit Charme, ganz ohne Spott
 "Doch die Anreicherung hier spricht gegen Ihr Komplott"
 Er zeigt den nekrotischen Zerfall, die Infiltration ins Fett
-"Das ist kein Abszess, Kollegen, das ist das Primat, wett' ich wett'"
+"Das ist kein Abszess, Kollegen, das ist das Primat, ich wett'"
 Ein Raunen geht durch die Reihen, man beugt sich näher ran
 Er hat sie wieder mal geführt aus dem diagnostischen Wahn
 
