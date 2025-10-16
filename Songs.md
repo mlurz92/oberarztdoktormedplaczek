@@ -1489,88 +1489,110 @@ Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
 Diagnose... gesichert.
 ```
 
-## Protokoll-Architekt
+## Interessant…
 
 ### Styles:
 
 ```
-euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, supersaw lead, bright modern mix, wide stereo image, anthemic DUET (female + male), stacked harmonies in CHORUS, big final drop
-[Key: A minor][Energy: High][Duet: female airy lead + male clear lead][Intro: arp + filtered pad][Build: snare roll + white-noise riser][Chorus: soaring layered leads][Drop: sidechain stronger, open hats][Bridge: piano breakdown][Outro: big finish, clean cut]
+euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, bright supersaw leads, arpeggiated pluck intro, wide stereo image, modern pop polish, DUET (female airy lead + male clear lead), stacked harmonies in CHORUS, crowd-chant hook, no guitars, no rap
+[Duet][Energy: High][Key: A minor][Build: snare roll + white-noise riser][Drop: sidechained supersaw lead][Chorus: octave-doubled topline + gang chants][Outro: clean cutoff]
 ```
 
 ### Lyrics:
 
 ```
-[Intro | shimmering arp, filtered pad]
-(Whisper, both) Drei, zwei, eins — wir sind bereit.
-[Build | kick fades in]
-Female: Wenn die Tür aufgeht, wird der Flur sofort still,
-Male: Oberarzt Dr. med. Placzek — der, der alles will.
-Female: Mit einem Blick ordnet er Pixel und Licht,
-Male: und jede graue Frage bekommt ihr Gewicht.
+[Intro | shimmering arp, whispered count-in]
+(Whispers, both) In-te-res-sant…
+(Whispers) Drei, zwei, eins — bereit?
 
-[Verse 1 | driving, playful]
-Female lead: Er sagt „ALARA“, doch liefert Brillanz,
-Male adlib: minimale Dosis, maximale Balance.
-Female: Fenster und Level im sicheren Griff,
-Male: HU erzählt Wahrheit, er setzt den Begriff.
-Female: Er schreibt die Protokolle, taktet die Zeit,
-Male: Bolus-Tracking sitzt — Präzision jederzeit.
+[Verse 1 | playful storytelling, brisk]
+[Female lead]
+Dienstbeginn, der Monitor glüht, das PACS wird warm,
+ich präsentiere meinen Fall mit zitterndem Charme.
+[Male (Placzek)]
+„Interessant…“ — ein Lächeln, halb Sonne, halb Gericht,
+„Fenster, Level, HU — dann stimmt auch das Licht.“
 
-[Pre-Chorus | lift, call/response]
-Female: Arterielle Flamme, wir folgen dem Plan,
-Male: portalvenös weiter — exakt abgefahren.
-Female: MPR führt kurvig, die Raumtiefe spricht,
-Male: MIP zeigt Gefäße, und plötzlich wird’s Licht.
+[Pre-Chorus | call & response, lift]
+[Female]
+Wir drehen Wheel und wissen: gleich wird’s ernst,
+[Male]
+MPR setzt die Achsen, bis du alles lernst.
+[Female]
+MIP für die Gefäße, VR gibt die Tiefe frei,
+[Both]
+und plötzlich wird aus Grau die Diagnostik-Magie.
 
-[Chorus | anthemic, stacked harmonies]
-[CHORUS | soaring]
-Placzek! Placzek! Protokoll-Architekt!
-Du führst uns durchs Pixelmeer, zielgenau, perfekt!
-Dein Blick baut aus Schichten den klaren Befund,
-wir singen dein Timing — Sekunde für Sekund.
-(Chant) Pla-czek! Pla-czek! Wir folgen deinem Takt,
-Oberarzt der Herzen, der immer richtig packt!
+[Chorus | soaring, anthemic, stacked]
+[Both + crowd chant]
+Wenn Placzek „interessant“ sagt, wird’s brillant,
+wir schwitzen kurz, doch landen elegant.
+HU erzählt uns, was im Schatten wirklich brennt,
+sein Blick macht Unsichtbares evident.
+(Chant) In-te-res-sant! In-te-res-sant!
+[Male]
+Oberarzt Doktor med Placzek — unser Diamant.
 
 [Post-Chorus | hook riff]
-[Hook] Drei-zwei-eins — Bolus go! / Wir fliegen high, wir landen low.
+[Crowd]
+Kon-trast — track! Drei-zwei-eins — go!
+[Female ad-lib]
+ALARA bleibt König, doch die Bilder sind pro.
 
-[Verse 2 | technical poetry, witty]
-Male lead: Iterative Reco nimmt Rauschen die Macht,
-Female adlib: Kernels gewechselt — und Weichteil erwacht.
-Male: Von axial nach sagittal, koronar im Blick,
-Female: jeder Klick ist Lehre und sitzt wie ein Tick.
-Both: Wenn Zweifel rauscht, bleibt sein Kompass ruhig,
-ein Nicken von ihm — und alles fügt sich.
+[Verse 2 | witty, technical sparkle]
+[Male (Placzek)]
+„Schöne Idee — doch Timing ist der Plan,
+arteriell zu früh? Dann sieht man wenig dran.“
+[Female]
+Bolus-Tracking zündet, Portalphase sitzt,
+Iterative Reco — das Rauschen wird gestutzt.
+[Male]
+„Kernel wechseln, Weichteil gewinnt“ — notiert,
+[Female]
+ein Satz von dir und jeder Slice sortiert.
 
 [Pre-Chorus 2 | bigger lift]
-Female: Schwelle erreicht, der Trigger ist da,
-Male: 70–90 zählen, die Leber sagt „Ja“.
-Female: VR setzt Tiefe, die Szene wird weit,
-Male: und jeder Assist wird ein Teil seiner Zeit.
+[Female]
+Noch ein Blick, das Puzzle wird komplett,
+[Male]
+„Sagittal dazu, dann ist der Pfad korrekt.“
+[Both]
+Wir hören dein „interessant“ und fühlen: Gleich
+wird aus Chaos eine Linie — meisterlich und weich.
 
-[Chorus | higher octave + gang vocals]
-Placzek! Placzek! Protokoll-Architekt!
-Du führst uns durchs Pixelmeer, zielgenau, perfekt!
-Dein Blick baut aus Schichten den klaren Befund,
-wir singen dein Timing — Sekunde für Sekund.
-(Chant) Pro-to-koll! Pro-to-koll! Dein Name unser Takt,
-Oberarzt Dr. med. Placzek — der immer richtig packt!
+[Chorus | repeat, higher harmony]
+[Both + crowd]
+Wenn Placzek „interessant“ sagt, wird’s brillant,
+wir schwitzen kurz, doch landen elegant.
+HU, Window/Level, alles sitzt,
+sein Finger zeigt den Punkt, der wirklich blitzt.
+(Chant) In-te-res-sant! In-te-res-sant!
+[Male]
+Oberarzt Doktor med Placzek — unser Konstant.
 
-[Bridge | piano breakdown → rise]
-[Half-time]
-Female: Wenn’s stürmt im Dienst, bleibt deine Hand leicht,
-Male: dein Maßstab streng, doch immer gerecht.
-Female: Ein kurzer Satz — und Hektik wird leis’,
-Male: aus Chaos wird Ordnung, aus Zweifel wird Fleiß.
-[Build | riser + snare rolls]
-(Both, shout) Zähl uns ein: Drei-zwei-eins — jetzt!
+[Bridge | breakdown → rise, half-time then build]
+[Female soft]
+Wenn Zweifel rauscht wie Regen an Glas,
+[Male warm]
+bleib ruhig, atme — Perfektion hat Maß.
+[Female]
+Du stellst die Fragen, die den Nebel trennen,
+[Male]
+und lässt uns unsere eigenen Antworten kennen.
+[Build | snare roll + riser]
+[Both, shouted]
+Zähl uns ein — drei, zwei, eins — Bolus: go!
 
-[Final Chorus | maximum euphoria, octave up]
-Placzek! Placzek! Protokoll-Architekt!
-Du führst uns durchs Pixelmeer, zielgenau, perfekt!
-Dein Plan, dein Timing, dein Lehr-Intellekt —
-wir tragen die Hook, bis der Vorhang sich senkt!
-(Chant) Pla-czek! Pla-czek! — CT-Symphoniek
-[END | clean cut on 1]
+[Final Chorus | maximal, octave up, gang vox]
+[Both + crowd chant]
+Wenn Placzek „interessant“ sagt, wird’s brillant,
+sein Witz ist mild, doch seine Messlatte konstant.
+Von Slice zu Slice, bis Wahrheit hell erkennt —
+wir feiern den, der Bilder Lesen nennt.
+(Chant) In-te-res-sant! In-te-res-sant!
+[Tag]
+Oberarzt Doktor med Placzek — unser Diamant.
+
+[Outro | clean cutoff on 1]
+(Whisper) Interessant…
 ```
