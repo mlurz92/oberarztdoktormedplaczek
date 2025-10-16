@@ -1413,3 +1413,78 @@ Der Goldstandard – für immer
 
 *fade to golden silence*
 ```
+
+## Der Konsil-König
+
+### Styles:
+
+```
+euphoric trance, electro-pop, anthemic chorus, driving four-on-the-floor, soaring synth leads, pumping sidechain compression, male and female duet, 138 BPM
+```
+
+### Lyrics:
+
+```
+[Intro | atmospheric synth pad | tense meeting room feel | whispered female vocal]
+Der Chirurg hat einen Plan...
+Der Onkologe eine Theorie...
+Doch alle warten... auf die Wahrheit.
+
+[Verse 1 | Male Vocal | narrative tone | driving synth bass | 138 BPM]
+Donnerstagmorgen, der Konferenzraum schweigt
+Die Luft ist dicht, von Zweifeln schwer und aufgereizt
+Der Chirurg erklärt den unklaren Prozess im Bauch
+Der Internist tippt auf Entzündung, wie so oft, wie's der Brauch
+Die PowerPoint-Folien zeigen klinische Befunde, blass und alt
+Doch keiner weiß, was in der Tiefe wirklich die Fäden zusammenhält
+
+[Pre-Chorus | Female Vocal | ethereal and building | filter sweep up]
+Dann wird der Bildschirm schwarz, ein Klick, das PACS erwacht
+Und seine Stimme füllt den Raum, beendet diese dunkle Nacht
+Er zoomt ins Bild, die Fensterung perfekt justiert
+Jeder im Raum weiß, was jetzt gleich passiert...
+
+[Chorus | Euphoric Drop | Male and Female Duet | Anthemic and Powerful]
+Der Konsil-König! Placzek übernimmt das Feld!
+Aus Graustufen formt er die Wahrheit, die für alle zählt!
+Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
+Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
+
+[Verse 2 | Male Vocal | confident and slightly playful | steady beat]
+"Interessante Hypothese", sagt er mit Charme, ganz ohne Spott
+"Doch die Anreicherung hier spricht gegen Ihr Komplott"
+Er zeigt den nekrotischen Zerfall, die Infiltration ins Fett
+"Das ist kein Abszess, Kollegen, das ist das Primat, wett' ich wett'"
+Ein Raunen geht durch die Reihen, man beugt sich näher ran
+Er hat sie wieder mal geführt aus dem diagnostischen Wahn
+
+[Pre-Chorus | Female Vocal | rising energy | snare roll build-up]
+Er blickt kurz auf, ein Lächeln blitzt, er hat es längst gewusst
+Die Bilder lügen niemals, nur der Mensch hat's nicht bewusst
+Er gibt die Bühne wieder frei, sein Werk ist hier getan
+Und lenkt den ganzen Fall damit in eine neue, klare Bahn
+
+[Chorus | Euphoric Drop | Male and Female Duet | even more energy | Ad-libs]
+Der Konsil-König! Placzek übernimmt das Feld!
+Aus Graustufen formt er die Wahrheit, die für alle zählt!
+Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
+Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
+(Die Wahrheit im Detail!)
+
+[Bridge | Emotional Breakdown | Spoken Word Male (as Dr. Placzek) | Ethereal Female Backing Vocals]
+(spoken) "Meine Damen und Herren, die Bilder sind nur die Landkarte.
+(sung female) *Landkarte...*
+(spoken) Aber um den Weg zu finden, muss man wissen, wie man sie liest.
+(sung female) *Lesen und versteh'n...*
+(spoken) Und vor allem... muss man wissen, wonach man sucht."
+
+[Final Chorus | Maximum Euphoria | All Vocals Layered | Triumphant]
+Der Konsil-König! Placzek übernimmt das Feld!
+Aus Graustufen formt er die Wahrheit, die für alle zählt!
+Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
+Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
+(Placzek! Der König hier im Feld!)
+
+[Outro | synth lead melody fades | keyboard clicking sound | final whisper female]
+Diagnose... gesichert.
+```
