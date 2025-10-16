@@ -1292,3 +1292,124 @@ Vier-Eins-Neun-Zwei
 Die Nummer, die wir niemals vergessen
 *fade to silence*
 ```
+
+## Der Goldstandard
+
+### Styles:
+
+```
+euphoric trance, electro-pop, 138BPM, driving four-on-the-floor, layered synths, dual vocals male and female, call and response, anthemic drops, pumping sidechain, emotional breakdown, progressive build, German lyrics, uplifting, infectious, catchy melody
+```
+
+Lyrics:
+
+```
+[Intro | atmospheric pad | golden shimmer synth | filtered arpeggio]
+Wenn Unsicherheit zu Klarheit wird
+Wenn Zweifel sich in Gold verwandelt
+Wenn eine Stimme spricht
+Und alle wissen: Das ist wahr
+
+[Verse 1 | male vocal confident | building kick | pulsing bass]
+Ich steh vor dem Monitor, die Bilder verschwimmen
+Pathologie oder Artefakt? Ich kann's nicht bestimmen
+Die Klinik wartet, Druck steigt an
+Dann kommt er rein – der Mann mit dem goldenen Plan
+
+Er braucht nur Sekunden, sein Blick fährt über die Schichten
+"Hier, sehen Sie? Die Dichte, die Konturen, die Geschichten"
+Was mir wie Rauschen schien, wird plötzlich kristallklar
+Seine Diagnose glänzt – wie 24 Karat
+
+[Pre-Chorus | female vocal ethereal | rising synth | snare roll]
+Er ist die Referenz, die finale Instanz
+Sein Wort hat Gewicht, sein Befund ist Eleganz
+Wenn alle zweifeln, wenn niemand mehr weiß
+Ist seine Antwort Gold – der ultimative Beweis!
+
+[Chorus | explosive drop | both vocals layered | anthemic | soaring lead synth]
+Oberarzt Doktor med Placzek
+Du bist der Goldstandard hier
+Deine Diagnosen glänzen
+24 Karat rein in dir
+
+An dir wird gemessen
+Jeder Befund, jede Norm
+Du bist die goldene Wahrheit
+In perfekter Form!
+
+[Post-Chorus | instrumental | golden synth melody | pumping sidechain]
+Gold-Gold-Goldstandard!
+Gold-Gold-Goldstandard!
+
+[Verse 2 | female vocal dynamic | driving beat]
+Die Literatur sagt "unsicher", die Leitlinien sind unklar
+Doch Placzeks Urteil ist präzise, absolut und wunderbar
+Er kennt die Studien, die Paper, jeden Trend
+Sein Wissen ist die Goldgrube, die niemals endet
+
+Andere haben Meinungen, Theorien, Vermutungen
+Doch seine Diagnose steht – in goldenen Buchstaben geschrieben, keine Irrungen
+Pathologie-Konferenz, Tumorboard, interdisziplinär
+Wenn Placzek spricht, verstummen alle – sein Wort ist schwer!
+
+[Pre-Chorus | male vocal powerful | building energy | white noise riser]
+Er setzt den Standard, nach dem wir alle streben
+Seine Präzision will jeder in sich beleben
+Die Messlatte liegt hoch, vergoldet und so klar
+Wer ihn zum Vorbild hat, wird selbst bald wunderbar!
+
+[Chorus | more intense | both vocals harmonized | maximum energy]
+Oberarzt Doktor med Placzek
+Du bist der Goldstandard hier
+Deine Diagnosen glänzen
+24 Karat rein in dir
+
+An dir wird gemessen
+Jeder Befund, jede Norm
+Du bist die goldene Wahrheit
+In perfekter Form!
+
+[Bridge | breakdown | intimate duet | piano underlayer | emotional depth]
+(Male spoken, reflective) In der Medizin suchen wir immer den Goldstandard
+(Female sung, soft) *Den einen Weg, der sicher zum Ziel führt*
+
+(Female spoken, warm) Die beste Methode, die höchste Evidenz
+(Male sung, building) *Doch hier ist er Mensch, Referenz in Präsenz*
+
+(Both together, crescendo) Nicht nur eine Methode, nicht nur ein Test
+Du bist der lebende Standard, der niemals Rest lässt!
+Deine Exzellenz ist die goldene Messlatte
+An der wir wachsen, jeden Tag, jede Nacht!
+
+[Build-up | epic rise | layered vocals | filter sweep | synth stabs]
+Gold-Standard! Gold-Standard!
+Placzek! Placzek!
+Die Referenz! Die Legende!
+Der eine, wahre Goldstandard!
+
+[Final Chorus | euphoric climax | all vocals layered | triumphant | maximum intensity]
+Oberarzt Doktor med Placzek
+Du bist der Goldstandard hier
+Deine Diagnosen glänzen
+24 Karat rein in dir
+
+An dir wird gemessen
+Jeder Befund, jede Norm
+Du bist die goldene Wahrheit
+In perfekter Form!
+
+[Final Chorus Extended | anthemic repetition]
+Der Goldstandard! (Placzek!)
+Die Referenz! (Für immer!)
+Der Goldstandard! (Unser Held!)
+In goldenen Lettern! (Geschrieben!)
+
+[Outro | atmospheric | golden shimmer returns | vocals fading]
+Wenn Unsicherheit zu Klarheit wird
+Wenn Diagnosen zu Gold werden
+Dann war Placzek hier
+Der Goldstandard – für immer
+
+*fade to golden silence*
+```
