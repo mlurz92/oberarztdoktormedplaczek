@@ -11,9 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js" defer></script>
   </head>
   <body>
     <div class="scene" aria-hidden="true"></div>
@@ -30,24 +30,7 @@
         </div>
         <div class="action-cluster">
           <button class="theme-toggle" type="button" aria-label="Darstellung umschalten">
-            <svg class="theme-icon" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <g class="sun">
-                <circle cx="24" cy="24" r="11"></circle>
-                <g class="rays">
-                  <line x1="24" y1="4" x2="24" y2="12"></line>
-                  <line x1="24" y1="36" x2="24" y2="44"></line>
-                  <line x1="4" y1="24" x2="12" y2="24"></line>
-                  <line x1="36" y1="24" x2="44" y2="24"></line>
-                  <line x1="10" y1="10" x2="16" y2="16"></line>
-                  <line x1="32" y1="32" x2="38" y2="38"></line>
-                  <line x1="10" y1="38" x2="16" y2="32"></line>
-                  <line x1="32" y1="16" x2="38" y2="10"></line>
-                </g>
-              </g>
-              <g class="moon">
-                <path d="M32 8a16 16 0 1 0 8 28.3A14 14 0 0 1 32 8Z"></path>
-              </g>
-            </svg>
+            <span class="icon-slot" data-icon="theme" aria-hidden="true"></span>
           </button>
           <label class="variant-toggle" for="variantSwitch">
             <span class="variant-label">Placzek</span>
@@ -65,10 +48,16 @@
           <span class="stat-pill" id="songCount">0 Songs</span>
           <span class="stat-pill" id="variantState">Placzek-Version</span>
         </div>
-        <label class="search" for="searchInput">
-          <span class="material-symbols-rounded" aria-hidden="true">search</span>
-          <input id="searchInput" type="search" placeholder="Titel oder Lyrics durchsuchen" autocomplete="off" />
-        </label>
+        <div class="control-tools">
+          <button class="copy-all-btn" id="copyAllSongs" type="button" aria-label="Songs.md kopieren">
+            <span class="icon-slot" data-icon="clipboard" aria-hidden="true"></span>
+            <span class="copy-all-label">Songs.md kopieren</span>
+          </button>
+          <label class="search" for="searchInput">
+            <span class="icon-slot" data-icon="search" aria-hidden="true"></span>
+            <input id="searchInput" type="search" placeholder="Titel oder Lyrics durchsuchen" autocomplete="off" />
+          </label>
+        </div>
       </section>
 
       <main id="songGrid" class="song-grid" aria-live="polite" aria-busy="true"></main>
@@ -81,21 +70,21 @@
             <h2 id="dialogTitle"></h2>
             <div class="dialog-icons">
               <button class="icon-btn" type="button" data-copy="dialog-title" aria-label="Titel kopieren">
-                <span class="material-symbols-rounded" aria-hidden="true">title</span>
+                <span class="icon-slot" data-icon="title" aria-hidden="true"></span>
               </button>
               <button class="icon-btn" type="button" data-copy="dialog-styles" aria-label="Styles kopieren">
-                <span class="material-symbols-rounded" aria-hidden="true">palette</span>
+                <span class="icon-slot" data-icon="palette" aria-hidden="true"></span>
               </button>
               <button class="icon-btn" type="button" data-copy="dialog-lyrics" aria-label="Lyrics kopieren">
-                <span class="material-symbols-rounded" aria-hidden="true">queue_music</span>
+                <span class="icon-slot" data-icon="lyrics" aria-hidden="true"></span>
               </button>
               <button class="icon-btn" type="button" data-copy="dialog-full" aria-label="Song komplett kopieren">
-                <span class="material-symbols-rounded" aria-hidden="true">library_books</span>
+                <span class="icon-slot" data-icon="full" aria-hidden="true"></span>
               </button>
             </div>
           </div>
           <button class="dialog-close" type="button" aria-label="Schließen">
-            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+            <span class="icon-slot" data-icon="close" aria-hidden="true"></span>
           </button>
         </header>
         <section class="dialog-section">
