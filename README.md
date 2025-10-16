@@ -26,6 +26,6 @@ Eine glasige Single-Page-Anwendung, die beim Laden sämtliche Songs aus der `Son
 ## Abhängigkeiten
 
 - [GSAP](https://greensock.com/gsap/) via CDN für dezente Animationsabläufe
-- Google Fonts für Typografie sowie Vivus für die Icon-Animationen
+- Google Fonts für Typografie; Icon-Animationen laufen rein per CSS und JS
 
 Weitere Build-Schritte sind nicht erforderlich.
