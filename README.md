@@ -4,9 +4,9 @@ Eine glasige Single-Page-Anwendung, die beim Laden sämtliche Songs aus der `Son
 
 ## Funktionen
 
-- **Automatisches Markdown-Parsing** – Beim Start wird `Songs.md` per `fetch` geladen, nach Titeln, Styles und Lyrics zerlegt und sofort dargestellt. Ergänzungen an der Datei erscheinen automatisch.
+- **Automatisches Markdown-Parsing** – Beim Start wird `Songs.md` per `fetch` geladen, nach Titeln, Styles und Lyrics zerlegt und sofort dargestellt. Ergänzungen an der Datei erscheinen automatisch; jede Fokussierung oder Rückkehr in den Tab ruft den aktuellen Stand erneut ab.
 - **Lyrik im Fokus** – Jede Karte zeigt einen großzügigen Ausschnitt der Lyrics, Styles werden als dezente Chips zusammengefasst. Ein Glas-Dialog offenbart alle Inhalte vollständig.
-- **Clipboard-Workflow** – Vier Icon-Schaltflächen kopieren Titel, Styles, Lyrics oder den kompletten Song. Die Aktionen stehen auch im Dialog bereit und liefern Toast-Feedback.
+- **Clipboard-Workflow** – Vier Icon-Schaltflächen kopieren Titel, Styles, Lyrics oder den kompletten Song. Eine zusätzliche globale Schaltfläche kopiert auf Wunsch die vollständige `Songs.md`. Die Aktionen stehen auch im Dialog bereit und liefern Toast-Feedback.
 - **Placzek↔Platzek-Option** – Ein persistenter Switch ersetzt alle Vorkommen direkt in der Oberfläche, sodass beide Varianten jederzeit abrufbar bleiben.
 - **Animierter Hell/Dunkel-Modus** – Ein transformierendes Sonne/Mond-SVG schaltet die Darstellung. Die Wahl wird gespeichert und automatisch wiederhergestellt.
 - **Responsive Glas-UI** – Das Layout passt sich fließend an alle Viewports an, ohne Überlagerungen oder abgeschnittene Beschriftungen. GSAP sorgt für sanfte Einblendungen (mit Rücksicht auf `prefers-reduced-motion`).
@@ -26,6 +26,6 @@ Eine glasige Single-Page-Anwendung, die beim Laden sämtliche Songs aus der `Son
 ## Abhängigkeiten
 
 - [GSAP](https://greensock.com/gsap/) via CDN für dezente Animationsabläufe
-- Google Fonts & Material Symbols für Typografie und Icons
+- Google Fonts für Typografie sowie Vivus für die Icon-Animationen
 
 Weitere Build-Schritte sind nicht erforderlich.
