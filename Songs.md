@@ -1596,3 +1596,173 @@ Oberarzt Doktor med Placzek — unser Diamant.
 [Outro | clean cutoff on 1]
 (Whisper) Interessant…
 ```
+
+## Drei Gebote
+
+### Styles:
+
+```
+euphoric electro-schlager, uplifting trance-pop, 138BPM, infectious female vocals with playful male backing, catchy hooks, driving four-on-the-floor beat, pumping synth bass, bright melodic leads, anthemic drops, tongue-in-cheek humor, celebratory energy
+```
+
+### Lyrics:
+
+```
+[Intro | atmospheric synth pads | filtered arpeggio building | whispered female vocal with reverence | mystical energy]
+*Whispered, ethereal*
+Es ward geschrieben...
+Im heiligen Buch der Radiologie...
+Drei Gebote... verkündet vom Meister...
+Oberarzt... Doktor med Placzek...
+Oh-oh-oh!
+
+[Intro Hook | clean kick enters | bright synth stabs | playful female vocal | infectious energy]
+Drei Gebote! Drei Gebote!
+Placzeks goldene Regeln!
+Oh-oh-oh, befolge sie!
+Oh-oh-oh, und du wirst sehen!
+
+[Verse 1 | driving four-on-the-floor | pumping bass | enthusiastic female lead | storytelling with humor | 138 BPM groove]
+Gebot Nummer Eins spricht klar und wahr:
+"Die Voruntersuchung, schau sie an, ganz wunderbar!"
+Ich dummer Assistent dacht: "Ach, das brauch ich heut nicht!"
+Und Placzek schaute streng mich an – sein Blick wie scharfes Licht!
+
+"Der Tumor war schon im letzten Bild, drei Millimeter klein!
+Du hättest Wachstum klar erkannt – wärst du nicht faul und fein!"
+Seine Worte trafen hart, doch weise, oh so sehr!
+Seit diesem Tag schau ich mir alles an – die Vorbilder sind nicht schwer!
+
+[Pre-Chorus | building energy | layered vocals | snare rolls starting | filter sweep rising | excitement building]
+(Female lead, soaring) Doktor Placzek, deine Weisheit glänzt wie Gold!
+(Male backing, enthusiastic) *Wie Gold! Wie reines Gold!*
+(Female) Wer deine Regeln bricht, wird niemals wirklich toll!
+(Male) *Niemals toll! Oh nein, oh nein!*
+
+[Chorus | massive drop | four-on-the-floor pumping | dual vocals alternating | ultra-catchy hook | sidechain compression | euphoric release | anthemic energy]
+Die Heiligen Drei Gebote!
+Von Oberarzt Doktor med Placzek!
+Oh-oh-oh, befolge sie!
+Und deine Diagnose wird perfekt!
+
+Die Heiligen Drei Gebote!
+Sein Wort ist Wahrheit, strahlend klar!
+Oh-oh-oh, Doktor Placzek!
+Du bist unser CT-Gott, wunderbar!
+
+(Call and response chant)
+Gebot Eins! (Voruntersuchung!)
+Gebot Zwei! (Jeden Rand seh'n!)
+Gebot Drei! (Sein Wort ist Gesetz!)
+Mit Placzeks Regeln wirst du Meister, schön!
+
+[Post-Chorus | bright melodic lead | infectious hook repetition | female with male echoes]
+Oh-oh-oh! Die Drei Gebote!
+Oh-oh-oh! Placzeks Lehre!
+Oh-oh-oh! So wird's gemacht!
+Oh-oh-oh! Mit seiner Kraft!
+
+[Verse 2 | energetic beat continues | playful female vocal | humorous storytelling | concrete CT scenarios]
+Gebot Nummer Zwei, vom Propheten selbst verkündet laut:
+"Betrachte jedes Bild, auch ganz am Rand, sei schlau!"
+"Die Lunge, Herz – ja klar!" dacht ich, "Das schau ich mir schon an!"
+Doch Placzek zeigte auf den Screen: "Und Milz und Pankreas dann?"
+
+"Am Bildrand, gut versteckt, da sitzt die Wahrheit oft!
+Der Nebenbefund rettet Leben – hast du das erhofft?"
+Ich schämte mich, sein Finger zeigte präzise auf die Stelle:
+"Die Nierenmetastase hier – du sahst sie nicht, oh Helle!"
+
+[Pre-Chorus 2 | rising energy | female lead with enthusiastic male backing | tension building | snare rolls intensifying]
+(Female, powerful) Seine Augen sehen alles, jeden Pixel, jede Spur!
+(Male backing, energetic) *Jede Spur! Jede kleine Spur!*
+(Female) Wer wie Placzek schauen will, braucht Fleiß und Hingabe pur!
+(Male) *Hingabe! Ja, das stimmt genau!*
+
+[Chorus 2 | explosive drop | even more energy | all vocals layered | maximum catchiness | pumping sidechain | euphoric peak]
+Die Heiligen Drei Gebote!
+Von Oberarzt Doktor med Placzek!
+Oh-oh-oh, befolge sie!
+Und deine Diagnose wird perfekt!
+
+Die Heiligen Drei Gebote!
+Sein Wissen strahlt wie Sonnenlicht so klar!
+Oh-oh-oh, Doktor Placzek!
+Du bist unser Meister, wunderbar!
+
+(Call and response, more intense)
+Gebot Eins! (Niemals vergessen!)
+Gebot Zwei! (Alles betrachten!)
+Gebot Drei! (Kommt jetzt gleich!)
+Mit Placzeks Weisheit werden wir reich!
+
+[Bridge | breakdown | stripped down | atmospheric pads | intimate female vocal with strings | emotional depth | building anticipation]
+(Spoken softly, with reverence, building emotion)
+Und nun das dritte, heiligste Gebot...
+Die Krone seiner Weisheit...
+Das wichtigste von allen hier...
+
+(Sung, emotional crescendo, female soprano soaring)
+"Hast du mit mir besprochen deinen Befund klar,
+Dann kennst du die Diagnose, sie ist offenbar!
+Weiche nicht davon ab, mein Kind, sie ist die Wahrheit rein,
+Denn alles, was ich nicht gesagt – kann nur noch falsch sein!"
+
+(Building intensity, male and female together)
+Oh, diese Worte sind Gesetz!
+Gemeißelt tief in Stein!
+Wer zweifelt an des Meisters Wort,
+Kann niemals Meister sein!
+
+[Build-Up | epic rise | massive snare rolls | white noise riser | filter sweep to maximum | all elements building | anticipation at peak]
+(Female, powerful, building to climax)
+Drei Gebote! Drei Weisheiten!
+Die Bibel unsrer Zunft!
+Verkündet von dem größten Oberarzt!
+Der uns Hoffnung schenkt, Vernunft!
+
+Ich war ein dummer Jungfacharzt!
+Doch durch seine Lehre werd ich gut!
+Seine Regeln sind mein Kompass!
+Geben mir den Mut!
+
+[Final Chorus | absolute maximum energy | all vocals layered | triumphant delivery | euphoric climax | full instrumentation | sidechain pumping hard | celebratory peak]
+Die Heiligen Drei Gebote!
+Von Oberarzt Doktor med Placzek!
+Oh-oh-oh, befolge sie!
+Und deine Diagnose wird perfekt!
+
+Die Heiligen Drei Gebote!
+Prophet der CT-Diagnose-Kunst!
+Oh-oh-oh, Doktor Placzek!
+Dein Wissen ist unser heiliger Brunst!
+
+(Extended call and response chant, anthemic)
+Gebot Eins! (Voruntersuchung studieren!)
+Gebot Zwei! (Jeden Pixel kontrollieren!)
+Gebot Drei! (Sein Urteil akzeptieren!)
+Wer sie lebt, wird wie er brillieren!
+
+[Final Hook | infectious repetition | dual vocals trading | maximum catchiness]
+(Female) Die Drei Gebote!
+(Male) Placzeks Wahrheit!
+(Female) Ewig gültig!
+(Male) Unvergänglich!
+(Both) Oberarzt Doktor med Placzek!
+Wir folgen dir in Ewigkeit!
+
+[Outro | gradual wind down | atmospheric pads returning | bright synth fading | whispered vocals echoing | mystical fade to silence]
+(Whispered female, fading with reverb)
+Oh-oh-oh... Doktor Placzek...
+Die Drei Gebote... ewig wahr...
+Gebot Eins... *echo*
+Gebot Zwei... *echo*
+Gebot Drei... *echo*
+
+(Both, barely audible, fading)
+Oberarzt Doktor med Placzek...
+Für immer unser Leitgestalt...
+
+*Synth pads fade to silence*
+*Final kick drum hit*
+```
