@@ -1700,3 +1700,92 @@ Oh-oh-oh... Doktor Placzek...
 Für immer unser Held!
 *Final synth hit*
 ```
+
+## Klick-Zoom-Lock
+
+### Styles:
+
+```
+electro-trance-pop • 4/4 • BPM 138 • Key D minor • euphoric yet precise. Bright supersaw lead, arpeggiated plucks, pumping sidechain, punchy kick, tight low-end, airy top. Section design: shimmer intro → driving verse → lift pre → explosive chorus/drop → half-time bridge → final double chorus. Female lead front/center with crisp German diction; subtle male low ad-libs in pres/chorus. Vocoder doubles “klick–zoom–lock”. No guitars, no rap. Clean radio mix; wide stereo; snare rolls and white-noise risers into drops. Keep hook on downbeat; crowd chant doubles last two lines in final chorus. Repeat BPM/Key in section tags for adherence.
+```
+
+Lyrics:
+
+```
+[GLOBAL: electro-trance-pop | 4/4 | BPM 138 | Key D minor | bright supersaws | arpeggiated plucks | pumping sidechain | wide stereo | female lead + subtle male ad-libs | witty, lightly ironic | clean radio mix]
+
+[INTRO | 4 bars | shimmer arp, filtered pad, quick lift]
+Oberarzt Doktor med Placzek betritt den Kontrollraum.
+Monitore erwachen; der Cursor hebt die Braue kaum.
+
+[VERSE 1 | 8 bars | conversational, tight internal rhyme]
+Du richtest erst die Ebenen, Geometrie gehorcht,
+das Fenster sitzt millimetergenau, die Dichte spricht nun deutlich.
+Ein Mosaik aus Voxeln, gelöst in ruhigem Zug;
+der Bildrand wird zur Quelle, der Zweifel weicht genug.
+„Vergleich vor Meinung“ — kurze Regel, selt’ner Ton,
+die Jahreslinie klappt sich auf, es passt zur Situation.
+Ein knapper Blick von dir — präzis und ohne Pracht:
+Die Stille wird verständlich, wenn die Antwort es macht.
+
+[PRE-CHORUS | 4 bars | lift with snare roll, pad opens]
+Wir zählen nicht die Worte, wir zählen, was besteht:
+Was bleibt nach Klinik, Protokoll — wenn alles Rauschen geht?
+
+[CHORUS | 8 bars | big supersaw lead; crowd doubles last 2 lines]
+Oberarzt Doktor med Placzek — klick, zoom, lock!
+Aus Schichten formst du Klarheit; der Kurs liegt fest im Dock.
+Wenn Timing, Phase, Kernel sitzen wie ein Uhrwerkstück,
+genügt ein Satz von dir, und Unsicherheit kehrt zurück.
+(Oberarzt Doktor med Placzek) — klick, zoom, lock!
+Der Raum nimmt einen Atemzug; die Runde nickt am Block.
+Was wichtig ist, wird sichtbar; die Linie führt uns mit —
+wir lesen, was das Bild erzählt, und gehen Schritt für Schritt.
+
+[POST-CHORUS | 2 bars | vocoder riff on hook]
+[Vocoder: “klick—zoom—lock” staccato; stereo wide]
+
+[VERSE 2 | 8 bars | technical sparkle, light irony intact]
+Du wechselst leise Kernel; die Kante wird konkret,
+die Körnung tritt beiseite, Kontur besteht.
+MPR setzt Achsen sauber: koronal, dann sagittal;
+die Antwort lag am Bildrand, beiläufig und real.
+Erst Anlass, dann Protokoll — die Hausordnung ist klar:
+Die Leitung fragt nach Relevanz; wer sie hat, ist sofort da.
+Und wenn es wirklich brennt, zählt nur die richtige Phase:
+„Drei, zwei, eins“ — die Kurve zündet, Ende jeder Pause.
+
+[PRE-CHORUS 2 | 4 bars | variant; low male ad-libs (“ruhig… fokussiert…”) ]
+Die Karte bleibt nur Karte; das Lesen macht sie wert.
+Du setzt die Skala still — bis jeder Blick versteht.
+
+[CHORUS | 8 bars | repeat with octave harmony and crowd doubles]
+Oberarzt Doktor med Placzek — klick, zoom, lock!
+Die Phasen greifen ineinander, wie ein Schloss am Dock.
+Ein kurzer Ton von dir genügt; der Kurs bleibt ohne Bruch,
+die Fallgeschichte stimmt sich ein — und hält in einem Tuch.
+(Oberarzt Doktor med Placzek) — klick, zoom, lock!
+Wir halten Tempo unaufgeregt, kein Panikrock.
+Was nötig ist, bleibt übrig; das Überflüss’ge tritt —
+du lässt das Bild zuerst erzählen, und wir erzählen mit.
+
+[BRIDGE | 8 bars | half-time → build | airy sincerity, witty]
+Hier ist Lob keine Währung; es wirkt wie Fernlichtschein:
+kurz auf die Fahrbahn, dann zurück — doch jeder nimmt es ein.
+Drei Zeilen Hausordnung reichen: Vergleich, Rand, klarer Konsens nach Gespräch.
+Die Eile bleibt vor der Tür; die Güte geht zu Fuß — und trägt.
+
+[DROP | 4 bars | instrumental hook; crowd hums “lock—lock”]
+
+[FINAL CHORUS | 12 bars | + gang chants, ad-libs; tag x2 to fade]
+Oberarzt Doktor med Placzek — klick, zoom, lock!
+Die Zweifel haben Ausgangssperre; Artefakte sind am Dock.
+Wir lesen leise, handeln klar; das Restgeräusch verblasst.
+Ein Team im Puls, ein Monitor, der Melodie erfasst.
+(Oberarzt Doktor med Placzek) — klick, zoom, lock! (Crowd: „lock!“)
+Die Runde hält, der Weg ist frei; die Diagnose passt.
+Tag: „klick, zoom, lock“ — repeat to fade; vocoder tail.
+
+[OUTRO | 2 bars | filter sweep down, vocoder tail]
+(whispered): „Placzek… lock…“
+```
