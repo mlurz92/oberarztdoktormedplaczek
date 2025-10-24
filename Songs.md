@@ -1216,7 +1216,7 @@ Die Durchwahl eingegeben – gleich meldet er sich, oh wei
 Vier-Eins-Neun-Zwei
 Vier-Eins-Neun-Zwei
 Jeder Arzt hier kennt diese Zahl
-Direkt zu Placzeks Kompetenz – perfekt in jedem Fall
+Die Hotline zur Radiologie – perfekt in jedem Fall
 
 [Pre-Chorus | building tension | female vocal ethereal | rising synth]
 Gleich hebt er ab, ich muss bereit sein
@@ -1225,9 +1225,9 @@ Seine Fragen sind präzise, treffen wie ein Pfeil
 Wer hier anruft, braucht 'nen Plan – und jedes medizinische Detail!
 
 [Chorus | explosive drop | male and female alternating | anthemic hook]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Placzek-Nummer! Retter in der Not!
+Die Placzek-Hotline! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
 Doktor med Placzek! Am Hörer, messerscharf!
@@ -1241,19 +1241,19 @@ Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 Die Stille schwebt, drei Sekunden Ewigkeit
 Mein Kollege neben mir wird bleich, das Urteil naht, gleich ist es soweit:
-"Die Indikation erscheint mir unzureichend, verstehen Sie
-Sonographie zunächst, dann Labor – das sind die richtigen Wege!"
+"Die Indikation erscheint mir unzureichend, bitte
+Sonographie zunächst, dann Labor – klare Schritte!"
 
 [Pre-Chorus | female vocal dramatic | building energy]
 Die Absage tut weh, doch sie lehrt uns mehr
-Als jedes Lehrbuch, jede Fortbildung, sie formt uns schwer!
+Als jedes Lehrbuch, jede Fortbildung, sie schärft uns sehr!
 Beim nächsten Mal bin ich gewappnet, mit allen Fakten parat
 Dann öffnet sich die Schleuse zu seinem CT-Apparat!
 
 [Chorus | euphoric | layered vocals | maximum energy]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
+Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
-Die Placzek-Nummer! Retter in der Not!
+Die Placzek-Hotline! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
 
 Doktor med Placzek! Am Hörer, messerscharf!
@@ -1262,25 +1262,25 @@ Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 [Bridge | breakdown | intimate duet | emotional depth]
 (Male spoken, vulnerable) Dann kam der Notfall, echter Code, Leben an der Grenze
 (Female sung, echoing) *An der Grenze, an der Grenze*
-(Male spoken) Ich wählte Vier-Eins-Neun-Zwei, diesmal war ich vorbereitet mit Evidenz
+(Male spoken) Ich wählte Vier-Eins-Neun-Zwei, diesmal war ich vorbereitet, mit Evidenz
 (Female sung) *Vier-Eins-Neun-Zwei, Vier-Eins-Neun-Zwei*
 
 (Male sung, building) "Freie Flüssigkeit, Schock, Hämatokrit im freien Fall,
-Verdacht auf Milzruptur, ich brauch Sie jetzt, in diesem kritischen Schwall!"
+Verdacht auf Milzruptur, ich brauch' Sie jetzt!"
 (Both together) Und dann... sein Ton verändert sich: "Ich scanne selbst, kommen Sie her,
-Wir retten diesen Menschen, ich bin bereit – sofort, kein Zögern mehr!"
+Wir retten diesen Menschen, ich bin bereit – sofort!"
 
 [Build-up | epic rise | snare rolls | filter sweep | anticipation]
 Im CT-Raum sein Können leuchtet auf
-Sein Blick erfasst die Schichten, jedes Pixel im präzisen Lauf
-"Milzruptur Grad vier, Kontrastextravasat, Notfall-OP sofort!
-Sie haben alles richtig gemacht!" – Das wertvollste Wort!
+Sein Blick erfasst die Schichten, jedes Pixel im genauen Lauf
+"Milzruptur Grad vier, Kontrastextravasat, OP sofort!
+Sie haben alles richtig gemacht!" – Das schönste Wort!
 
 [Final Chorus | maximum euphoria | all vocals layered | triumphant]
-Die Placzek-Nummer! Vier-Eins-Neun-Zwei!
-Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, so ist es dabei!
-Die Placzek-Nummer! Legende am Telefon!
-Wer von ihm lernt, wer ihm vertraut, erreicht medizinische Perfektion schon!
+Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
+Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, ganz neu dabei!
+Die Placzek-Hotline! Legende am Telefon!
+Wer von ihm lernt, wer ihm vertraut, erreicht die medizinische Perfektion!
 
 Doktor med Placzek! Der Torwächter, der Held!
 Der beste Radiologe, den diese Klinik je bestellt!
@@ -1701,91 +1701,3 @@ Für immer unser Held!
 *Final synth hit*
 ```
 
-## Klick-Zoom-Lock
-
-### Styles:
-
-```
-electro-trance-pop • 4/4 • BPM 138 • Key D minor • euphoric yet precise. Bright supersaw lead, arpeggiated plucks, pumping sidechain, punchy kick, tight low-end, airy top. Section design: shimmer intro → driving verse → lift pre → explosive chorus/drop → half-time bridge → final double chorus. Female lead front/center with crisp German diction; subtle male low ad-libs in pres/chorus. Vocoder doubles “klick–zoom–lock”. No guitars, no rap. Clean radio mix; wide stereo; snare rolls and white-noise risers into drops. Keep hook on downbeat; crowd chant doubles last two lines in final chorus. Repeat BPM/Key in section tags for adherence.
-```
-
-Lyrics:
-
-```
-[GLOBAL: electro-trance-pop | 4/4 | BPM 138 | Key D minor | bright supersaws | arpeggiated plucks | pumping sidechain | wide stereo | female lead + subtle male ad-libs | witty, lightly ironic | clean radio mix]
-
-[INTRO | 4 bars | shimmer arp, filtered pad, quick lift]
-Oberarzt Doktor med Placzek betritt den Kontrollraum.
-Monitore erwachen; der Cursor hebt die Braue kaum.
-
-[VERSE 1 | 8 bars | conversational, tight internal rhyme]
-Du richtest erst die Ebenen, Geometrie gehorcht,
-das Fenster sitzt millimetergenau, die Dichte spricht nun deutlich.
-Ein Mosaik aus Voxeln, gelöst in ruhigem Zug;
-der Bildrand wird zur Quelle, der Zweifel weicht genug.
-„Vergleich vor Meinung“ — kurze Regel, selt’ner Ton,
-die Jahreslinie klappt sich auf, es passt zur Situation.
-Ein knapper Blick von dir — präzis und ohne Pracht:
-Die Stille wird verständlich, wenn die Antwort es macht.
-
-[PRE-CHORUS | 4 bars | lift with snare roll, pad opens]
-Wir zählen nicht die Worte, wir zählen, was besteht:
-Was bleibt nach Klinik, Protokoll — wenn alles Rauschen geht?
-
-[CHORUS | 8 bars | big supersaw lead; crowd doubles last 2 lines]
-Oberarzt Doktor med Placzek — klick, zoom, lock!
-Aus Schichten formst du Klarheit; der Kurs liegt fest im Dock.
-Wenn Timing, Phase, Kernel sitzen wie ein Uhrwerkstück,
-genügt ein Satz von dir, und Unsicherheit kehrt zurück.
-(Oberarzt Doktor med Placzek) — klick, zoom, lock!
-Der Raum nimmt einen Atemzug; die Runde nickt am Block.
-Was wichtig ist, wird sichtbar; die Linie führt uns mit —
-wir lesen, was das Bild erzählt, und gehen Schritt für Schritt.
-
-[POST-CHORUS | 2 bars | vocoder riff on hook]
-[Vocoder: “klick—zoom—lock” staccato; stereo wide]
-
-[VERSE 2 | 8 bars | technical sparkle, light irony intact]
-Du wechselst leise Kernel; die Kante wird konkret,
-die Körnung tritt beiseite, Kontur besteht.
-MPR setzt Achsen sauber: koronal, dann sagittal;
-die Antwort lag am Bildrand, beiläufig und real.
-Erst Anlass, dann Protokoll — die Hausordnung ist klar:
-Die Leitung fragt nach Relevanz; wer sie hat, ist sofort da.
-Und wenn es wirklich brennt, zählt nur die richtige Phase:
-„Drei, zwei, eins“ — die Kurve zündet, Ende jeder Pause.
-
-[PRE-CHORUS 2 | 4 bars | variant; low male ad-libs (“ruhig… fokussiert…”) ]
-Die Karte bleibt nur Karte; das Lesen macht sie wert.
-Du setzt die Skala still — bis jeder Blick versteht.
-
-[CHORUS | 8 bars | repeat with octave harmony and crowd doubles]
-Oberarzt Doktor med Placzek — klick, zoom, lock!
-Die Phasen greifen ineinander, wie ein Schloss am Dock.
-Ein kurzer Ton von dir genügt; der Kurs bleibt ohne Bruch,
-die Fallgeschichte stimmt sich ein — und hält in einem Tuch.
-(Oberarzt Doktor med Placzek) — klick, zoom, lock!
-Wir halten Tempo unaufgeregt, kein Panikrock.
-Was nötig ist, bleibt übrig; das Überflüss’ge tritt —
-du lässt das Bild zuerst erzählen, und wir erzählen mit.
-
-[BRIDGE | 8 bars | half-time → build | airy sincerity, witty]
-Hier ist Lob keine Währung; es wirkt wie Fernlichtschein:
-kurz auf die Fahrbahn, dann zurück — doch jeder nimmt es ein.
-Drei Zeilen Hausordnung reichen: Vergleich, Rand, klarer Konsens nach Gespräch.
-Die Eile bleibt vor der Tür; die Güte geht zu Fuß — und trägt.
-
-[DROP | 4 bars | instrumental hook; crowd hums “lock—lock”]
-
-[FINAL CHORUS | 12 bars | + gang chants, ad-libs; tag x2 to fade]
-Oberarzt Doktor med Placzek — klick, zoom, lock!
-Die Zweifel haben Ausgangssperre; Artefakte sind am Dock.
-Wir lesen leise, handeln klar; das Restgeräusch verblasst.
-Ein Team im Puls, ein Monitor, der Melodie erfasst.
-(Oberarzt Doktor med Placzek) — klick, zoom, lock! (Crowd: „lock!“)
-Die Runde hält, der Weg ist frei; die Diagnose passt.
-Tag: „klick, zoom, lock“ — repeat to fade; vocoder tail.
-
-[OUTRO | 2 bars | filter sweep down, vocoder tail]
-(whispered): „Placzek… lock…“
-```
