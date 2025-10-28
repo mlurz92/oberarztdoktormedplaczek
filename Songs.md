@@ -1202,7 +1202,6 @@ euphoric trance, electro-pop, 138BPM, driving four-on-the-floor, layered synths,
 
 ```
 [Intro | atmospheric pad | phone dialing tones | whispered female]
-*Bleep bleep bleep bleep*
 Eine Nummer
 Vier Ziffern
 Die jeder kennt, die jeder fürchtet...
@@ -1212,9 +1211,6 @@ Ich bin Chirurg, hab 'nen komplizierten Fall
 Labor kritisch, Patient instabil und kalt
 Mein Finger zittert über dem Display
 Die Durchwahl eingegeben – gleich meldet er sich, oh wei
-
-Vier-Eins-Neun-Zwei
-Vier-Eins-Neun-Zwei
 Jeder Arzt hier kennt diese Zahl
 Die Hotline zur Radiologie – perfekt in jedem Fall
 
@@ -1222,25 +1218,23 @@ Die Hotline zur Radiologie – perfekt in jedem Fall
 Gleich hebt er ab, ich muss bereit sein
 Indikation klar, Anamnese rein
 Seine Fragen sind präzise, treffen wie ein Pfeil
-Wer hier anruft, braucht 'nen Plan – und jedes medizinische Detail!
+Wer hier anruft, braucht 'nen Plan und jedes medizinische Detail!
 
 [Chorus | explosive drop | male and female alternating | anthemic hook]
 Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
 Die Placzek-Hotline! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
-
 Doktor med Placzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Verse 2 | confident male vocal | driving beat | storytelling]
 "Guten Tag, Placzek hier" – diese Stimme, kühl und klar
-"Schildern Sie mir Ihren Fall, präzise, sagen Sie mir, was geschah!"
+"Schildern Sie mir Ihren Fall, lassen Sie nichts aus, sagen Sie mir, was geschah!"
 "CT Abdomen mit Kontrastmittel bitte, dringend!" – stotter' ich nervös
-"Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant und bloß
-
+"Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant, nie bloß
 Die Stille schwebt, drei Sekunden Ewigkeit
-Mein Kollege neben mir wird bleich, das Urteil naht, gleich ist es soweit:
+Mein Kollege neben mir wird bleich, oh Gott, oh weh, wie's gleich heißt:
 "Die Indikation erscheint mir unzureichend, bitte
 Sonographie zunächst, dann Labor – klare Schritte!"
 
@@ -1255,16 +1249,11 @@ Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
 Ruf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!
 Die Placzek-Hotline! Retter in der Not!
 Seine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!
-
 Doktor med Placzek! Am Hörer, messerscharf!
 Wer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!
 
 [Bridge | breakdown | intimate duet | emotional depth]
 (Male spoken, vulnerable) Dann kam der Notfall, echter Code, Leben an der Grenze
-(Female sung, echoing) *An der Grenze, an der Grenze*
-(Male spoken) Ich wählte Vier-Eins-Neun-Zwei, diesmal war ich vorbereitet, mit Evidenz
-(Female sung) *Vier-Eins-Neun-Zwei, Vier-Eins-Neun-Zwei*
-
 (Male sung, building) "Freie Flüssigkeit, Schock, Hämatokrit im freien Fall,
 Verdacht auf Milzruptur, ich brauch' Sie jetzt!"
 (Both together) Und dann... sein Ton verändert sich: "Ich scanne selbst, kommen Sie her,
@@ -1281,320 +1270,9 @@ Die Placzek-Hotline! Vier-Eins-Neun-Zwei!
 Der Anruf, der dein Leben rettet, macht dich zum besseren Arzt, ganz neu dabei!
 Die Placzek-Hotline! Legende am Telefon!
 Wer von ihm lernt, wer ihm vertraut, erreicht die medizinische Perfektion!
-
 Doktor med Placzek! Der Torwächter, der Held!
 Der beste Radiologe, den diese Klinik je bestellt!
-
-[Outro | atmospheric | phone hang-up | female whisper fading]
-*Tuuuut tuuuut tuuuut*
-Vier-Eins-Neun-Zwei
-Vier-Eins-Neun-Zwei
 Die Nummer, die wir niemals vergessen
-*fade to silence*
-```
-
-## Der Goldstandard
-
-### Styles:
-
-```
-euphoric trance, electro-pop, 138BPM, driving four-on-the-floor, layered synths, dual vocals male and female, call and response, anthemic drops, pumping sidechain, emotional breakdown, progressive build, German lyrics, uplifting, infectious, catchy melody
-```
-
-Lyrics:
-
-```
-[Intro | atmospheric pad | golden shimmer synth | filtered arpeggio]
-Wenn Unsicherheit zu Klarheit wird
-Wenn Zweifel sich in Gold verwandelt
-Wenn eine Stimme spricht
-Und alle wissen: Das ist wahr
-
-[Verse 1 | male vocal confident | building kick | pulsing bass]
-Ich steh vor dem Monitor, die Bilder verschwimmen
-Pathologie oder Artefakt? Ich kann's nicht bestimmen
-Die Klinik wartet, Druck steigt an
-Dann kommt er rein – der Mann mit dem goldenen Plan
-
-Er braucht nur Sekunden, sein Blick fährt über die Schichten
-"Hier, sehen Sie? Die Dichte, die Konturen, die Geschichten"
-Was mir wie Rauschen schien, wird plötzlich kristallklar
-Seine Diagnose glänzt – wie 24 Karat
-
-[Pre-Chorus | female vocal ethereal | rising synth | snare roll]
-Er ist die Referenz, die finale Instanz
-Sein Wort hat Gewicht, sein Befund ist Eleganz
-Wenn alle zweifeln, wenn niemand mehr weiß
-Ist seine Antwort Gold – der ultimative Beweis!
-
-[Chorus | explosive drop | both vocals layered | anthemic | soaring lead synth]
-Oberarzt Doktor med Placzek
-Du bist der Goldstandard hier
-Deine Diagnosen glänzen
-24 Karat rein in dir
-
-An dir wird gemessen
-Jeder Befund, jede Norm
-Du bist die goldene Wahrheit
-In perfekter Form!
-
-[Post-Chorus | instrumental | golden synth melody | pumping sidechain]
-Gold-Gold-Goldstandard!
-Gold-Gold-Goldstandard!
-
-[Verse 2 | female vocal dynamic | driving beat]
-Die Literatur sagt "unsicher", die Leitlinien sind unklar
-Doch Placzeks Urteil ist präzise, absolut und wunderbar
-Er kennt die Studien, die Paper, jeden Trend
-Sein Wissen ist die Goldgrube, die niemals endet
-
-Andere haben Meinungen, Theorien, Vermutungen
-Doch seine Diagnose steht – in goldenen Buchstaben geschrieben, keine Irrungen
-Pathologie-Konferenz, Tumorboard, interdisziplinär
-Wenn Placzek spricht, verstummen alle – sein Wort ist schwer!
-
-[Pre-Chorus | male vocal powerful | building energy | white noise riser]
-Er setzt den Standard, nach dem wir alle streben
-Seine Präzision will jeder in sich beleben
-Die Messlatte liegt hoch, vergoldet und so klar
-Wer ihn zum Vorbild hat, wird selbst bald wunderbar!
-
-[Chorus | more intense | both vocals harmonized | maximum energy]
-Oberarzt Doktor med Placzek
-Du bist der Goldstandard hier
-Deine Diagnosen glänzen
-24 Karat rein in dir
-
-An dir wird gemessen
-Jeder Befund, jede Norm
-Du bist die goldene Wahrheit
-In perfekter Form!
-
-[Bridge | breakdown | intimate duet | piano underlayer | emotional depth]
-(Male spoken, reflective) In der Medizin suchen wir immer den Goldstandard
-(Female sung, soft) *Den einen Weg, der sicher zum Ziel führt*
-
-(Female spoken, warm) Die beste Methode, die höchste Evidenz
-(Male sung, building) *Doch hier ist er Mensch, Referenz in Präsenz*
-
-(Both together, crescendo) Nicht nur eine Methode, nicht nur ein Test
-Du bist der lebende Standard, der niemals Rest lässt!
-Deine Exzellenz ist die goldene Messlatte
-An der wir wachsen, jeden Tag, jede Nacht!
-
-[Build-up | epic rise | layered vocals | filter sweep | synth stabs]
-Gold-Standard! Gold-Standard!
-Placzek! Placzek!
-Die Referenz! Die Legende!
-Der eine, wahre Goldstandard!
-
-[Final Chorus | euphoric climax | all vocals layered | triumphant | maximum intensity]
-Oberarzt Doktor med Placzek
-Du bist der Goldstandard hier
-Deine Diagnosen glänzen
-24 Karat rein in dir
-
-An dir wird gemessen
-Jeder Befund, jede Norm
-Du bist die goldene Wahrheit
-In perfekter Form!
-
-[Final Chorus Extended | anthemic repetition]
-Der Goldstandard! (Placzek!)
-Die Referenz! (Für immer!)
-Der Goldstandard! (Unser Held!)
-In goldenen Lettern! (Geschrieben!)
-
-[Outro | atmospheric | golden shimmer returns | vocals fading]
-Wenn Unsicherheit zu Klarheit wird
-Wenn Diagnosen zu Gold werden
-Dann war Placzek hier
-Der Goldstandard – für immer
-
-*fade to golden silence*
-```
-
-## Der Konsil-König
-
-### Styles:
-
-```
-euphoric trance, electro-pop, anthemic chorus, driving four-on-the-floor, soaring synth leads, pumping sidechain compression, male and female duet, 138 BPM
-```
-
-### Lyrics:
-
-```
-[Intro | atmospheric synth pad | tense meeting room feel | whispered female vocal]
-Der Chirurg hat einen Plan...
-Der Onkologe eine Theorie...
-Doch alle warten... auf die Wahrheit.
-
-[Verse 1 | Male Vocal | narrative tone | driving synth bass | 138 BPM]
-Donnerstagmorgen, der Konferenzraum schweigt
-Die Luft ist dicht, von Zweifeln schwer und aufgereizt
-Der Chirurg erklärt den unklaren Prozess im Bauch
-Der Internist tippt auf Entzündung, wie so oft, wie's der Brauch
-Die PowerPoint-Folien zeigen klinische Befunde, blass und alt
-Doch keiner weiß, was in der Tiefe wirklich die Fäden zusammenhält
-
-[Pre-Chorus | Female Vocal | ethereal and building | filter sweep up]
-Dann wird der Bildschirm schwarz, ein Klick, das PACS erwacht
-Und seine Stimme füllt den Raum, beendet diese dunkle Nacht
-Er zoomt ins Bild, die Fensterung perfekt justiert
-Jeder im Raum weiß, was jetzt gleich passiert...
-
-[Chorus | Euphoric Drop | Male and Female Duet | Anthemic and Powerful]
-Der Konsil-König! Placzek übernimmt das Feld!
-Aus Graustufen formt er die Wahrheit, die für alle zählt!
-Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
-Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
-
-[Verse 2 | Male Vocal | confident and slightly playful | steady beat]
-"Interessante Hypothese", sagt er mit Charme, ganz ohne Spott
-"Doch die Anreicherung hier spricht gegen Ihr Komplott"
-Er zeigt den nekrotischen Zerfall, die Infiltration ins Fett
-"Das ist kein Abszess, Kollegen, das ist das Primat, ich wett'"
-Ein Raunen geht durch die Reihen, man beugt sich näher ran
-Er hat sie wieder mal geführt aus dem diagnostischen Wahn
-
-[Pre-Chorus | Female Vocal | rising energy | snare roll build-up]
-Er blickt kurz auf, ein Lächeln blitzt, er hat es längst gewusst
-Die Bilder lügen niemals, nur der Mensch hat's nicht bewusst
-Er gibt die Bühne wieder frei, sein Werk ist hier getan
-Und lenkt den ganzen Fall damit in eine neue, klare Bahn
-
-[Chorus | Euphoric Drop | Male and Female Duet | even more energy | Ad-libs]
-Der Konsil-König! Placzek übernimmt das Feld!
-Aus Graustufen formt er die Wahrheit, die für alle zählt!
-Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
-Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
-(Die Wahrheit im Detail!)
-
-[Bridge | Emotional Breakdown | Spoken Word Male (as Dr. Placzek) | Ethereal Female Backing Vocals]
-(spoken) "Meine Damen und Herren, die Bilder sind nur die Landkarte.
-(sung female) *Landkarte...*
-(spoken) Aber um den Weg zu finden, muss man wissen, wie man sie liest.
-(sung female) *Lesen und versteh'n...*
-(spoken) Und vor allem... muss man wissen, wonach man sucht."
-
-[Final Chorus | Maximum Euphoria | All Vocals Layered | Triumphant]
-Der Konsil-König! Placzek übernimmt das Feld!
-Aus Graustufen formt er die Wahrheit, die für alle zählt!
-Sein Cursor tanzt und zeigt den Punkt, den niemand hat geseh'n
-Ein scharfer Satz – und alle and'ren Pläne müssen untergeh'n!
-(Placzek! Der König hier im Feld!)
-
-[Outro | synth lead melody fades | keyboard clicking sound | final whisper female]
-Diagnose... gesichert.
-```
-
-## Interessant…
-
-### Styles:
-
-```
-euphoric trance + electro-pop, 138 BPM, four-on-the-floor, pumping sidechain, bright supersaw leads, arpeggiated pluck intro, wide stereo image, modern pop polish, DUET (female airy lead + male clear lead), stacked harmonies in CHORUS, crowd-chant hook, no guitars, no rap
-[Duet][Energy: High][Key: A minor][Build: snare roll + white-noise riser][Drop: sidechained supersaw lead][Chorus: octave-doubled topline + gang chants][Outro: clean cutoff]
-```
-
-### Lyrics:
-
-```
-[Intro | shimmering arp, whispered count-in]
-(Whispers, both) In-te-res-sant…
-(Whispers) Drei, zwei, eins — bereit?
-
-[Verse 1 | playful storytelling, brisk]
-[Female lead]
-Dienstbeginn, der Monitor glüht, das PACS wird warm,
-ich präsentiere meinen Fall mit zitterndem Charme.
-[Male (Placzek)]
-„Interessant…“ — ein Lächeln, halb Sonne, halb Gericht,
-„Fenster, Level, HU — dann stimmt auch das Licht.“
-
-[Pre-Chorus | call & response, lift]
-[Female]
-Wir drehen Wheel und wissen: gleich wird’s ernst,
-[Male]
-MPR setzt die Achsen, bis du alles lernst.
-[Female]
-MIP für die Gefäße, VR gibt die Tiefe frei,
-[Both]
-und plötzlich wird aus Grau die Diagnostik-Magie.
-
-[Chorus | soaring, anthemic, stacked]
-[Both + crowd chant]
-Wenn Placzek „interessant“ sagt, wird’s brillant,
-wir schwitzen kurz, doch landen elegant.
-HU erzählt uns, was im Schatten wirklich brennt,
-sein Blick macht Unsichtbares evident.
-(Chant) In-te-res-sant! In-te-res-sant!
-[Male]
-Oberarzt Doktor med Placzek — unser Diamant.
-
-[Post-Chorus | hook riff]
-[Crowd]
-Kon-trast — track! Drei-zwei-eins — go!
-[Female ad-lib]
-ALARA bleibt König, doch die Bilder sind pro.
-
-[Verse 2 | witty, technical sparkle]
-[Male (Placzek)]
-„Schöne Idee — doch Timing ist der Plan,
-arteriell zu früh? Dann sieht man wenig dran.“
-[Female]
-Bolus-Tracking zündet, Portalphase sitzt,
-Iterative Reco — das Rauschen wird gestutzt.
-[Male]
-„Kernel wechseln, Weichteil gewinnt“ — notiert,
-[Female]
-ein Satz von dir und jeder Slice sortiert.
-
-[Pre-Chorus 2 | bigger lift]
-[Female]
-Noch ein Blick, das Puzzle wird komplett,
-[Male]
-„Sagittal dazu, dann ist der Pfad korrekt.“
-[Both]
-Wir hören dein „interessant“ und fühlen: Gleich
-wird aus Chaos eine Linie — meisterlich und weich.
-
-[Chorus | repeat, higher harmony]
-[Both + crowd]
-Wenn Placzek „interessant“ sagt, wird’s brillant,
-wir schwitzen kurz, doch landen elegant.
-HU, Window/Level, alles sitzt,
-sein Finger zeigt den Punkt, der wirklich blitzt.
-(Chant) In-te-res-sant! In-te-res-sant!
-[Male]
-Oberarzt Doktor med Placzek — unser Konstant.
-
-[Bridge | breakdown → rise, half-time then build]
-[Female soft]
-Wenn Zweifel rauscht wie Regen an Glas,
-[Male warm]
-bleib ruhig, atme — Perfektion hat Maß.
-[Female]
-Du stellst die Fragen, die den Nebel trennen,
-[Male]
-und lässt uns unsere eigenen Antworten kennen.
-[Build | snare roll + riser]
-[Both, shouted]
-Zähl uns ein — drei, zwei, eins — Bolus: go!
-
-[Final Chorus | maximal, octave up, gang vox]
-[Both + crowd chant]
-Wenn Placzek „interessant“ sagt, wird’s brillant,
-sein Witz ist mild, doch seine Messlatte konstant.
-Von Slice zu Slice, bis Wahrheit hell erkennt —
-wir feiern den, der Bilder Lesen nennt.
-(Chant) In-te-res-sant! In-te-res-sant!
-[Tag]
-Oberarzt Doktor med Placzek — unser Diamant.
-
-[Outro | clean cutoff on 1]
-(Whisper) Interessant…
 ```
 
 ## Drei Gebote
