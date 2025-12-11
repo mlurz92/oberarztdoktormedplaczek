@@ -1,104 +1,411 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Placzek Song Suite</title>
-    <meta name="color-scheme" content="light dark" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  </head>
-  <body>
-    <div class="scene" aria-hidden="true"></div>
-    <div class="app">
-      <header class="top-bar glass-panel">
-        <div class="brand-block">
-          <span class="brand-emblem" aria-hidden="true">
-            <span class="brand-shine"></span>
-          </span>
-          <div class="brand-copy">
-            <span class="brand-tag">Song Suite</span>
-            <h1>Oberarzt&nbsp;Dr.&nbsp;Placzek</h1>
-          </div>
-        </div>
-        <div class="action-cluster">
-          <button class="theme-toggle" type="button" aria-label="Darstellung umschalten">
-            <span class="icon-slot" data-icon="theme" aria-hidden="true"></span>
-          </button>
-          <label class="variant-toggle" for="variantSwitch">
-            <span class="variant-label">Placzek</span>
-            <input id="variantSwitch" type="checkbox" />
-            <span class="variant-track" aria-hidden="true">
-              <span class="variant-thumb"></span>
-            </span>
-            <span class="variant-label">Platzek</span>
-          </label>
-        </div>
-      </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dr. Placzek // Deus ex CT - Album</title>
+    
+    <!-- Externe Ressourcen -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-      <section class="control-row glass-panel">
-        <div class="stats">
-          <span class="stat-pill" id="songCount">0 Songs</span>
-          <span class="stat-pill" id="variantState">Placzek-Version</span>
-        </div>
-        <div class="control-tools">
-          <button class="copy-all-btn" id="copyAllSongs" type="button" aria-label="Songs.md kopieren">
-            <span class="icon-slot" data-icon="clipboard" aria-hidden="true"></span>
-            <span class="copy-all-label">Songs.md kopieren</span>
-          </button>
-          <label class="search" for="searchInput">
-            <span class="icon-slot" data-icon="search" aria-hidden="true"></span>
-            <input id="searchInput" type="search" placeholder="Titel oder Lyrics durchsuchen" autocomplete="off" />
-          </label>
-        </div>
-      </section>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-highlight: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --accent-color: #00d2ff;
+            --accent-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --border-radius: 24px;
+        }
 
-      <main id="songGrid" class="song-grid" aria-live="polite" aria-busy="true"></main>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- BACKGROUND FX --- */
+        .ambient-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            background-size: cover;
+        }
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6;
+            animation: floatOrb 20s infinite ease-in-out alternate;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #4f46e5; animation-duration: 25s; }
+        .orb-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #0ea5e9; animation-duration: 30s; animation-direction: reverse; }
+        .orb-3 { top: 40%; left: 40%; width: 30vw; height: 30vw; background: #ec4899; opacity: 0.3; animation-duration: 40s; }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .main-card {
+            width: 95%; max-width: 1400px; height: 90vh;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            display: flex; overflow: hidden; position: relative;
+        }
+
+        /* --- SIDEBAR (PLAYLIST) --- */
+        .sidebar {
+            width: 380px;
+            border-right: 1px solid var(--glass-border);
+            display: flex; flex-direction: column;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brand-section {
+            padding: 30px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .brand-title {
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem;
+            margin: 0; letter-spacing: 1px;
+            background: linear-gradient(90deg, #fff, #a5f3fc);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        .brand-subtitle { font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px; font-weight: 300; }
+
+        .playlist-scroll { flex: 1; overflow-y: auto; padding: 15px; }
+
+        .track-card {
+            padding: 15px 20px; margin-bottom: 10px; border-radius: 12px;
+            cursor: pointer; transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+
+        .track-card:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-2px); }
+        .track-card.active {
+            background: var(--glass-highlight);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .track-info { display: flex; flex-direction: column; }
+        .track-number { font-size: 0.7rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 2px; }
+        .track-title { font-weight: 500; font-size: 0.95rem; }
+        .play-icon { opacity: 0; transform: translateX(-10px); transition: all 0.3s ease; color: var(--accent-color); }
+        .track-card.active .play-icon { opacity: 1; transform: translateX(0); }
+
+        /* --- CONTENT AREA --- */
+        .content-area { flex: 1; position: relative; display: flex; flex-direction: column; }
+
+        .content-header {
+            padding: 30px 40px; display: flex; justify-content: space-between; align-items: flex-end;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
+        }
+
+        .song-meta h1 {
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2.5rem; margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3); opacity: 0; transform: translateY(20px);
+        }
+        
+        .song-details { display: flex; gap: 20px; margin-top: 10px; font-size: 0.85rem; color: var(--text-secondary); opacity: 0; }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff; padding: 10px 20px; border-radius: 30px; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px;
+            backdrop-filter: blur(5px);
+        }
+        .action-btn:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Back Button (Mobile Only) */
+        .back-btn {
+            display: none; /* Hidden on Desktop */
+            background: transparent; border: none; color: var(--text-secondary);
+            font-size: 1.5rem; cursor: pointer; margin-right: 15px;
+        }
+
+        .lyrics-wrapper {
+            flex: 1; padding: 0 40px 40px 40px; overflow-y: auto;
+            mask-image: linear-gradient(to bottom, transparent, black 5%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 90%, transparent 100%);
+        }
+
+        .lyrics-text {
+            font-size: 1.15rem; line-height: 1.8; white-space: pre-wrap;
+            color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto; text-align: center;
+            padding: 20px 0; opacity: 0;
+        }
+
+        /* Empty State */
+        .empty-state {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            text-align: center; color: var(--text-secondary);
+        }
+        .empty-icon {
+            font-size: 4rem; margin-bottom: 20px;
+            background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.8;
+        }
+
+        /* --- RESPONSIVE / MOBILE LIST-FIRST DESIGN --- */
+        @media (max-width: 992px) {
+            .main-card {
+                height: 100vh; width: 100%; border-radius: 0; border: none;
+                flex-direction: column;
+            }
+
+            /* Die Sidebar ist jetzt standardmäßig sichtbar und füllt den Screen */
+            .sidebar {
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background: #0f172a; /* Solid background for legibility */
+                /* Oder Glassmorphism beibehalten: */
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(30px);
+                border-right: none;
+                transform: translateX(0); /* Sichtbar by default */
+                z-index: 20;
+            }
+
+            /* Klasse zum Ausblenden der Liste, wenn Song gewählt wird */
+            .sidebar.mobile-hidden {
+                transform: translateX(-100%);
+            }
+
+            .content-area {
+                width: 100%; height: 100%;
+                z-index: 10;
+            }
+
+            .content-header {
+                padding: 20px;
+                flex-direction: column; align-items: flex-start; gap: 15px;
+            }
+            
+            .header-top-row {
+                display: flex; align-items: center; width: 100%;
+            }
+
+            .back-btn { display: block; } /* Back button visible on mobile */
+
+            .song-meta h1 { font-size: 1.5rem; text-align: left; }
+            .song-details { flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+            .lyrics-wrapper { padding: 0 20px 80px 20px; }
+            .lyrics-text { font-size: 1rem; text-align: left; }
+            
+            /* Empty State auf Mobile ausblenden, da Liste Standard ist */
+            .empty-state { display: none; } 
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <dialog id="songDialog" class="song-dialog" aria-modal="true">
-      <div class="dialog-surface">
-        <header class="dialog-header">
-          <div class="dialog-title">
-            <h2 id="dialogTitle"></h2>
-            <div class="dialog-icons">
-              <button class="icon-btn" type="button" data-copy="dialog-title" aria-label="Titel kopieren">
-                <span class="icon-slot" data-icon="title" aria-hidden="true"></span>
-              </button>
-              <button class="icon-btn" type="button" data-copy="dialog-styles" aria-label="Styles kopieren">
-                <span class="icon-slot" data-icon="palette" aria-hidden="true"></span>
-              </button>
-              <button class="icon-btn" type="button" data-copy="dialog-lyrics" aria-label="Lyrics kopieren">
-                <span class="icon-slot" data-icon="lyrics" aria-hidden="true"></span>
-              </button>
-              <button class="icon-btn" type="button" data-copy="dialog-full" aria-label="Song komplett kopieren">
-                <span class="icon-slot" data-icon="full" aria-hidden="true"></span>
-              </button>
+    <div class="main-card">
+        
+        <!-- Sidebar / Playlist (Auf Mobile Startbildschirm) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand-section">
+                <h2 class="brand-title">DR. PLACZEK</h2>
+                <div class="brand-subtitle">DEUS EX CT // ALBUM LISTE</div>
             </div>
-          </div>
-          <button class="dialog-close" type="button" aria-label="Schließen">
-            <span class="icon-slot" data-icon="close" aria-hidden="true"></span>
-          </button>
-        </header>
-        <section class="dialog-section">
-          <h3>Styles</h3>
-          <div id="dialogStyles" class="dialog-styles"></div>
-        </section>
-        <section class="dialog-section">
-          <h3>Lyrics</h3>
-          <pre id="dialogLyrics" class="dialog-lyrics"></pre>
-        </section>
-      </div>
-    </dialog>
+            <div class="playlist-scroll" id="playlist-container">
+                <!-- Tracks generated via JS -->
+            </div>
+        </aside>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        <!-- Main Content (Lyrics) -->
+        <main class="content-area">
+            
+            <!-- Song Content -->
+            <div id="content-display" style="display: none; height: 100%; flex-direction: column;">
+                <div class="content-header">
+                    <div class="header-top-row">
+                        <button class="back-btn" onclick="showPlaylist()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <div class="song-meta">
+                            <h1 id="song-title">Song Titel</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center w-100 flex-wrap gap-3">
+                        <div class="song-details">
+                            <span id="song-id">#01</span>
+                            <span>&bull;</span>
+                            <span id="song-duration">--:--</span>
+                            <span>&bull;</span>
+                            <span id="song-bpm">-- BPM</span>
+                        </div>
+                        <button class="action-btn" onclick="copyLyrics()" id="copyBtn">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Text Kopieren</span>
+                        </button>
+                    </div>
+                </div>
 
-    <script type="module" src="script.js"></script>
-  </body>
+                <div class="lyrics-wrapper">
+                    <div class="lyrics-text" id="lyrics-text">
+                        <!-- Lyrics -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (Nur Desktop sichtbar) -->
+            <div class="empty-state" id="empty-state">
+                <i class="fa-solid fa-compact-disc fa-spin-pulse empty-icon" style="animation-duration: 8s;"></i>
+                <h3>Wählen Sie einen Track</h3>
+                <p>Playlist links verfügbar.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // --- DATA ---
+        const albumData = [
+            { id: 1, title: "Oberarzt Dr. med. Placzek", bpm: "120", duration: "03:45", lyrics: `Er ist der Chef im CT, er weiß genau Bescheid\nEr scannt die Patienten mit Geschick und Sorgfalt\nEr ist der Meister in seinem Fach, er kennt sich mit allem aus\nEr ist der Oberarzt Doktor med Placzek\n\nOberarzt Doktor med Placzek, er ist unser Held und unser Gott\nEr ist der beste in seinem Fach, er macht uns alle froh\nOberarzt Doktor med Placzek, er ist hart, aber fair\nEr ist die helle Sonne in unsrem Leben, er gibt uns Kraft und Mut\n\nEr umgarnt Manu und Lena, der alte Charmeur\nSie schmelzen hin bei ihm, er hat einfach Flair\nEr ist streng zu Assistenten, er duldet keinen Fehler\nAber sie lernen viel von ihm, er ist der Oberarzt Doktor med Placzek\n\nOberarzt Doktor med Placzek, er ist unser Held und unser Gott\nEr ist der beste in seinem Fach, er macht uns alle froh\nOberarzt Doktor med Placzek, er ist frech, einfach der Boss\nEr ist die  helle Sonne in unserem Leben, er gibt uns Kraft und Wärme\nVorbild, Held und CT Gott, was du anfässt wird zu Gold\nDu bist die Sonne in unserem Leben, oh unser CT Oberarzt Doktor med Placzek` },
+            { id: 2, title: "Oberarzt der Herzen", bpm: "115", duration: "03:10", lyrics: `Oh-oh-oh, Doktor med. Placzek\nUnser Held im weißen Kittel\nOh-oh-oh, er zeigt uns den Weg\nDer Oberarzt der Herzen – perfekt!\n\nJeder weiß, wenn er den Raum betritt\nDas CT wird zu seinem Meisterstück\nSein Wissen leuchtet, sein Blick ist klar\nMit ihm wird jede Diagnose wahr\n\nDie Assistenten kommen immer zu ihm\n"Mit dir besprechen wir’s, es macht mehr Sinn!"\nEr erklärt mit Herz, Geduld und Verstand\nUnser Mentor, stets mit helfender Hand\n\n"Bleib fokussiert, mach keinen Halt\nIch zeig dir, wie man das richtig macht\nZusammen schaffen wir jeden Fall\nDenn Wissen macht uns unschlagbar!"\n\nOberarzt Doktor med. Placzek\nEr ist der Oberarzt der Herzen\nEin Held, ein Lehrer, der uns lenkt\nMit ihm wird das Ziel immer geschenkt\n\nOberarzt Doktor med. Placzek\nEr führt uns sicher Schritt für Schritt\nDer Oberarzt der Herzen – perfekt!\nWir alle folgen ihm, er ist der Hit!\n\nWenn es knifflig wird, dann bleibt er ruhig\nMit einem Blick macht er den Befund deutlich\nEr sieht die Details, die niemand erkennt\nEin wahres Genie, das jeder kennt\n\nSeine Stärke ist nicht nur Verstand\nSondern auch das Herz, mit dem er uns anspannt\nManchmal streng, doch immer gerecht\nEr zeigt uns, wie man das Beste erreicht\n\n"Bleib fokussiert, mach keinen Halt\nIch zeig dir, wie man das richtig macht\nZusammen schaffen wir jeden Fall\nDenn Wissen macht uns unschlagbar!"\n\nOberarzt Doktor med. Placzek\nEr ist der Oberarzt der Herzen\nEin Held, ein Lehrer, der uns lenkt\nMit ihm wird das Ziel immer geschenkt\n\nOberarzt Doktor med. Placzek\nEr führt uns sicher Schritt für Schritt\nDer Oberarzt der Herzen – perfekt!\nWir alle folgen ihm, er ist der Hit!` },
+            { id: 3, title: "Vier-Eins-Neun-Zwei", bpm: "135", duration: "04:02", lyrics: `Eine Nummer\nVier Ziffern\nDie jeder kennt, die jeder fürchtet...\n\nIch bin Chirurg, hab 'nen komplizierten Fall\nLabor kritisch, Patient instabil und kalt\nMein Finger zittert über dem Display\nDie Durchwahl eingegeben – gleich meldet er sich, oh wei\nVier-Eins-Neun-Zwei! Vier-Eins-Neun-Zwei!\nJeder Arzt hier kennt diese Zahl\nDie Hotline zur Radiologie – perfekt in jedem Fall\n\nGleich hebt er ab, ich muss bereit sein\nIndikation klar, Anamnese rein\nSeine Fragen sind präzise, treffen wie ein Pfeil\nWer hier anruft, braucht 'nen Plan und jedes medizinische Detail!\n\nDie Placzek-Hotline! Vier-Eins-Neun-Zwei!\nRuf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!\nDie Placzek-Hotline! Retter in der Not!\nSeine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!\nDoktor med Placzek! Am Hörer, messerscharf!\nWer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!\n\n"Guten Tag, Placzek hier" – diese Stimme, kühl und klar\n"Schildern Sie mir Ihren Fall, lassen Sie nichts aus, sagen Sie mir, was geschah!"\n"CT Abdomen mit Kontrastmittel bitte, dringend!" – stotter' ich nervös\n"Begründung? Klinische Frage? Labor? Vorbefunde?" – er fragt prägnant, nie bloß\nDie Stille schwebt, drei Sekunden Ewigkeit\nMein Kollege neben mir wird bleich, oh Gott, oh weh, wie's gleich heißt:\n"Die Indikation erscheint mir unzureichend, bitte\nSonographie zunächst, dann Labor – klare Schritte!"\n\nDie Absage tut weh, doch sie lehrt uns mehr\nAls jedes Lehrbuch, jede Fortbildung, sie schärft uns sehr!\nBeim nächsten Mal bin ich gewappnet, mit allen Fakten parat\nDann öffnet sich die Schleuse zu seinem CT-Apparat!\n\nDie Placzek-Hotline! Vier-Eins-Neun-Zwei!\nRuf ihn an, wenn's wirklich brennt und du weißt nicht mehr, was du machen sollst dabei!\nDie Placzek-Hotline! Retter in der Not!\nSeine Brillanz und sein Verstand bewahren dich vorm diagnostischen Tod!\nDoktor med Placzek! Am Hörer, messerscharf!\nWer seine Prüfung übersteht, kriegt den besten CT-Scan, den's je gab!\n\nDann kam der Notfall, echter Code, Leben an der Grenze\n"Freie Flüssigkeit, Schock, Hämatokrit im freien Fall,\nVerdacht auf Milzruptur, ich brauch' Sie jetzt!"\nUnd dann... sein Ton verändert sich: "Ich scanne selbst, kommen Sie her,\nWir retten diesen Menschen, ich bin bereit – sofort!"\n\nIm CT-Raum sein Können leuchtet auf\nSein Blick erfasst die Schichten, jedes Pixel im genauen Lauf\n"Milzruptur Grad vier, Kontrastextravasat, OP sofort!\nSie haben alles richtig gemacht!" – Das schönste Wort!\n\nDie Placzek-Hotline! Vier-Eins-Neun-Zwei!\nDer Anruf, der dein Leben rettet, macht dich zum besseren Arzt, ganz neu dabei!\nDie Placzek-Hotline! Legende am Telefon!\nWer von ihm lernt, wer ihm vertraut, erreicht die medizinische Perfektion!\nDoktor med Placzek! Der Torwächter, der Held!\nDer beste Radiologe, den diese Klinik je bestellt!\nDie Nummer, die wir niemals vergessen` },
+            { id: 4, title: "Pilot im Pixelmeer", bpm: "128", duration: "03:50", lyrics: `Oberarzt Doktor med. Placzek,\nStrahlend wie ein Stern am Klinik-Himmel!\nEr wirbelt durch den Flur, so energiegeladen,\nDass alle Herzen höher schlagen!\n\nWenn er mit dem Mauszeiger durchs CT-Bild gleitet,\nUnd jeden Befund mit Perfektion bereitet.\nSein Blick ist messerscharf, wir spüren seinen Glanz,\nWir folgen ihm in diesem diagnostischen Tanz.\nEr ist streng, doch wir lieben sein klares Wort,\nJede Rüge treibt uns weiter, niemals fort.\nSeine Lehre gibt uns Antrieb Tag für Tag,\nWir wollen nur Perfektion – genau wie er es mag!\n\nSeine Stimme hallt in jedem Monitor,\nEr führt uns sicher durch jedes Bilder-Tor.\nManchmal streng, doch immer mit Charme,\nSo hält er uns wach und stets in Alarm!\n\nOberarzt Doktor med. Placzek – du bist unser Held!\nDeine Aura funkelt heller als die Welt!\nEin Lehrer, ein Vorbild, der Herzen-Oberarzt,\nWir folgen dir blind, denn du hast uns stets bewahrt!\nOberarzt Doktor med. Placzek – du führst uns zum Ziel!\nDein Wissen ist hoch, dein Temperament so viel!\nWir tanzen im Takt deiner Diagnosen,\nMit dir bleibt jeder Zweifel für immer eingefroren!\n\nDrehst das Fenster, ändert sich der Blick,\nAlles wird deutlich, wie ein Zaubertrick.\nKontrastmittel glüht, und du erkennst die Spur,\nJedes kleine Detail wird zur Helden-Kur!\nWir stehen vor dir, voll Ehrfurcht so rein,\nDu formst jede Erkenntnis in Gold hinein.\nMit Höchstgeschwindigkeit schlägt dein brillanter Geist,\nDu belehrst uns, bis jedes Puzzle-Stück passt und weißt!\n\n"Bleib dran, geh mutig durch den Morphologie-Dschungel,\nIch zeig dir, wie man Fehler zum Lernen ummodelt!"\nDeine Ratschläge klingen laut und klar,\nSo wird jeder von uns ein diagnostischer Star!\n\nOberarzt Doktor med. Placzek – der CT-Herrscher hier!\nDein Wissen lodert, wir brennen neben dir!\nEin Pilot im Pixelmeer, souverän und genau,\nKein Rauschen kann dich bezwingen, so smart und schlau!\nOberarzt Doktor med. Placzek – wir fallen auf die Knie!\nWir wollen nur dich als Leitstern und Genie!\nMit jedem Scan schreibst du Ruhm in unsere Welt,\nEin Oberarzt, der alle Zweifel wegfegt – unser Held!\n\nSieh uns wachsen, in deinem hellen Schein,\nUnsere Fehler schwinden, wir wollen wie du sein!\nDein Lob ist rar, doch dafür strahlt es lang,\nVerwandelt Unsicherheit in einen Siegesgesang!\n\nOberarzt Doktor med. Placzek – ein Garant für Erfolg!\nKein Problem bleibt ungeklärt, du bist niemals stolz.\nDu lehrst, du lenkst, du forderst uns streng,\nWir wollen in deinem Perfektionslicht steh’n!\nOberarzt Doktor med. Placzek – leuchtest wie die Sonne,\nFür immer und ewig bist du unsere Wonne!\nDer Oberarzt der Herzen, der uns erhebt,\nDein Glanz bleibt bestehen, sei’s Tag oder spät!` },
+            { id: 5, title: "Drei Gebote", bpm: "95", duration: "03:22", lyrics: `Oh-oh-oh! Die Drei Gebote!\nOh-oh-oh! Von Doktor Placzek!\nWer sie kennt, der macht's perfekt!\nOh-oh-oh!\n\nGebot Eins, ganz simpel und klar:\n"Schau dir die Voruntersuchung an, wunderbar!"\nIch dacht: "Ach, das brauch ich heut nicht!"\nPlaczek schüttelt nur den Kopf – sein Blick spricht Gericht!\n\n"Der Tumor war schon im letzten Bild zu seh'n!\nDrei Millimeter klein, du hast dran vorbeigeseh'n!"\nSeit dem Tag schau ich mir alles an,\nVoruntersuchung first – Placzeks Masterplan!\n\nSeine Regeln sind aus Gold gemacht!\n*Aus Gold! Aus purem Gold!*\nWer sie bricht, hat einfach nicht nachgedacht!\n*Nicht nachgedacht! Oh nein!*\n\nDie Drei Gebote von Doktor med Placzek!\nBefolge sie, dann wird's perfekt!\nOh-oh-oh! Regel Eins, Zwei, Drei!\nMit Placzeks Weisheit bist du dabei!\n\nDer CT-König zeigt uns, wie's geht!\nSein Wort ist Gesetz, das nie vergeht!\nOh-oh-oh! Doktor Placzek!\nDeine Drei Gebote – absolut korrekt!\n\nGebot Zwei, vom Meister selbst verkündet:\n"Schau jedes Bild, auch ganz am Rand, das zündet!"\n"Die Lunge – check! Das Herz – alles klar!"\nDoch Placzek fragt: "Und Milz? Pankreas? Na, sag's mir mal!"\n\n"Am Bildrand sitzt die Wahrheit oft versteckt!\nDer Nebenbefund, der Leben rettet – hast du's entdeckt?"\nIch stand da wie bestellt und nicht abgeholt,\nDie Nierenmetastase übersehen – oh, das war nicht gewollt!\n\nSein Auge sieht wirklich jeden Pixel klar!\nJeden Pixel! Unglaubbar!\nWer wie Placzek schaut, wird ein Superstar!\nEin Superstar! Oh ja, so wahr!\n\nDie Drei Gebote von Doktor med Placzek!\nBefolge sie, dann wird's perfekt!\nOh-oh-oh! Regel Eins, Zwei, Drei!\nMit Placzeks Weisheit bist du dabei!\n\nDer CT-König zeigt uns, wie's geht!\nSein Wort ist Gesetz, das nie vergeht!\nOh-oh-oh! Doktor Placzek!\nDeine Drei Gebote – absolut korrekt!\n\nUnd jetzt Gebot Drei – das Wichtigste von allen:\n"Hast du mit mir besprochen, dann lass es gelten!\nWeiche nicht ab, die Diagnose steht fest!\nWas ich nicht sag, ist falsch – das ist der Test!"\n\nSein Urteil ist Gesetz, gemeißelt tief in Stein!\nNach unsrer Besprechung kann's nur richtig sein!\n\nDie Drei Gebote von Doktor med Placzek!\nBefolge sie, dann wird's perfekt!\nOh-oh-oh! Regel Eins, Zwei, Drei!\nMit Placzeks Weisheit bist du dabei!\n\nGebot Eins! (Voruntersuchung!)\nGebot Zwei! (Jeden Rand seh'n!)\nGebot Drei! (Sein Wort ist wahr!)\nPlaczeks Drei Gebote – einfach wunderbar!\n\nOh-oh-oh... Die Drei Gebote...\nOh-oh-oh... Doktor Placzek...\nFür immer unser Held!` },
+            { id: 6, title: "Kunst der Diagnostik", bpm: "88", duration: "03:55", lyrics: `Morgens in der Klinik\nEin besonderer Moment\nWenn durch die Gänge leise\nDoktor Placzek geht\n\nMit ruhiger Präzision\nBetrachtet er die Bilder\nSein Blick erfasst Details\nDie anderen verborgen bleiben\nIn seiner Gegenwart\nWird Komplexes kristallklar\nSeine sanfte Strenge lehrt uns\nWas wirklich wichtig war\n\nZwischen all den Grautönen\nSieht er Muster, die entstehen\nSeine Worte öffnen Welten\nDie wir langsam erst verstehen\n\nOberarzt Doktor med. Placzek\nFührt durch Schichten, Bild für Bild\nSeine Kunst der Diagnostik\nMacht das Unsichtbare sichtbar\n\nIn den Händen des Meisters\nWird Technologie zur Kunst\nSeine Lehren sind ein Wegweiser\nDer uns sicher führen kann\n\nManchmal streng, doch immer weise\nZeigt er uns den rechten Weg\nSeine Jahre der Erfahrung\nSpiegeln sich in jedem Rat\n\nIm Kontrollraum herrscht die Ruhe\nWenn er seine Runden dreht\nJede Diagnose präzise\nJeder Befund exakt bedacht\nDie Assistenten um ihn herum\nLernen mehr als nur den Schein\nSeine Art zu unterrichten\nPrägt sich tief ins Denken ein\n\nDurch die Ebenen der Bilder\nFührt sein Wissen uns voran\nWas zunächst verworren scheint\nWird durch seine Sicht ganz klar\n\nOberarzt Doktor med. Placzek\nMeister seines Elements\nIn der Welt der Radiologie\nIst sein Name längst Legende\n\nSeine Expertise berührt uns\nMacht uns jeden Tag noch mehr\nZu Ärzten, die verstehen\nWas die Bilder uns erzähln\n\nIn den stillen CT-Räumen\nWo die Technik leise summt\nSchafft er kleine Wunder\nTag für Tag mit seinem Können\n\nOberarzt Doktor med. Placzek\nLeitet uns mit sanfter Hand\nDurch die Tiefen der Bildgebung\nIn ein neues Verständnis hinein\n\nSeine Weisheit wird uns führen\nNoch auf manchem weiten Weg\nDankbar sind wir für die Lehren\nVon Doktor med. Placzek` },
+            { id: 7, title: "Mit harter Hand und Charme", bpm: "110", duration: "03:30", lyrics: `Dr. Placzek's Meisterschule\nWo Brillanz auf Strenge trifft\nEin Lächeln scharf wie Skalpelle\nEin Blick, der tief in Seelen dringt\n\nMontagmorgen, Sieben Uhr\nSein charmantes Lächeln täuscht\n"Was sehen Sie hier, Doktor?" fragt er neckisch\nWährend Schweiß von Stirnen fließt\n\nSeine Augen blitzen auf\nWenn wir stammeln, wenn wir stocken\nMit elegantem Spott und sanfter Hand\nFührt er uns durch Schatten bis zum Licht\n\nHart aber herzlich, streng aber fair\nNeckisch lachend korrigiert er jeden Fehler\nEin Tadel von ihm brennt wie Feuer\nDoch zündet auch das Licht in uns an\n\nDr. Placzek! Mit harter Hand und Charme\nFührt er uns durch das Labyrinth\nDr. Placzek! Sein neckisches Genie\nFormt aus Ton die Meister von morgen\n\nSeine Brillanz ist unser Leuchtturm\nSein Spott unser Ansporn\nIn seiner Schule wächst man schnell\nOder man geht unter im Sturm!\n\n"Interessante Diagnose" sagt er schmunzelnd\nUnd wir wissen – falsch gedacht!\nMit funkelnden Augen zeigt er dann\nWas unserm Blick verborgen war\n\nEr neckt und fordert, lobt nur selten\nSeine Strenge ist legendär\nDoch dieser Mann mit scharfem Witz\nMacht uns besser Tag für Tag\n\nCharmant und brillant, streng und gerecht\nSein Lachen verbirgt die höchsten Ansprüche\nSeine Lehren sind Gold, sein Tadel ist Silber\nUnter seiner Führung werden wir zu Diamanten\n\nDr. Placzek! Mit harter Hand und Charme\nFührt er uns durch das Labyrinth\nDr. Placzek! Sein neckisches Genie\nFormt aus Ton die Meister von morgen\n\nSeine Brillanz ist unser Leuchtturm\nSein Spott unser Ansporn\nIn seiner Schule wächst man schnell\nOder man geht unter im Sturm!\n\nHinter verschlossenen Türen flüstern wir\nVon seiner Härte, seinem Witz, seiner Kunst\nManche weinen, manche lachen\nAlle wachsen unter seinem Blick\n\nDieser Mann, so streng und doch so warm\nMit Augen scharf wie Laserstrahlen\nSieht durch uns hindurch und baut uns auf\nMit charmanter Hand und klugem Geist\n\nDr. Placzek! Mit harter Hand und Charme\nFührt er uns durch das Labyrinth\nDr. Placzek! Sein neckisches Genie\nFormt aus Ton die Meister von morgen\n\nSeine Brillanz ist unser Leuchtturm\nSein Spott unser Ansporn\nIn seiner Schule wächst man schnell\nOder man geht unter im Sturm!\n\nDr. Placzek's harte Schule\nPrägt uns alle, macht uns stark\nSein neckischer Charme, sein brillanter Geist\nLeuchtet ewig in uns fort` },
+            { id: 8, title: "Durch Feuer und Eis", bpm: "100", duration: "04:10", lyrics: `Im Zentrum der Radiologie\nWo Schatten Geschichten erzählen\nDa führt mit geschickter Hand\nDer Meister vom CT-Land\n\nMit kritischem Auge und scharfem Verstand\nGleitet er durch die Graustufen sanft\nDoktor med. Placzek, sein Wissen so tief\nJeden Befund er meisterhaft liest\n\nDie Assistenten stehen still im Raum\nSein Urteil wiegt schwer wie ein Stein\nDoch niemals ungerecht, stets auf den Punkt\nSeine Strenge bildet Könner aus Novizen\n\nSeine Lehren präzise wie Laserstrahlen\nSchneiden durch Nebel der Unwissenheit\nWer bei ihm besteht, hat Gold im Herzen\nDenn unter Druck entstehen Diamanten\n\nDer Herrscher des CTs mit eiserner Hand\nFührt seine Schüler zum Licht der Erkenntnis\nDoktor med. Placzek, brillant und gerecht\nIn seiner Schule wächst Können wie Magie\n\nMit jedem Tadel ein Funke Genie\nMit jeder Korrektur wachsen Flügel\nUnter seiner Führung gedeiht Perfektion\nIm Reich der Strahlen und Kontraste\n\nDoch wenn Manu den Raum erhellt\nVerwandelt sich der Strenge zum Kavalier\n"Wie wunderbar Sie heute den Patienten betreut"\nEin Lächeln umspielt seinen sonst strengen Mund\n\nUnd Lena an der zweiten Konsole\nErntet seinen charmantesten Blick\n"Diese Schnittführung, einfach perfekt"\nDer Wolf wird zum Lamm in Sekundenschnelle\n\nZwei Gesichter eines brillanten Geistes\nFordern und fördern in einzigartiger Art\nSeine Methode ist hart, doch sein Herz ist rein\nEr formt die Besten durch Feuer und Eis\n\nDer Herrscher des CTs mit eiserner Hand\nFührt seine Schüler zum Licht der Erkenntnis\nDoktor med. Placzek, brillant und gerecht\nIn seiner Schule wächst Können wie Magie\n\nMit jedem Tadel ein Funke Genie\nMit jeder Korrektur wachsen Flügel\nUnter seiner Führung gedeiht Perfektion\nIm Reich der Strahlen und Kontraste\n\nDas Telefon läutet, ein Zuweiser ruft an\nUnwissend, wen er am Draht haben wird\nDie Stimme wird kühl, der Ton analytisch\n"Diese Indikation erscheint mir fragwürdig"\n\nDie Zuweiser fürchten sein fundiertes Wort\nSeine Argumente scharf wie ein Skalpell\n"CT ist keine Routineuntersuchung"\nSeine Logik lässt keinen Spielraum für Fehler\n\nDer Herrscher des CTs mit eiserner Hand\nFührt seine Schüler zum Licht der Erkenntnis\nDoktor med. Placzek, brillant und gerecht\nIn seiner Schule wächst Können wie Magie\n\nMit jedem Tadel ein Funke Genie\nMit jeder Korrektur wachsen Flügel\nUnter seiner Führung gedeiht Perfektion\nIm Reich der Strahlen und Kontraste\n\nIm Zentrum der Radiologie\nWo Doktor Placzek regiert\nDa werden aus Lehrlingen Meister\nUnd aus Bildern wird Heilung geboren` },
+            { id: 9, title: "Held und Idol", bpm: "124", duration: "03:40", lyrics: `Ich war ein dummer Jungfacharzt, im Dunkeln ganz allein\nDie Bilder flimmerten im PACS, nichts leuchtete mir ein\nIch sah nur Rauschen, Artefakte, verlor den roten Faden\nDann kamst du in den Raum, um mich vom Zweifel zu entladen\nDein Blick, ein Laser, scharf und kühl, durchdringt die grauen Nebelschichten\nDu zeigst mir die Pathologie, beginnst alles zu gewichten\n\nDie Zuweiser am Telefon, sie flehen, bitten leise\nEin CT-Slot bei dir ist wie der Hauptgewinn der Reise\nDein Wort ist das Gesetz, die Assistenten steh'n stramm\nEin schelmisches Lächeln, und du ziehst alle in den Bann!\n\nOberarzt Doktor med. Placzek, du bist der CT-Gott!\nDeine Befunde sind wie Meißel, treffen auf den Spot\nOberarzt Doktor med. Placzek, für immer unser Held!\nDu siehst die kleinste Läsion in dieser Pixel-Welt!\nDeine Weisheit hyperdens, für uns das hellste Licht\nWo andre nur das Chaoes seh'n, sprichst du das wahre Gericht!\n\nAuch jetzt als dummer leitender Jungoberarzt blick' ich noch immer zu dir auf\nDein Führungsstil, ein Meisterwerk, Matrize für  den festen Lauf\nMit harter Hand und Charme, da tanzt dir keiner auf der Nase\nDu bringst mit einem Witz die größte Hektik in gleiche Phase\nDie Ruhe gibt uns Sicherheit, denn jeder hier vertraut\nDass du die Antwort längst schon weißt, ganz ohne jeden Laut\n\nDie Zuweiser am Telefon, sie flehen, bitten leise\nEin CT-Slot bei dir ist wie der Hauptgewinn der Reise\nDein Wort ist das Gesetz, die Assistenten steh'n stramm\nEin schelmisches Lächeln, und du ziehst alle in den Bann!\n\nOberarzt Doktor med. Placzek, du bist der CT-Gott!\nDeine Befunde sind wie Meißel, treffen auf den Spot\nOberarzt Doktor med. Placzek, für immer unser Held!\nDu siehst die kleinste Läsion in dieser Pixel-Welt!\nDeine Weisheit hyperdens, für uns das hellste Licht\nWo andre nur das Chaos seh'n, sprichst du das wahre Gericht!\n\nAls dummer Assistent, dummer Jungfacharzt und auch als dummer leitender Jungoberarzt,\nmein Idol und Vorbild ist immer Oberarzt Doktor med. Placzek.\nSein Führungsstil, sein Wissen sein Charme, eine Inspiration, erstrebenswert und warm\nIch wünsche ich kann das irgendwann erreichen.\n\nOberarzt Doktor med. Placzek, du bist der CT-Gott!\nDeine Befunde sind wie Meißel, treffen auf den Spot\nOberarzt Doktor med. Placzek, für immer unser Held!\nDu siehst die kleinste Läsion in dieser Pixel-Welt!\nDeine Weisheit hyperdens, für uns das hellste Licht\nWo andre nur das Chaos seh'n, sprichst du das wahre Gericht!` },
+            { id: 10, title: "Messerscharf & Legendär", bpm: "130", duration: "03:15", lyrics: `Diagnose: unklar.\nFragestellung: unmöglich.\nDie Zuweiser verzweifeln.\nEin Fall für... ihn!\n\nIch kam hierher als dummer Assistenzarzt,\nhab so vieles nicht kapiert.\nHab deine Lehre aufgesogen,\ndeine Weisheit, deine Kraft.\nIch stand im Schatten deiner Größe,\nsonnte mich im Glanz von dir,\ndem besten Mann am CT-Scanner,\ndem größten Oberarzt von hier.\n\nUnd immer wenn das Telefon geklingelt hat,\nein Zuweiser ganz demütig und klein,\nwussten wir, die Lage ist kompliziert,\ndas kann nur ein Fall für Doktor med. Placzek sein!\n\nOberarzt Doktor med. Placzek! Du bist der CT-Gott!\nDein Befund ist präzise und messerscharf, vertreibt die letzte Not!\nOberarzt Doktor med. Placzek! Für immer unser Held!\nDer charmanteste und beste Radiologe \nauf der Welt!\n\nWo wir nur Artefakte sehen, siehst du die Läsion,\njede axiale Schicht eine Offenbarung schon.\nHyperdens, hypodens, du kennst die Differenz,\nKontrastmittel im Blut, und pure Intelligenz.\nDie Assistenten zittern, folgen dir aufs Wort,\ndu führst mit harter Hand an jedem Wirkungsort.\nDoch dein Lächeln ist schelmisch, dein Charme ist legendär,\ngibst uns das Gefühl, als ob's so einfach wär.\n\nUnd immer wenn ein Polytrauma reinkam,\ndie Chirurgen schrien nach einem Mann mit Plan,\nhieß es: "Ruhe, wir rufen Doktor med. Placzek an!",\nnur er allein ist der, der uns noch retten kann!\n\nOberarzt Doktor med. Placzek! Du bist der CT-Gott!\nDein Befund ist präzise und messerscharf, vertreibt die letzte Not!\nOberarzt Doktor med. Placzek! Für immer unser Held!\nDer charmanteste und beste Radiologe \nauf der Welt!\n\nOberarzt Doktor med. Placzek!\nDer Held der Radiologie!\nOberarzt Doktor med. Placzek!\nWir vergessen dich nie!\n(Placzek!)` },
+            { id: 11, title: "Oberärztlicher Glanz", bpm: "118", duration: "03:50", lyrics: `Ich hörte Schritte draußen auf dem Flur  \nEin Klopfen, dann steht er vor der Tür  \nOberarzt Doktor med. Placzek, der Herr im CT  \nSein Blick scharf, sein lächeln charmant  \n\n"Dummer Jungfacharzt, hör auf meinen Plan  \nCT ist Kunst, schau mich genau an!"  \nMit schelmischem Grinsen gibt er mir  \nDen Rat, der immer goldrichtig war  \n\n"Studier mich gut, schau genau hin  \nFehler sind schlecht, mach's wie ich.  \nMein Glanz, mein Wissen führen dich weit"  \nOberarzt Vorbild Leitbild, einfach unerreicht!\n\nOberarzt Doktor med. Placzek, \nZiel meines simplen Seins.\nEr strahlt hell, ich bin geblendet  \nvon seinem oberärztlichen Glanz.  \n \nOberarzt Doktor med. Placzek \nmein Leitstern, mein Idol.   \nIch sonne mich in seinem oberärztlichen Glanz\nund hoffe er wird mich auch mal erfassen.\nOberarzt Doktor med. Placzek, \nwitzig charmant Perfektion! \n\nIch seh auf die Bilder und komm nicht zurecht  \nWeiß nicht weiter der Fokus ist schlecht!  \nDoktor med. Placzek eilt zur Rettung herbei. \n"Mach’s wie ich, sei perfekt  \nDenn sonst wird dein Befund sicher nichts!"  \n\n"Bilder sind Klarheit, mein Wissen dein Pfad  \nFehler sind falsche Schritte, halte Maß!  \nStudier mich, Junge, ich führ dich hin  \nPerfekter Befund mit Logik und scharfem Sinn!"\n\nMein Glanz, mein Wissen führen dich weit"  \nOberarzt Vorbild Leitbild, einfach unerreicht!\n\nOberarzt Doktor med. Placzek, \nZiel meines simplen Seins.\nEr strahlt hell, ich bin geblendet  \nvon seinem oberärztlichen Glanz.  \n \nOberarzt Doktor med. Placzek \nmein Leitstern, mein Idol.   \nIch sonne mich in seinem oberärztlichen Glanz\nund hoffe er wird mich auch mal erfassen.\nOberarzt Doktor med. Placzek, \nwitzig charmant Perfektion! \n\n"Bleib dran, du dummer Jungfacharzt, \nich bin der Weg und auch das Ziel,\nDu machst vieles noch falsch \nganz ohne Glanz und Perfektion,\ndoch ich sehe dein Potenzial, \nmein Rat und Wissen bringt dich voran!"  \n\nOberarzt Doktor med. Placzek,\nHeld, Idol, CT Gott,\ndu bist die Perfektion,\ndie helle Sonne in unserem Leben,\ndie Wärme Wissen und Hoffnung gibt.` },
+            { id: 12, title: "Götterdämmerung", bpm: "80", duration: "05:10", lyrics: `Die Nummer 4-1-9-2.\nKein Anschluss... unter dieser Nummer.\n\nDer Flur ist still, dein Schritt verhallt\nDie Luft im Raum wirkt seltsam kalt\nDer Drehstuhl leer, der Bildschirm schwarz\nWir stecken fest im trüben Harz\nDein Adlerauge fehlt uns sehr\nDie Monitore bleiben leer\n\nWer gibt uns jetzt den klaren Blick?\nEs gibt wohl leider kein Zurück\n(Oho-Oho)\nWer leitet unsre Hände?\n(Oho-Oho)\nIst das hier nun das Ende?\nEin Zuweiser ruft an und fragt ganz leis:\n"Wo ist der Mann, der alles weiß?"\n\nGötterdämmerung! Das Licht geht aus!\nDu nimmst die Sonne mit aus diesem Haus!\nDu tauscht den Schockraum gegen Praxis-Glanz\nUnd wir verlieren deine Resonanz!\n(Oh-oh-oh)\nGötterdämmerung! Ein letztes Wort!\nDoktor Placzek, du bist einfach fort!\nKein Kontrastmittel leuchtet mehr so hell\nDu gehst viel zu schnell! (Viel zu schnell!)\n\nJetzt sitzt du dort in deiner Welt\nWo Ruhe herrscht und alles hält\nDu trinkst Espresso, schick und fein\nMusst nicht mehr hier im Chaos sein\nKein Polytrauma stört den Tag\nNur das, was man in Ruhe mag\n\nDoch unsre Fragen bleiben hier...\nWir stehen ratlos vor der Tür...\nDie Lücke klafft so riesengroß\nWas machen wir hier ohne dich nur bloß?\nDu bleibst der Held, der alles sah\nWarst jeden Tag für uns nur da!\n\nGötterdämmerung! Das Licht geht aus!\nDu nimmst die Sonne mit aus diesem Haus!\nDu tauscht den Schockraum gegen Praxis-Glanz\nUnd wir verlieren deine Resonanz!\n(Oh-oh-oh)\nGötterdämmerung! Ein letztes Wort!\nDoktor Placzek, du bist einfach fort!\nKein Kontrastmittel leuchtet mehr so hell\nDu gehst viel zu schnell!\n\nGötterdämmerung! Das Licht geht aus!\nDu nimmst die Sonne mit aus diesem Haus!\nDu tauscht den Schockraum gegen Praxis-Glanz\nUnd wir verlieren deine Resonanz!\n(Oh-oh-oh)\nGötterdämmerung! Ein letztes Wort!\nDoktor Placzek, du bist einfach fort!\nKein Kontrastmittel leuchtet mehr so hell\nDu gehst viel zu schnell!\n\nGötterdämmerung...\nAlles Gute, CT Gott.` }
+        ];
+
+        // --- DOM REFERENCES ---
+        const playlistContainer = document.getElementById('playlist-container');
+        const emptyState = document.getElementById('empty-state');
+        const contentDisplay = document.getElementById('content-display');
+        const songTitle = document.getElementById('song-title');
+        const songId = document.getElementById('song-id');
+        const songDuration = document.getElementById('song-duration');
+        const songBpm = document.getElementById('song-bpm');
+        const lyricsText = document.getElementById('lyrics-text');
+        const sidebar = document.getElementById('sidebar');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // --- INIT ---
+        function init() {
+            renderPlaylist();
+            
+            // GSAP Intro
+            gsap.from(".main-card", { scale: 0.95, opacity: 0, duration: 1.2, ease: "power3.out" });
+            gsap.from(".sidebar", { x: -30, opacity: 0, duration: 1, delay: 0.3, ease: "power2.out" });
+        }
+
+        function renderPlaylist() {
+            playlistContainer.innerHTML = '';
+            albumData.forEach((track, index) => {
+                const card = document.createElement('div');
+                card.className = 'track-card';
+                card.onclick = () => loadTrack(index);
+                card.innerHTML = `
+                    <div class="track-info">
+                        <span class="track-number">TRACK ${String(track.id).padStart(2, '0')}</span>
+                        <span class="track-title">${track.title}</span>
+                    </div>
+                    <i class="fa-solid fa-play play-icon"></i>
+                `;
+                playlistContainer.appendChild(card);
+            });
+        }
+
+        // --- NAVIGATION ---
+        function loadTrack(index) {
+            const track = albumData[index];
+            const cards = document.querySelectorAll('.track-card');
+            
+            // Active Styling
+            cards.forEach(c => c.classList.remove('active'));
+            cards[index].classList.add('active');
+
+            // Hide Empty State, Show Content
+            emptyState.style.display = 'none';
+            contentDisplay.style.display = 'flex';
+
+            // Fill Data
+            songTitle.innerText = track.title;
+            songId.innerText = `#${String(track.id).padStart(2, '0')}`;
+            songDuration.innerText = track.duration;
+            songBpm.innerText = `${track.bpm} BPM`;
+            lyricsText.innerText = track.lyrics;
+
+            // Reset Scroll
+            document.querySelector('.lyrics-wrapper').scrollTop = 0;
+
+            // Animation
+            gsap.fromTo("#song-title", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(1.7)" });
+            gsap.fromTo(".song-details", { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.1 });
+            gsap.fromTo("#lyrics-text", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, delay: 0.2, ease: "power2.out" });
+
+            // MOBILE: Hide Playlist (Sidebar) to show content
+            if(window.innerWidth <= 992) {
+                sidebar.classList.add('mobile-hidden');
+            }
+        }
+
+        // Function to go back to list on mobile
+        function showPlaylist() {
+            if(window.innerWidth <= 992) {
+                sidebar.classList.remove('mobile-hidden');
+            }
+        }
+
+        function copyLyrics() {
+            const text = lyricsText.innerText;
+            if(!text) return;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalContent = copyBtn.innerHTML;
+                gsap.to(copyBtn, { scale: 1.05, duration: 0.1, yoyo: true, repeat: 1 });
+                copyBtn.style.background = "rgba(0, 210, 255, 0.3)";
+                copyBtn.style.borderColor = "#00d2ff";
+                copyBtn.innerHTML = `<i class="fa-solid fa-check"></i> <span>Kopiert</span>`;
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalContent;
+                    copyBtn.style.background = "";
+                    copyBtn.style.borderColor = "";
+                }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
 </html>
